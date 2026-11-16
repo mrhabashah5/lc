@@ -1,0 +1,62 @@
+{
+  "loan-clearance-certificate-noc-pakistan": {
+    "url": "/images/og/loan-clearance-certificate-noc-pakistan.png",
+    "width": 800,
+    "height": 420,
+    "type": "image/png"
+  },
+  "close-loan-app-loan-pakistan": {
+    "url": "/images/og/close-loan-app-loan-pakistan.png",
+    "width": 800,
+    "height": 420,
+    "type": "image/png"
+  },
+  "check-loan-app-secp-approved": {
+    "url": "/images/og/check-loan-app-secp-approved.png",
+    "width": 800,
+    "height": 420,
+    "type": "image/png"
+  },
+  "loan-app-harassment-pakistan": {
+    "url": "/images/og/loan-app-harassment-pakistan.png",
+    "width": 800,
+    "height": 420,
+    "type": "image/png"
+  },
+  "loan-settlement-vs-loan-clearance": {
+    "url": "/images/og/loan-settlement-vs-loan-clearance.png",
+    "width": 800,
+    "height": 420,
+    "type": "image/png"
+  },
+  "check-credit-report-pakistan": {
+    "url": "/images/og/check-credit-report-pakistan.png",
+    "width": 1000,
+    "height": 525,
+    "type": "image/png"
+  },
+  "remove-bank-lien-car-registration-pakistan": {
+    "url": "/images/og/remove-bank-lien-car-registration-pakistan.png",
+    "width": 800,
+    "height": 420,
+    "type": "image/png"
+  },
+  "clearance-letter-noc-explained": {
+    "url": "/images/og/clearance-letter-noc-explained.png",
+    "width": 1000,
+    "height": 525,
+    "type": "image/png"
+  },
+  "understanding-your-credit-record-in-pakistan": {
+    "url": "/images/og/understanding-your-credit-record-in-pakistan.png",
+    "width": 1000,
+    "height": 525,
+    "type": "image/png"
+  },
+  "default": {
+    "url": "/images/og/default.png",
+    "width": 800,
+    "height": 420,
+    "type": "image/png"
+  }
+}

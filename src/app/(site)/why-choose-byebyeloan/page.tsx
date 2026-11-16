@@ -1,0 +1,96 @@
+import type { Metadata } from "next";
+import { Check, X } from "lucide-react";
+import { IconTile } from "@/components/Icon";
+import { CtaBand, PageHero, SectionHeading } from "@/components/Sections";
+import { reasons } from "@/lib/content";
+
+export const metadata: Metadata = {
+  title: "Why Choose Us",
+  description:
+    "Clear information, written terms and realistic expectations. See what makes ByeByeLoan a trustworthy choice for loan settlement and clearance assistance in Pakistan.",
+  alternates: { canonical: "/why-choose-byebyeloan" },
+};
+
+const will = [
+  "Explain your situation and options in plain language",
+  "Tell you honestly when settlement may not be the best route",
+  "Put the scope of our work and our fee in writing first",
+  "Keep your information confidential",
+  "Stay with your case until the paperwork is complete",
+];
+
+const wont = [
+  "Guarantee a settlement, a reduction or a timeline",
+  "Advise you to stop paying your lender",
+  "Ask for your PIN, password, OTP or full card number",
+  "Collect loan repayments on a lender's behalf",
+  "Claim we can erase accurate credit records",
+];
+
+export default function WhyPage() {
+  return (
+    <>
+      <PageHero
+        crumb="Why Choose ByeByeLoan"
+        eyebrow="Why choose ByeByeLoan"
+        title="Straightforward help,"
+        highlight="honestly delivered."
+        intro="When you are under financial pressure, the last thing you need is another promise that does not hold. Here is how we are different."
+      />
+
+      <section className="section bg-white">
+        <div className="container-x">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {reasons.map((r) => (
+              <div key={r.title} className="card">
+                <IconTile name={r.icon} />
+                <h2 className="mt-5 text-xl font-bold">{r.title}</h2>
+                <p className="mt-3 leading-relaxed text-muted">{r.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-sky-light/25">
+        <div className="container-x">
+          <SectionHeading
+            eyebrow="Our commitments"
+            title="What we will and will not do"
+            text="Knowing the limits of a service is as important as knowing its benefits."
+          />
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="card">
+              <h3 className="text-xl font-bold">We will</h3>
+              <ul className="mt-5 space-y-4">
+                {will.map((t) => (
+                  <li key={t} className="flex items-start gap-3 font-medium text-ink">
+                    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky text-white">
+                      <Check size={14} strokeWidth={3.5} aria-hidden="true" />
+                    </span>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="card">
+              <h3 className="text-xl font-bold">We will not</h3>
+              <ul className="mt-5 space-y-4">
+                {wont.map((t) => (
+                  <li key={t} className="flex items-start gap-3 font-medium text-ink">
+                    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-navy text-white">
+                      <X size={14} strokeWidth={3.5} aria-hidden="true" />
+                    </span>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CtaBand />
+    </>
+  );
+}

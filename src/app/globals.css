@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   ByeByeLoan brand tokens — the single source of truth for colour.
+   Use these (bg-navy, text-sky, border-line …) everywhere; do not
+   add one-off hex values in components.
+------------------------------------------------------------------- */
+/* Accessibility (WCAG 2.2 AA): every text/background pair below is at least
+   4.5:1 (normal text) or 3:1 (large text, icons, field borders). Brand hues
+   are kept; only the shades used under or as text are deepened. */
+@theme {
+  --color-navy: #00496e;
+  /* Sky blue for large headings, icons and fills (3.6:1 on white). */
+  --color-sky: #1890c4;
+  /* Original brand sky blue: decorative use only, never for text. */
+  --color-sky-brand: #20a7e2;
+  /* Sky blue for small text, links and fills behind white text (5.4:1). */
+  --color-sky-ink: #13729c;
+  --color-sky-light: #b5e2f9;
+  /* Original brand orange: decorative accents only, never behind text. */
+  --color-orange: #ff7026;
+  --color-orange-hover: #e95e18;
+  /* Orange for buttons and CTA areas with white text (4.9:1 / 6.3:1). */
+  --color-cta: #c4480a;
+  --color-cta-hover: #a3410e;
+  --color-surface: #fafcfd;
+  --color-ink: #263746;
+  /* Muted text: 5.1:1 or better on every light background used. */
+  --color-muted: #5b6b77;
+  --color-line: #e5edf2;
+  /* Form field borders (3.3:1, WCAG 1.4.11 non-text contrast). */
+  --color-field: #7f8f9b;
+  /* Form validation errors only */
+  --color-danger: #c0392b;
+
+  --shadow-card: 0 1px 2px rgb(0 73 110 / 0.04), 0 8px 24px rgb(0 73 110 / 0.07);
+  --shadow-float: 0 14px 36px rgb(0 73 110 / 0.16);
+}
+
+@theme inline {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-white);
+  color: var(--color-ink);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Clearly visible keyboard focus on every interactive element (WCAG 2.4.7 / 2.4.11). */
+:focus-visible {
+  outline: 3px solid var(--color-sky-ink);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.on-dark :focus-visible {
+  outline-color: var(--color-white);
+}
+
+/* Respect the user's reduced-motion setting (WCAG 2.3.3). */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* In the base layer so utilities such as text-white can override it on dark sections. */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-navy);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: var(--color-sky-light);
+    color: var(--color-navy);
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .eyebrow {
+    @apply text-sm font-bold uppercase tracking-widest text-sky-ink;
+  }
+
+  .h-display {
+    @apply text-4xl leading-[1.08] font-extrabold sm:text-5xl lg:text-6xl;
+  }
+
+  .h-section {
+    @apply text-3xl leading-tight font-extrabold sm:text-4xl;
+  }
+
+  .lead {
+    @apply text-lg leading-relaxed text-muted;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-base leading-none font-bold transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply bg-cta text-white shadow-sm hover:bg-cta-hover;
+  }
+  .btn-secondary {
+    @apply border-2 border-navy bg-white text-navy hover:border-cta hover:text-cta;
+  }
+  .btn-on-orange {
+    @apply bg-white text-navy hover:bg-sky-light;
+  }
+  .btn-sm {
+    @apply rounded-lg px-4 py-2.5 text-sm;
+  }
+  .link-arrow {
+    @apply inline-flex items-center gap-1.5 font-bold text-sky-ink underline-offset-4 transition-colors hover:text-navy hover:underline;
+  }
+
+  /* Cards */
+  .card {
+    @apply rounded-2xl border border-line bg-white p-6 shadow-card sm:p-8;
+  }
+  .icon-tile {
+    @apply inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-sky-light/40 text-sky;
+  }
+
+  /* Forms */
+  .label {
+    @apply mb-1.5 block text-sm font-semibold text-navy;
+  }
+  .field {
+    @apply block w-full rounded-lg border border-field bg-white px-4 py-3 text-base text-ink placeholder:text-muted focus:border-sky-ink focus:ring-3 focus:ring-sky/35 focus:outline-none;
+  }
+  .field-error {
+    @apply mt-1.5 text-sm text-danger;
+  }
+
+  /* Long-form text (articles, legal pages) */
+  .prose-lc h2 {
+    @apply mt-10 mb-3 text-2xl font-bold;
+  }
+  .prose-lc h3 {
+    @apply mt-6 mb-2 text-lg font-bold;
+  }
+  .prose-lc p {
+    @apply mb-4 leading-relaxed text-ink;
+  }
+  .prose-lc ul {
+    @apply mb-4 list-disc space-y-2 pl-6 marker:text-sky;
+  }
+  .prose-lc a {
+    @apply font-semibold text-navy underline decoration-sky underline-offset-4 hover:text-sky-ink;
+  }
+}

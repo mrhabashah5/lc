@@ -23,7 +23,7 @@ export function SettlementCalculator() {
   const pctSaved = (saving / b) * 100;
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr]">
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
       <form className="card space-y-5 sm:p-8" onSubmit={(e) => e.preventDefault()} noValidate>
         <h2 className="text-xl font-extrabold">Your figures</h2>
         <NumberField

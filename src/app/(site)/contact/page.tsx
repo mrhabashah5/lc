@@ -30,7 +30,7 @@ export default function ContactPage() {
         intro="Have a question about our services? Get in touch using whichever method suits you."
       />
       <section className="section bg-white">
-        <div className="container-x grid gap-10 lg:grid-cols-[1fr_1.5fr] lg:gap-12">
+        <div className="container-x grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:gap-12">
           <div>
             <ul className="space-y-5">
               {items.map(({ icon: I, label, value, href, external }) => (

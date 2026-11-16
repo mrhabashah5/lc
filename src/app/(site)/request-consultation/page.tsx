@@ -29,7 +29,7 @@ export default async function RequestConsultationPage({ searchParams }: Props) {
         intro="Tell us a little about your situation. It takes about two minutes, and there is no obligation."
       />
       <section className="section bg-white">
-        <div className="container-x grid gap-10 lg:grid-cols-[1.7fr_1fr] lg:gap-12">
+        <div className="container-x grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)] lg:gap-12">
           <ConsultationForm key={initialApp ?? "none"} initialApp={initialApp} />
           <aside className="space-y-6 self-start">
             <div className="rounded-2xl bg-sky-light/30 p-6">

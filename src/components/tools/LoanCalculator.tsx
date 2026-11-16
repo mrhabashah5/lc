@@ -54,7 +54,7 @@ export function LoanCalculator() {
   const rows = result ? (showAll ? result.rows : result.rows.slice(0, 12)) : [];
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr]">
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
       <form className="card space-y-5 sm:p-8" onSubmit={(e) => e.preventDefault()} noValidate>
         <h2 className="text-xl font-extrabold">Your loan details</h2>
         <NumberField id="amount" label="Loan amount" prefix="Rs" value={amount} onChange={setAmount} error={errors.amount} step="1000" />

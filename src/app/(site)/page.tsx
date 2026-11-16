@@ -15,7 +15,7 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="overflow-hidden bg-white">
-        <div className="container-x grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:py-24">
+        <div className="container-x grid grid-cols-1 items-center gap-12 py-14 sm:py-20 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-16 lg:py-24">
           <div>
             <p className="eyebrow mb-4">Loan settlement &amp; clearance assistance</p>
             <h1 className="h-display lg:text-[4rem]">
@@ -149,7 +149,7 @@ export default function HomePage() {
 
       {/* Why choose */}
       <section className="section bg-white">
-        <div className="container-x grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:gap-16">
+        <div className="container-x grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:gap-16">
           <div>
             <p className="eyebrow mb-3">Why choose ByeByeLoan</p>
             <h2 className="h-section">

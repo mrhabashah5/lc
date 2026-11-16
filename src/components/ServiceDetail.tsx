@@ -25,7 +25,7 @@ export function ServiceDetail(p: ServiceDetailProps) {
       <PageHero crumb={p.crumb} eyebrow="Our services" title={p.title} highlight={p.highlight} intro={p.intro} />
 
       <section className="section bg-white">
-        <div className="container-x grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
+        <div className="container-x grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:gap-16">
           <div>
             <h2 className="h-section">{p.whatTitle}</h2>
             <div className="mt-5 space-y-4 text-lg leading-relaxed text-ink">

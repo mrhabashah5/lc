@@ -105,7 +105,7 @@ export function CtaBand({
           <h2 className="text-3xl leading-tight font-extrabold text-white sm:text-4xl">{title}</h2>
           <p className="mt-3 text-lg leading-relaxed text-white">{text}</p>
         </div>
-        <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+        <div className="flex w-full shrink-0 flex-col gap-3 sm:w-auto sm:flex-row">
           <Link href="/request-consultation" className="btn btn-on-orange">
             Request Consultation <ArrowRight size={18} aria-hidden="true" />
           </Link>

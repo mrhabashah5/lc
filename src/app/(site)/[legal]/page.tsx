@@ -30,7 +30,7 @@ export default async function LegalPage({ params }: Props) {
     <>
       <PageHero crumb={doc.title} eyebrow="Legal" title={doc.title} intro={doc.description} />
       <section className="section bg-white">
-        <div className="container-x grid gap-10 lg:grid-cols-[1fr_260px] lg:gap-16">
+        <div className="container-x grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-16">
           <div className="prose-lc max-w-3xl">
             <p className="text-sm font-semibold text-muted">Last updated: {doc.updated}</p>
             <p className="text-lg">{doc.intro}</p>

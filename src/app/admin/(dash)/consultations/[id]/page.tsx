@@ -46,7 +46,7 @@ export default async function ConsultationDetail({ params }: Props) {
       </div>
       <p className="mt-1 text-sm text-muted">Received {formatDate(c.created_at)}</p>
 
-      <div className="mt-8 grid gap-6 lg:grid-cols-[1.5fr_1fr]">
+      <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
         <div className="card sm:p-6">
           <h2 className="text-lg font-extrabold">Request details</h2>
           <dl className="mt-4 divide-y divide-line text-[15px]">

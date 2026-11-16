@@ -18,10 +18,10 @@ export function whatsappLink(message = "Hello ByeByeLoan, I would like to reques
 export const telLink = `tel:${site.phone.replace(/[^\d+]/g, "")}`;
 
 export const mainNav = [
-  { href: "/about", label: "About Us" },
+  { href: "/about", label: "About" },
   {
     href: "/services",
-    label: "Our Services",
+    label: "Services",
     children: [
       { href: "/services", label: "All Services" },
       { href: "/loan-settlement", label: "Loan Settlement" },
@@ -30,7 +30,7 @@ export const mainNav = [
     ],
   },
   { href: "/how-it-works", label: "How It Works" },
-  { href: "/why-choose-byebyeloan", label: "Why ByeByeLoan" },
+  { href: "/why-choose-byebyeloan", label: "Why Us" },
   {
     href: "/articles",
     label: "Resources",

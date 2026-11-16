@@ -79,7 +79,7 @@ export function ClearanceChecklist() {
   const pct = all.length ? Math.round((count / all.length) * 100) : 0;
 
   return (
-    <div className="grid gap-8 lg:grid-cols-[280px_1fr]">
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-[280px_minmax(0,1fr)]">
       <fieldset className="card self-start sm:p-6 print:hidden">
         <legend className="sr-only">Type of loan</legend>
         <h2 className="text-lg font-extrabold">Your type of loan</h2>

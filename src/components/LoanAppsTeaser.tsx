@@ -9,7 +9,7 @@ const SHOWN = 12;
 export function LoanAppsTeaser() {
   return (
     <section className="section bg-sky-light/25">
-      <div className="container-x grid items-center gap-12 lg:grid-cols-[1fr_1.35fr] lg:gap-16">
+      <div className="container-x grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.35fr)] lg:gap-16">
         <div>
           <p className="eyebrow mb-3">Loan app clearance</p>
           <h2 className="h-section">

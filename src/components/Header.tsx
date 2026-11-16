@@ -15,17 +15,19 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur">
-      <div className="container-x flex h-18 items-center justify-between gap-6 py-4">
-        <Logo />
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
+        <div className="shrink-0">
+          <Logo />
+        </div>
 
-        <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
+        <nav aria-label="Main" className="hidden items-center gap-6 xl:flex 2xl:gap-8">
           {mainNav.map((item) =>
             item.children ? (
               <div key={item.href} className="group relative">
                 <Link
                   href={item.href}
                   aria-current={isActive(item.href) ? "page" : undefined}
-                  className={`inline-flex items-center gap-1 py-2 text-[15px] font-semibold transition-colors hover:text-sky-ink ${
+                  className={`inline-flex items-center gap-1 py-2 text-[15px] font-semibold whitespace-nowrap transition-colors hover:text-sky-ink ${
                     isActive(item.href) || item.children.some((c) => isActive(c.href))
                       ? "text-sky-ink"
                       : "text-navy"
@@ -54,7 +56,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 aria-current={isActive(item.href) ? "page" : undefined}
-                className={`py-2 text-[15px] font-semibold transition-colors hover:text-sky-ink ${
+                className={`py-2 text-[15px] font-semibold whitespace-nowrap transition-colors hover:text-sky-ink ${
                   isActive(item.href) ? "text-sky-ink" : "text-navy"
                 }`}
               >
@@ -64,13 +66,13 @@ export function Header() {
           )}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-3">
           <Link href="/request-consultation" className="btn btn-primary btn-sm hidden sm:inline-flex">
             Request Consultation
           </Link>
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-navy hover:bg-sky-light/30 lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-navy hover:bg-sky-light/30 xl:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav"
@@ -85,7 +87,7 @@ export function Header() {
         <nav
           id="mobile-nav"
           aria-label="Mobile"
-          className="border-t border-line bg-white lg:hidden"
+          className="max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-line bg-white xl:hidden"
           onClick={(e) => {
             if ((e.target as HTMLElement).closest("a")) setOpen(false);
           }}

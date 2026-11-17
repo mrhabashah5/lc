@@ -84,22 +84,6 @@ export default function HomePage() {
       <HomeHero />
       <AppTicker />
 
-      {/* Clear responsibly */}
-      <section className="border-y border-notice-border/60 bg-notice">
-        <div className="container-x flex gap-4 py-8">
-          <AlertTriangle size={28} className="mt-0.5 shrink-0 text-notice-icon" aria-hidden="true" />
-          <div>
-            <h2 className="text-lg font-extrabold text-notice-ink">Clear Responsibly</h2>
-            <p className="mt-1 leading-relaxed text-notice-ink">
-              Always make loan payments directly to your lender through its official app, branch or account, and keep
-              your receipts. ByeByeLoan never collects loan repayments and never asks you to pay a personal account.
-              Lenders make the final decision on any settlement, so no result or timeline can be guaranteed.
-            </p>
-            <p className="mt-2 font-bold text-notice-ink">Your financial peace of mind is our priority.</p>
-          </div>
-        </div>
-      </section>
-
       {/* Stats */}
       <section className="bg-white py-14 sm:py-16">
         <ul className="container-x grid grid-cols-2 gap-4 lg:grid-cols-4">

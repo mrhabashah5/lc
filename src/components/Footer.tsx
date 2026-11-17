@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { AlertTriangle, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { Logo } from "./Logo";
 import { legalNav, shortDisclaimer, site, telLink, whatsappLink } from "@/lib/site";
 
@@ -80,6 +80,18 @@ export function Footer() {
 
       <div className="border-t border-white/15">
         <div className="container-x py-8">
+          <div className="mb-6 flex gap-3 rounded-2xl border border-notice-border/40 bg-white/5 p-5">
+            <AlertTriangle size={22} className="mt-0.5 shrink-0 text-notice-border" aria-hidden="true" />
+            <div>
+              <h2 className="text-base font-extrabold text-white">Clear Responsibly</h2>
+              <p className="mt-1 text-sm leading-relaxed text-white/80">
+                Always make loan payments directly to your lender through its official app, branch or account, and keep
+                your receipts. {site.name} never collects loan repayments and never asks you to pay a personal account.
+                Lenders make the final decision on any settlement, so no result or timeline can be guaranteed.
+              </p>
+              <p className="mt-1.5 text-sm font-bold text-white">Your financial peace of mind is our priority.</p>
+            </div>
+          </div>
           <p className="text-sm leading-relaxed text-white/70">
             <strong className="text-white">Important:</strong> {shortDisclaimer}
           </p>

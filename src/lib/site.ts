@@ -4,18 +4,18 @@ export const site = {
   description:
     "Professional loan settlement and clearance assistance for individuals in Pakistan.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://byebyeloan.online",
-  phone: process.env.NEXT_PUBLIC_PHONE ?? "+92 300 0000000",
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923000000000",
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923101990325",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "info@byebyeloan.online",
   address: process.env.NEXT_PUBLIC_ADDRESS ?? "Office address, City, Pakistan",
   hours: "Monday to Saturday, 10:00 am – 6:00 pm (PKT)",
 };
 
+/** WhatsApp number formatted for display, e.g. +92 310 1990325. */
+export const whatsappDisplay = site.whatsapp.replace(/^(92)(\d{3})(\d+)$/, "+$1 $2 $3");
+
 export function whatsappLink(message = "Hello ByeByeLoan, I would like to request a consultation.") {
   return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
 }
-
-export const telLink = `tel:${site.phone.replace(/[^\d+]/g, "")}`;
 
 export const mainNav = [
   { href: "/about", label: "About Us" },

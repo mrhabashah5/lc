@@ -9,7 +9,6 @@ const orgJsonLd = {
   name: site.name,
   description: site.description,
   url: site.url,
-  telephone: site.phone,
   email: site.email,
   areaServed: { "@type": "Country", name: "Pakistan" },
 };

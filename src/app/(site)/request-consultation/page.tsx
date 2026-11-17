@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Clock, Lock, MessageCircle, Phone } from "lucide-react";
+import { Clock, Lock, MessageCircle } from "lucide-react";
 import { ConsultationForm } from "@/components/ConsultationForm";
 import { DisclaimerNote, PageHero } from "@/components/Sections";
 import { findLoanApp } from "@/lib/loan-apps";
-import { shortDisclaimer, site, telLink, whatsappLink } from "@/lib/site";
+import { shortDisclaimer, site, whatsappDisplay, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Request a Consultation",
@@ -46,14 +46,11 @@ export default async function RequestConsultationPage({ searchParams }: Props) {
               </ul>
             </div>
             <div className="card sm:p-6">
-              <h2 className="text-lg font-extrabold">Prefer to talk?</h2>
+              <h2 className="text-lg font-extrabold">Prefer WhatsApp?</h2>
               <p className="mt-2 text-[15px] text-muted">{site.hours}</p>
               <div className="mt-4 flex flex-col gap-3">
-                <a href={telLink} className="btn btn-secondary btn-sm">
-                  <Phone size={17} aria-hidden="true" /> {site.phone}
-                </a>
                 <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-sm">
-                  <MessageCircle size={17} aria-hidden="true" /> WhatsApp us<span className="sr-only"> (opens in a new tab)</span>
+                  <MessageCircle size={17} aria-hidden="true" /> {whatsappDisplay}<span className="sr-only"> (opens in a new tab)</span>
                 </a>
               </div>
             </div>

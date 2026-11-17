@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { AlertTriangle, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { AlertTriangle, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Logo } from "./Logo";
-import { legalNav, shortDisclaimer, site, telLink, whatsappLink } from "@/lib/site";
+import { legalNav, shortDisclaimer, site, whatsappDisplay, whatsappLink } from "@/lib/site";
 
 const company = [
   { href: "/about", label: "About Us" },
@@ -52,18 +52,13 @@ export function Footer() {
           <h2 className="mb-4 text-sm font-bold tracking-widest text-white uppercase">Get in touch</h2>
           <ul className="space-y-3 text-[15px] text-footer-muted">
             <li>
-              <a href={telLink} className="inline-flex items-center gap-2.5 hover:text-white">
-                <Phone size={17} aria-hidden="true" /> {site.phone}
-              </a>
-            </li>
-            <li>
               <a
                 href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 hover:text-white"
               >
-                <MessageCircle size={17} aria-hidden="true" /> WhatsApp us<span className="sr-only"> (opens in a new tab)</span>
+                <MessageCircle size={17} aria-hidden="true" /> {whatsappDisplay} (WhatsApp)<span className="sr-only"> (opens in a new tab)</span>
               </a>
             </li>
             <li>

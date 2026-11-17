@@ -3,7 +3,7 @@ import { createConsultation } from "@/lib/db";
 import { notifyTeam, sendMail } from "@/lib/mail";
 import { validateConsultation, type ConsultationInput } from "@/lib/options";
 import { clientIp, rateLimit } from "@/lib/rate-limit";
-import { site } from "@/lib/site";
+import { site, whatsappDisplay } from "@/lib/site";
 
 const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 
@@ -78,7 +78,7 @@ export async function POST(req: Request) {
       ? sendMail({
           to: data.email,
           subject: `We have received your request (${reference})`,
-          text: `Dear ${data.fullName},\n\nThank you for contacting ${site.name}. We have received your consultation request and a consultant will contact you by ${data.contactMethod.toLowerCase()}.\n\nYour reference: ${reference}\n\nFor your security, we will never ask for your PIN, password, OTP or full card number.\n\n${site.name}\n${site.phone}`,
+          text: `Dear ${data.fullName},\n\nThank you for contacting ${site.name}. We have received your consultation request and a consultant will contact you by ${data.contactMethod.toLowerCase()}.\n\nYour reference: ${reference}\n\nFor your security, we will never ask for your PIN, password, OTP or full card number.\n\n${site.name}\nWhatsApp: ${whatsappDisplay}`,
         })
       : null,
   ]);

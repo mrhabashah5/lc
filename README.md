@@ -20,7 +20,7 @@ Production: `npm run build` then `npm start`, or deploy to Vercel (see below). R
 | Variable | Purpose |
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Public URL (`https://byebyeloan.online`), used for canonical links, sitemap, robots and structured data |
-| `NEXT_PUBLIC_PHONE`, `NEXT_PUBLIC_WHATSAPP_NUMBER`, `NEXT_PUBLIC_CONTACT_EMAIL`, `NEXT_PUBLIC_ADDRESS` | Contact details shown on the site. WhatsApp number in international format without `+` |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER`, `NEXT_PUBLIC_CONTACT_EMAIL`, `NEXT_PUBLIC_ADDRESS` | Contact details shown on the site. WhatsApp number in international format without `+` |
 | `ADMIN_PASSWORD` | Password for `/admin` |
 | `SESSION_SECRET` | 32+ character secret used to sign the admin session cookie |
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `MAIL_FROM`, `MAIL_TO` | Email notifications. Leave `SMTP_HOST` empty to disable |
@@ -44,7 +44,7 @@ Use the Tailwind utilities (`bg-navy`, `text-sky`, …) and the shared classes
 
 ## Before launch
 
-- Replace the placeholder phone, WhatsApp number, email and address.
+- Replace the placeholder office address (WhatsApp number and email are set).
 - Have the legal pages reviewed and add the registered business details.
 - Set a strong `ADMIN_PASSWORD` and a fresh `SESSION_SECRET` on the server.
 - Create the Turso database and set `TURSO_DATABASE_URL` / `TURSO_AUTH_TOKEN` before deploying.

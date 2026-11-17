@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const detail = [
   {
     title: "You tell us about your situation",
-    text: "Complete the consultation form, call us or message us on WhatsApp. We only need the basics at this stage: the type of loan, a rough amount and what is happening now.",
+    text: "Complete the consultation form or message us on WhatsApp. We only need the basics at this stage: the type of loan, a rough amount and what is happening now.",
     you: "Share basic details. Never share PINs, passwords or OTPs.",
   },
   {

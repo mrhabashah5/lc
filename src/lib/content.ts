@@ -36,7 +36,7 @@ export const coreServices = [
 export const steps = [
   {
     title: "Request a consultation",
-    text: "Tell us about your loan and your situation using our short online form, by phone or on WhatsApp.",
+    text: "Tell us about your loan and your situation using our short online form or on WhatsApp.",
   },
   {
     title: "We review your situation",
@@ -195,7 +195,7 @@ export const faqs = [
   },
   {
     q: "Which cities do you cover?",
-    a: "Consultations are carried out by phone, WhatsApp and email, so we can assist individuals anywhere in Pakistan.",
+    a: "Consultations are carried out on WhatsApp and by email, so we can assist individuals anywhere in Pakistan.",
   },
 ] as const;
 

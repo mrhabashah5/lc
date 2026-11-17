@@ -13,7 +13,6 @@ import {
   Mail,
   MapPin,
   MessageCircle,
-  Phone,
   ShieldCheck,
   Smartphone,
 } from "lucide-react";
@@ -22,7 +21,7 @@ import { AppTicker } from "@/components/home/AppTicker";
 import { HomeHero } from "@/components/home/HomeHero";
 import { articles } from "@/lib/content";
 import { loanApps } from "@/lib/loan-apps";
-import { site, telLink, whatsappLink } from "@/lib/site";
+import { site, whatsappDisplay, whatsappLink } from "@/lib/site";
 
 export const metadata = { alternates: { canonical: "/" } };
 
@@ -73,8 +72,7 @@ const steps = [
 
 export default function HomePage() {
   const channels = [
-    { icon: Phone, label: "Phone", value: site.phone, href: telLink },
-    { icon: MessageCircle, label: "WhatsApp", value: site.phone, href: whatsappLink(), external: true },
+    { icon: MessageCircle, label: "WhatsApp", value: whatsappDisplay, href: whatsappLink(), external: true },
     { icon: Mail, label: "Email", value: site.email, href: `mailto:${site.email}` },
     { icon: MapPin, label: "Office", value: site.address },
   ];

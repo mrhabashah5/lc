@@ -1,4 +1,4 @@
-import { site } from "./site";
+import { site, whatsappDisplay } from "./site";
 
 // DRAFT legal content. Have these pages reviewed by a qualified Pakistani
 // lawyer and completed with the registered business details before launch.
@@ -13,7 +13,7 @@ export type LegalDoc = {
 };
 
 const updated = "16 November 2026";
-const contactLine = `You can contact us at ${site.email} or ${site.phone}.`;
+const contactLine = `You can contact us by email at ${site.email} or on WhatsApp at ${whatsappDisplay}.`;
 
 export const legalDocs: LegalDoc[] = [
   {
@@ -216,7 +216,7 @@ export const legalDocs: LegalDoc[] = [
       {
         heading: "How to make a complaint",
         paragraphs: [
-          `You can make a complaint by email at ${site.email}, by phone on ${site.phone}, or through the contact form on this website. Please include your name, contact details, your consultation reference if you have one, and a description of what went wrong and how you would like it resolved.`,
+          `You can make a complaint by email at ${site.email}, on WhatsApp at ${whatsappDisplay}, or through the contact form on this website. Please include your name, contact details, your consultation reference if you have one, and a description of what went wrong and how you would like it resolved.`,
         ],
       },
       {

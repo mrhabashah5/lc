@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, MessageCircle } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/Sections";
-import { site, telLink, whatsappLink } from "@/lib/site";
+import { site, whatsappDisplay, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: "Contact ByeByeLoan by phone, WhatsApp, email or our contact form.",
+  description: "Contact ByeByeLoan on WhatsApp, by email or through our contact form.",
   alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
   const items = [
-    { icon: Phone, label: "Phone", value: site.phone, href: telLink },
-    { icon: MessageCircle, label: "WhatsApp", value: "Chat with us", href: whatsappLink(), external: true },
+    { icon: MessageCircle, label: "WhatsApp", value: whatsappDisplay, href: whatsappLink(), external: true },
     { icon: Mail, label: "Email", value: site.email, href: `mailto:${site.email}` },
     { icon: MapPin, label: "Office", value: site.address },
     { icon: Clock, label: "Hours", value: site.hours },

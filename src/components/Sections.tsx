@@ -22,23 +22,23 @@ export function PageHero({
     <section className="relative overflow-hidden border-b border-line bg-surface">
       <div
         aria-hidden="true"
-        className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-sky-light/50"
+        className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-brand-soft/50"
       />
       <div
         aria-hidden="true"
-        className="absolute right-40 -bottom-16 hidden h-40 w-40 rounded-full bg-sky-light/30 md:block"
+        className="absolute right-40 -bottom-16 hidden h-40 w-40 rounded-full bg-brand-soft/30 md:block"
       />
       <div className="container-x relative py-14 sm:py-20">
         <nav aria-label="Breadcrumb" className="mb-5 flex items-center gap-1.5 text-sm text-muted">
-          <Link href="/" className="hover:text-navy">
+          <Link href="/" className="hover:text-brand-dark">
             Home
           </Link>
           <ChevronRight size={14} aria-hidden="true" />
-          <span aria-current="page" className="font-semibold text-navy">{crumb}</span>
+          <span aria-current="page" className="font-semibold text-brand-dark">{crumb}</span>
         </nav>
         {eyebrow && <p className="eyebrow mb-3">{eyebrow}</p>}
         <h1 className="h-display max-w-3xl">
-          {title} {highlight && <span className="text-sky">{highlight}</span>}
+          {title} {highlight && <span className="text-brand">{highlight}</span>}
         </h1>
         {intro && <p className="lead mt-5 max-w-2xl">{intro}</p>}
       </div>
@@ -72,7 +72,7 @@ export function StepCards() {
     <ol className="grid gap-6 md:grid-cols-3">
       {steps.map((s, i) => (
         <li key={s.title} className="card relative">
-          <span className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-sky text-xl font-extrabold text-white">
+          <span className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand text-xl font-extrabold text-white">
             {i + 1}
           </span>
           <h3 className="mb-2 text-xl font-bold">{s.title}</h3>
@@ -81,7 +81,7 @@ export function StepCards() {
             <ArrowRight
               aria-hidden="true"
               size={22}
-              className="absolute top-1/2 -right-[23px] z-10 hidden -translate-y-1/2 rounded-full bg-white text-sky md:block"
+              className="absolute top-1/2 -right-[23px] z-10 hidden -translate-y-1/2 rounded-full bg-white text-brand md:block"
             />
           )}
         </li>
@@ -113,7 +113,7 @@ export function CtaBand({
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn border-2 border-white text-white hover:bg-white hover:text-navy"
+            className="btn border-2 border-white text-white hover:bg-white hover:text-brand-dark"
           >
             <MessageCircle size={18} aria-hidden="true" /> WhatsApp Us<span className="sr-only"> (opens in a new tab)</span>
           </a>
@@ -127,7 +127,7 @@ export function CtaBand({
 export function DisclaimerNote({ children }: { children: React.ReactNode }) {
   return (
     <p className="rounded-xl border border-line bg-surface p-4 text-sm leading-relaxed text-muted">
-      <strong className="text-navy">Please note: </strong>
+      <strong className="text-brand-dark">Please note: </strong>
       {children}
     </p>
   );

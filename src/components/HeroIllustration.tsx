@@ -3,14 +3,14 @@
  * Inline SVG in brand colours, so it adds no image download and stays sharp at any size.
  */
 export function HeroIllustration({ className = "" }: { className?: string }) {
-  const navy = "#00496E";
-  const navyDark = "#003552";
-  const sky = "#1890C4";
-  const skyBrand = "#20A7E2";
-  const skyLight = "#B5E2F9";
-  const orange = "#FF7026";
+  const navy = "#0B4D33";
+  const navyDark = "#08392A";
+  const sky = "#15934A";
+  const skyBrand = "#22C55E";
+  const skyLight = "#D9F4E4";
+  const orange = "#F97316";
   const white = "#FFFFFF";
-  const line = "#E5EDF2";
+  const line = "#E3EFE8";
   const skinA = "#C68642";
   const skinB = "#8D5524";
   const hair = "#2B1D18";

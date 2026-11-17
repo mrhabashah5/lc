@@ -43,8 +43,8 @@ export function ToolPage({ slug, title, highlight, quickAnswer, children, howItW
 
       <section className="bg-white pt-10">
         <div className="container-x">
-          <div className="max-w-3xl rounded-2xl border-l-4 border-sky-ink bg-sky-light/30 p-6">
-            <h2 className="text-sm font-bold tracking-widest text-sky-ink uppercase">Quick answer</h2>
+          <div className="max-w-3xl rounded-2xl border-l-4 border-brand-ink bg-brand-soft/30 p-6">
+            <h2 className="text-sm font-bold tracking-widest text-brand-ink uppercase">Quick answer</h2>
             <p className="mt-2 text-lg leading-relaxed font-medium text-ink">{quickAnswer}</p>
           </div>
         </div>
@@ -72,7 +72,7 @@ export function ToolPage({ slug, title, highlight, quickAnswer, children, howItW
                 <details key={f.q} className="group rounded-2xl border border-line bg-white">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-2xl p-5 [&::-webkit-details-marker]:hidden">
                     <h3 className="!m-0 text-lg font-bold">{f.q}</h3>
-                    <ArrowRight size={20} aria-hidden="true" className="shrink-0 text-sky transition-transform group-open:rotate-90" />
+                    <ArrowRight size={20} aria-hidden="true" className="shrink-0 text-brand transition-transform group-open:rotate-90" />
                   </summary>
                   <p className="px-5 !pb-1">{f.a}</p>
                 </details>
@@ -89,7 +89,7 @@ export function ToolPage({ slug, title, highlight, quickAnswer, children, howItW
               <ul className="mt-3 space-y-2">
                 {related.map((r) => (
                   <li key={r.href}>
-                    <Link href={r.href} className="font-semibold text-navy underline decoration-sky underline-offset-4 hover:text-sky-ink">
+                    <Link href={r.href} className="font-semibold text-brand-dark underline decoration-brand underline-offset-4 hover:text-brand-ink">
                       {r.label}
                     </Link>
                   </li>

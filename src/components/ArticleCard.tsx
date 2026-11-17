@@ -36,21 +36,21 @@ export function ArticleCard({
           height={360}
           unoptimized
           priority={priority}
-          className="aspect-video w-full bg-sky-light object-cover"
+          className="aspect-video w-full bg-brand-soft object-cover"
         />
       ) : (
-        <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-sky-light" aria-hidden="true">
-          <span className="relative inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-navy shadow-card">
+        <div className="relative flex aspect-video items-center justify-center overflow-hidden bg-brand-soft" aria-hidden="true">
+          <span className="relative inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-brand-dark shadow-card">
             <Art size={30} />
           </span>
         </div>
       )}
       <div className="flex flex-1 flex-col p-6">
-        <p className="mb-2 text-sm font-bold tracking-widest text-sky-ink uppercase">
+        <p className="mb-2 text-sm font-bold tracking-widest text-brand-ink uppercase">
           {article.category} · {readMinutes(article)} min read
         </p>
         <H className="text-xl leading-snug font-bold">
-          <Link href={`/articles/${article.slug}`} className="after:absolute after:inset-0 group-hover:text-sky-ink">
+          <Link href={`/articles/${article.slug}`} className="after:absolute after:inset-0 group-hover:text-brand-ink">
             {article.title}
           </Link>
         </H>

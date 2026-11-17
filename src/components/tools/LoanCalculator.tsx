@@ -80,12 +80,12 @@ export function LoanCalculator() {
             ).map(([v, l, d]) => (
               <label
                 key={v}
-                className={`cursor-pointer rounded-xl border-2 p-3.5 transition-colors has-focus-visible:outline-3 has-focus-visible:outline-offset-2 has-focus-visible:outline-sky-ink ${
-                  method === v ? "border-sky-ink bg-sky-light/30" : "border-field hover:border-sky-ink"
+                className={`cursor-pointer rounded-xl border-2 p-3.5 transition-colors has-focus-visible:outline-3 has-focus-visible:outline-offset-2 has-focus-visible:outline-brand-ink ${
+                  method === v ? "border-brand-ink bg-brand-soft/30" : "border-field hover:border-brand-ink"
                 }`}
               >
                 <input type="radio" name="method" value={v} className="sr-only" checked={method === v} onChange={() => setMethod(v)} />
-                <span className="block font-bold text-navy">{l}</span>
+                <span className="block font-bold text-brand-dark">{l}</span>
                 <span className="mt-0.5 block text-sm text-muted">{d}</span>
               </label>
             ))}
@@ -96,8 +96,8 @@ export function LoanCalculator() {
       <div aria-live="polite">
         {result ? (
           <div className="space-y-6">
-            <div className="rounded-2xl bg-navy p-6 text-white sm:p-8">
-              <p className="text-sm font-bold tracking-widest text-sky-light uppercase">Monthly instalment</p>
+            <div className="rounded-2xl bg-brand-dark p-6 text-white sm:p-8">
+              <p className="text-sm font-bold tracking-widest text-brand-soft uppercase">Monthly instalment</p>
               <p className="mt-1 text-4xl font-extrabold text-white sm:text-5xl">{pkr(result.payment)}</p>
               <dl className="mt-6 grid grid-cols-2 gap-4 border-t border-white/20 pt-5">
                 <div>
@@ -113,10 +113,10 @@ export function LoanCalculator() {
 
             <div className="overflow-x-auto rounded-2xl border border-line bg-white" tabIndex={0} role="region" aria-label="Repayment schedule">
               <table className="w-full min-w-[480px] text-left text-sm">
-                <caption className="bg-surface px-4 py-3 text-left font-bold text-navy">
+                <caption className="bg-surface px-4 py-3 text-left font-bold text-brand-dark">
                   Repayment schedule {showAll ? "" : "(first 12 months)"}
                 </caption>
-                <thead className="bg-navy text-white">
+                <thead className="bg-brand-dark text-white">
                   <tr>
                     <th scope="col" className="px-4 py-2.5">Month</th>
                     <th scope="col" className="px-4 py-2.5">Instalment</th>
@@ -128,7 +128,7 @@ export function LoanCalculator() {
                 <tbody className="divide-y divide-line">
                   {rows.map((row) => (
                     <tr key={row.month} className="even:bg-surface">
-                      <th scope="row" className="px-4 py-2 font-semibold text-navy">{row.month}</th>
+                      <th scope="row" className="px-4 py-2 font-semibold text-brand-dark">{row.month}</th>
                       <td className="px-4 py-2">{pkr(row.payment)}</td>
                       <td className="px-4 py-2">{pkr(row.markup)}</td>
                       <td className="px-4 py-2">{pkr(row.principal)}</td>

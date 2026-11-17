@@ -32,15 +32,15 @@ export default async function RequestConsultationPage({ searchParams }: Props) {
         <div className="container-x grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)] lg:gap-12">
           <ConsultationForm key={initialApp ?? "none"} initialApp={initialApp} />
           <aside className="space-y-6 self-start">
-            <div className="rounded-2xl bg-sky-light/30 p-6">
+            <div className="rounded-2xl bg-brand-soft/30 p-6">
               <h2 className="text-lg font-extrabold">What happens next</h2>
               <ul className="mt-4 space-y-4 text-[15px] leading-relaxed text-ink">
                 <li className="flex gap-3">
-                  <Clock size={20} className="mt-0.5 shrink-0 text-sky" aria-hidden="true" />
+                  <Clock size={20} className="mt-0.5 shrink-0 text-brand" aria-hidden="true" />
                   A consultant reviews your request and contacts you during business hours.
                 </li>
                 <li className="flex gap-3">
-                  <Lock size={20} className="mt-0.5 shrink-0 text-sky" aria-hidden="true" />
+                  <Lock size={20} className="mt-0.5 shrink-0 text-brand" aria-hidden="true" />
                   Your details stay confidential. We never ask for PINs, passwords or OTPs.
                 </li>
               </ul>

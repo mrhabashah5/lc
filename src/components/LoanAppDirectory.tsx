@@ -6,7 +6,7 @@ import { useMemo, useState } from "react";
 import { ArrowRight, Search, X } from "lucide-react";
 import { appCategories, consultationLinkFor, loanApps, type AppCategoryId, type LoanApp } from "@/lib/loan-apps";
 
-const avatarTones = ["bg-navy text-white", "bg-sky-ink text-white", "bg-sky-light text-navy"];
+const avatarTones = ["bg-brand-dark text-white", "bg-brand-ink text-white", "bg-brand-soft text-brand-dark"];
 
 export function AppAvatar({ name, index, logo }: { name: string; index: number; logo?: string }) {
   if (logo) {
@@ -33,16 +33,16 @@ function AppCard({ app, index, categoryLabel }: { app: LoanApp; index: number; c
     <li>
       <Link
         href={consultationLinkFor(app)}
-        className="group flex h-full items-center gap-4 rounded-2xl border border-line bg-white p-4 shadow-card transition hover:border-sky hover:shadow-float"
+        className="group flex h-full items-center gap-4 rounded-2xl border border-line bg-white p-4 shadow-card transition hover:border-brand hover:shadow-float"
       >
         <AppAvatar name={app.name} index={index} logo={app.logo} />
         <span className="min-w-0 flex-1">
-          <span className="block text-lg leading-tight font-bold text-navy">{app.name}</span>
+          <span className="block text-lg leading-tight font-bold text-brand-dark">{app.name}</span>
           <span className="mt-0.5 block text-sm leading-snug text-muted">
             {app.company ?? categoryLabel}
           </span>
           {app.note && (
-            <span className="mt-1.5 inline-block rounded-full bg-sky-light/50 px-2.5 py-0.5 text-[13px] font-bold text-navy">
+            <span className="mt-1.5 inline-block rounded-full bg-brand-soft/50 px-2.5 py-0.5 text-[13px] font-bold text-brand-dark">
               {app.note}
             </span>
           )}
@@ -50,7 +50,7 @@ function AppCard({ app, index, categoryLabel }: { app: LoanApp; index: number; c
         <ArrowRight
           size={18}
           aria-hidden="true"
-          className="shrink-0 text-sky transition-transform group-hover:translate-x-1"
+          className="shrink-0 text-brand transition-transform group-hover:translate-x-1"
         />
         <span className="sr-only">Request clearance help for {app.name}</span>
       </Link>
@@ -90,7 +90,7 @@ export function LoanAppDirectory() {
           <Search
             size={20}
             aria-hidden="true"
-            className="pointer-events-none absolute top-1/2 left-4 -translate-y-1/2 text-sky"
+            className="pointer-events-none absolute top-1/2 left-4 -translate-y-1/2 text-brand"
           />
           <label htmlFor="app-search" className="sr-only">
             Search for a loan app or lending company
@@ -109,7 +109,7 @@ export function LoanAppDirectory() {
               type="button"
               aria-label="Clear search"
               onClick={() => setQuery("")}
-              className="absolute top-1/2 right-2 inline-flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-lg text-muted hover:bg-sky-light/30 hover:text-navy"
+              className="absolute top-1/2 right-2 inline-flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-lg text-muted hover:bg-brand-soft/30 hover:text-brand-dark"
             >
               <X size={18} />
             </button>
@@ -128,14 +128,14 @@ export function LoanAppDirectory() {
               onClick={() => setCategory(f.id)}
               className={`inline-flex shrink-0 cursor-pointer items-center gap-2 rounded-full border-2 px-4 py-2 text-sm font-bold transition-colors ${
                 category === f.id
-                  ? "border-navy bg-navy text-white"
-                  : "border-field bg-white text-navy hover:border-sky-ink hover:text-sky-ink"
+                  ? "border-brand-dark bg-brand-dark text-white"
+                  : "border-field bg-white text-brand-dark hover:border-brand-ink hover:text-brand-ink"
               }`}
             >
               {f.label}
               <span
                 className={`rounded-full px-2 py-0.5 text-[13px] ${
-                  category === f.id ? "bg-white/20 text-white" : "bg-sky-light/40 text-navy"
+                  category === f.id ? "bg-white/20 text-white" : "bg-brand-soft/40 text-brand-dark"
                 }`}
               >
                 {f.count}
@@ -152,7 +152,7 @@ export function LoanAppDirectory() {
       {/* Results grouped by category */}
       {matches.length === 0 ? (
         <div className="mt-6 rounded-2xl border border-line bg-white p-10 text-center shadow-card">
-          <p className="text-lg font-bold text-navy">No app matches “{query}”.</p>
+          <p className="text-lg font-bold text-brand-dark">No app matches “{query}”.</p>
           <p className="mx-auto mt-2 max-w-md text-muted">
             Check the spelling, or tell us which app your loan is with and we will let you know
             whether we can assist.
@@ -171,7 +171,7 @@ export function LoanAppDirectory() {
                 <div className="mb-4 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-line pb-3">
                   <h3 id={`cat-${c.id}`} className="text-xl font-extrabold">
                     {c.label}{" "}
-                    <span className="ml-1 text-base font-bold text-sky-ink">
+                    <span className="ml-1 text-base font-bold text-brand-ink">
                       {items.length} {items.length === 1 ? "app" : "apps"}
                     </span>
                   </h3>

@@ -19,11 +19,11 @@ export default async function MessagesPage() {
           {rows.map((m) => (
             <li
               key={m.id}
-              className={`rounded-2xl border bg-white p-5 shadow-card sm:p-6 ${m.is_read ? "border-line" : "border-sky"}`}
+              className={`rounded-2xl border bg-white p-5 shadow-card sm:p-6 ${m.is_read ? "border-line" : "border-brand"}`}
             >
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
-                  <p className="text-lg font-bold text-navy">
+                  <p className="text-lg font-bold text-brand-dark">
                     {m.subject || "General enquiry"}
                     {!m.is_read && (
                       <span className="ml-3 rounded-full bg-cta px-2.5 py-0.5 align-middle text-xs font-bold text-white">
@@ -36,7 +36,7 @@ export default async function MessagesPage() {
                     {m.email && (
                       <>
                         {" · "}
-                        <a href={`mailto:${m.email}`} className="font-semibold text-navy hover:text-sky-ink">
+                        <a href={`mailto:${m.email}`} className="font-semibold text-brand-dark hover:text-brand-ink">
                           {m.email}
                         </a>
                       </>
@@ -50,7 +50,7 @@ export default async function MessagesPage() {
                   <form action={toggleMessageRead}>
                     <input type="hidden" name="id" value={m.id} />
                     <input type="hidden" name="read" value={m.is_read ? "0" : "1"} />
-                    <button type="submit" className="cursor-pointer text-sky-ink hover:text-navy">
+                    <button type="submit" className="cursor-pointer text-brand-ink hover:text-brand-dark">
                       Mark as {m.is_read ? "unread" : "read"}
                     </button>
                   </form>

@@ -62,8 +62,8 @@ export function SettlementCalculator() {
       <div aria-live="polite" className="space-y-6">
         {valid ? (
           <>
-            <div className="rounded-2xl bg-navy p-6 text-white sm:p-8">
-              <p className="text-sm font-bold tracking-widest text-sky-light uppercase">Difference from your balance</p>
+            <div className="rounded-2xl bg-brand-dark p-6 text-white sm:p-8">
+              <p className="text-sm font-bold tracking-widest text-brand-soft uppercase">Difference from your balance</p>
               <p className="mt-1 text-4xl font-extrabold text-white sm:text-5xl">{pkr(saving)}</p>
               <p className="mt-1 text-white/85">{pctSaved.toFixed(1)}% less than the outstanding balance</p>
               <dl className="mt-6 grid grid-cols-2 gap-4 border-t border-white/20 pt-5">
@@ -78,7 +78,7 @@ export function SettlementCalculator() {
               </dl>
               <div className="mt-6" aria-hidden="true">
                 <div className="flex h-3 overflow-hidden rounded-full bg-white/20">
-                  <div className="h-full bg-sky-light" style={{ width: `${Math.min(100, pctOfBalance)}%` }} />
+                  <div className="h-full bg-brand-soft" style={{ width: `${Math.min(100, pctOfBalance)}%` }} />
                 </div>
                 <div className="mt-2 flex justify-between text-sm text-white/85">
                   <span>You pay</span>
@@ -89,7 +89,7 @@ export function SettlementCalculator() {
 
             <div className="card sm:p-6">
               <h2 className="text-lg font-extrabold">Before you accept any settlement</h2>
-              <ul className="mt-3 list-disc space-y-2 pl-5 leading-relaxed text-ink marker:text-sky">
+              <ul className="mt-3 list-disc space-y-2 pl-5 leading-relaxed text-ink marker:text-brand">
                 <li>Get the full terms in writing from the lender before you pay anything.</li>
                 <li>Ask how the account will be reported. A settled loan may be shown as settled, not paid in full.</li>
                 <li>Pay only through the lender&apos;s official channels and keep every receipt.</li>

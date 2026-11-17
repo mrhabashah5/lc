@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { Calculator, ChevronDown, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { mainNav } from "@/lib/site";
 
@@ -27,10 +27,10 @@ export function Header() {
                 <Link
                   href={item.href}
                   aria-current={isActive(item.href) ? "page" : undefined}
-                  className={`inline-flex items-center gap-1 py-2 text-[15px] font-semibold whitespace-nowrap transition-colors hover:text-sky-ink ${
+                  className={`inline-flex items-center gap-1 py-2 text-[15px] font-semibold whitespace-nowrap transition-colors hover:text-brand-ink ${
                     isActive(item.href) || item.children.some((c) => isActive(c.href))
-                      ? "text-sky-ink"
-                      : "text-navy"
+                      ? "text-brand-ink"
+                      : "text-brand-dark"
                   }`}
                 >
                   {item.label}
@@ -43,7 +43,7 @@ export function Header() {
                         key={c.label}
                         href={c.href}
                         aria-current={isActive(c.href) ? "page" : undefined}
-                        className="block rounded-lg px-3 py-2.5 text-[15px] font-semibold text-navy hover:bg-sky-light/30"
+                        className="block rounded-lg px-3 py-2.5 text-[15px] font-semibold text-brand-dark hover:bg-brand-soft/30"
                       >
                         {c.label}
                       </Link>
@@ -56,8 +56,8 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 aria-current={isActive(item.href) ? "page" : undefined}
-                className={`py-2 text-[15px] font-semibold whitespace-nowrap transition-colors hover:text-sky-ink ${
-                  isActive(item.href) ? "text-sky-ink" : "text-navy"
+                className={`py-2 text-[15px] font-semibold whitespace-nowrap transition-colors hover:text-brand-ink ${
+                  isActive(item.href) ? "text-brand-ink" : "text-brand-dark"
                 }`}
               >
                 {item.label}
@@ -66,13 +66,19 @@ export function Header() {
           )}
         </nav>
 
-        <div className="flex shrink-0 items-center gap-3">
+        <div className="flex shrink-0 items-center gap-5">
+          <Link
+            href="/tools/loan-repayment-calculator"
+            className="hidden items-center gap-1.5 text-[15px] font-semibold whitespace-nowrap text-brand-ink hover:text-brand-dark xl:inline-flex"
+          >
+            <Calculator size={18} aria-hidden="true" /> Loan Calculator
+          </Link>
           <Link href="/request-consultation" className="btn btn-primary btn-sm hidden sm:inline-flex">
             Request Consultation
           </Link>
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-navy hover:bg-sky-light/30 xl:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-brand-dark hover:bg-brand-soft/30 xl:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-nav"
@@ -93,14 +99,14 @@ export function Header() {
           }}
         >
           <div className="container-x flex flex-col py-3">
-            <Link href="/" className="py-3 text-base font-semibold text-navy">
+            <Link href="/" className="py-3 text-base font-semibold text-brand-dark">
               Home
             </Link>
             {mainNav.map((item) => (
               <div key={item.href} className="border-t border-line">
                 <Link
                   href={item.href}
-                  className={`block py-3 text-base font-semibold ${isActive(item.href) ? "text-sky-ink" : "text-navy"}`}
+                  className={`block py-3 text-base font-semibold ${isActive(item.href) ? "text-brand-ink" : "text-brand-dark"}`}
                 >
                   {item.label}
                 </Link>
@@ -108,7 +114,7 @@ export function Header() {
                   <Link
                     key={c.href}
                     href={c.href}
-                    className={`block py-2.5 pl-4 text-[15px] font-medium ${isActive(c.href) ? "text-sky-ink" : "text-muted"}`}
+                    className={`block py-2.5 pl-4 text-[15px] font-medium ${isActive(c.href) ? "text-brand-ink" : "text-muted"}`}
                   >
                     {c.label}
                   </Link>

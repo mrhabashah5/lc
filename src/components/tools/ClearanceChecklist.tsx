@@ -87,8 +87,8 @@ export function ClearanceChecklist() {
           {Object.entries(extra).map(([k, v]) => (
             <label
               key={k}
-              className={`block cursor-pointer rounded-xl border-2 px-4 py-3 font-bold transition-colors has-focus-visible:outline-3 has-focus-visible:outline-offset-2 has-focus-visible:outline-sky-ink ${
-                type === k ? "border-sky-ink bg-sky-light/30 text-navy" : "border-field text-navy hover:border-sky-ink"
+              className={`block cursor-pointer rounded-xl border-2 px-4 py-3 font-bold transition-colors has-focus-visible:outline-3 has-focus-visible:outline-offset-2 has-focus-visible:outline-brand-ink ${
+                type === k ? "border-brand-ink bg-brand-soft/30 text-brand-dark" : "border-field text-brand-dark hover:border-brand-ink"
               }`}
             >
               <input type="radio" name="loanType" value={k} className="sr-only" checked={type === k} onChange={() => setType(k)} />
@@ -106,25 +106,25 @@ export function ClearanceChecklist() {
           </button>
         </div>
         <div className="mt-4" aria-live="polite">
-          <div className="flex items-center justify-between text-sm font-semibold text-navy">
+          <div className="flex items-center justify-between text-sm font-semibold text-brand-dark">
             <span>
               {count} of {all.length} done
             </span>
             <span>{pct}%</span>
           </div>
           <div className="mt-2 h-2.5 overflow-hidden rounded-full bg-line" role="progressbar" aria-label="Checklist progress" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100}>
-            <div className="h-full rounded-full bg-sky-ink transition-all" style={{ width: `${pct}%` }} />
+            <div className="h-full rounded-full bg-brand-ink transition-all" style={{ width: `${pct}%` }} />
           </div>
         </div>
 
         <div className="mt-8 space-y-8">
           {groups.map((g) => (
             <section key={g.title}>
-              <h3 className="text-sm font-bold tracking-widest text-sky-ink uppercase">{g.title}</h3>
+              <h3 className="text-sm font-bold tracking-widest text-brand-ink uppercase">{g.title}</h3>
               <ul className="mt-3 space-y-2">
                 {g.items.map((item) => (
                   <li key={item}>
-                    <label className="flex cursor-pointer items-start gap-3 rounded-xl p-2 hover:bg-surface has-focus-visible:outline-3 has-focus-visible:outline-sky-ink">
+                    <label className="flex cursor-pointer items-start gap-3 rounded-xl p-2 hover:bg-surface has-focus-visible:outline-3 has-focus-visible:outline-brand-ink">
                       <input
                         type="checkbox"
                         className="peer sr-only"
@@ -134,7 +134,7 @@ export function ClearanceChecklist() {
                       <span
                         aria-hidden="true"
                         className={`mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md border-2 ${
-                          done[item] ? "border-sky-ink bg-sky-ink text-white" : "border-field bg-white"
+                          done[item] ? "border-brand-ink bg-brand-ink text-white" : "border-field bg-white"
                         }`}
                       >
                         {done[item] && <Check size={16} strokeWidth={3.5} />}

@@ -28,7 +28,7 @@ function Col({ title, links }: { title: string; links: { href: string; label: st
       <ul className="space-y-2.5">
         {links.map((l) => (
           <li key={l.href}>
-            <Link href={l.href} className="inline-block py-1 text-[15px] text-sky-light transition-colors hover:text-white">
+            <Link href={l.href} className="inline-block py-1 text-[15px] text-footer-muted transition-colors hover:text-white">
               {l.label}
             </Link>
           </li>
@@ -40,7 +40,7 @@ function Col({ title, links }: { title: string; links: { href: string; label: st
 
 export function Footer() {
   return (
-    <footer className="on-dark bg-navy text-white">
+    <footer className="on-dark bg-footer text-white">
       <div className="container-x grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
           <Logo onDark />
@@ -50,7 +50,7 @@ export function Footer() {
         <Col title="Services" links={services} />
         <div>
           <h2 className="mb-4 text-sm font-bold tracking-widest text-white uppercase">Get in touch</h2>
-          <ul className="space-y-3 text-[15px] text-sky-light">
+          <ul className="space-y-3 text-[15px] text-footer-muted">
             <li>
               <a href={telLink} className="inline-flex items-center gap-2.5 hover:text-white">
                 <Phone size={17} aria-hidden="true" /> {site.phone}
@@ -90,7 +90,7 @@ export function Footer() {
             <ul className="flex flex-wrap gap-x-5 gap-y-2">
               {legalNav.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="inline-block py-1 text-sky-light hover:text-white">
+                  <Link href={l.href} className="inline-block py-1 text-footer-muted hover:text-white">
                     {l.label}
                   </Link>
                 </li>

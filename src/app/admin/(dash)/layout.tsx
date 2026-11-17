@@ -11,15 +11,15 @@ export default async function DashLayout({ children }: { children: React.ReactNo
 
   return (
     <>
-      <header className="on-dark bg-navy text-white">
+      <header className="on-dark bg-brand-dark text-white">
         <div className="container-x flex flex-wrap items-center justify-between gap-x-8 gap-y-3 py-4">
-          <div className="flex items-center gap-8">
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
             <Logo onDark href="/admin" />
-            <nav aria-label="Admin" className="flex items-center gap-5 text-[15px] font-semibold">
-              <Link href="/admin" className="text-sky-light hover:text-white">
+            <nav aria-label="Admin" className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[15px] font-semibold">
+              <Link href="/admin" className="text-brand-soft hover:text-white">
                 Consultations
               </Link>
-              <Link href="/admin/messages" className="inline-flex items-center gap-2 text-sky-light hover:text-white">
+              <Link href="/admin/messages" className="inline-flex items-center gap-2 text-brand-soft hover:text-white">
                 Messages
                 {unread > 0 && (
                   <span className="rounded-full bg-cta px-2 py-0.5 text-xs font-bold text-white">{unread}</span>
@@ -28,11 +28,11 @@ export default async function DashLayout({ children }: { children: React.ReactNo
             </nav>
           </div>
           <div className="flex items-center gap-5 text-sm font-semibold">
-            <Link href="/" target="_blank" className="inline-flex items-center gap-1.5 text-sky-light hover:text-white">
+            <Link href="/" target="_blank" className="inline-flex items-center gap-1.5 text-brand-soft hover:text-white">
               View site <ExternalLink size={15} aria-hidden="true" />
             </Link>
             <form action={logout}>
-              <button type="submit" className="inline-flex cursor-pointer items-center gap-1.5 text-sky-light hover:text-white">
+              <button type="submit" className="inline-flex cursor-pointer items-center gap-1.5 text-brand-soft hover:text-white">
                 <LogOut size={15} aria-hidden="true" /> Sign out
               </button>
             </form>

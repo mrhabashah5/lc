@@ -19,15 +19,15 @@ fs.mkdirSync(thumbDir, { recursive: true });
 fs.mkdirSync(ogDir, { recursive: true });
 
 const C = {
-  navy: "#00496E",
-  sky: "#1890C4",
-  skyBrand: "#20A7E2",
-  skyInk: "#13729C",
-  skyLight: "#B5E2F9",
-  orange: "#FF7026",
+  navy: "#0B4D33",
+  sky: "#15934A",
+  skyBrand: "#22C55E",
+  skyInk: "#0E7A3E",
+  skyLight: "#D9F4E4",
+  orange: "#F97316",
   white: "#FFFFFF",
-  line: "#E5EDF2",
-  surface: "#FAFCFD",
+  line: "#E3EFE8",
+  surface: "#F4FAF6",
 };
 
 // Each article gets its own motif. Keep this in sync with src/content/articles.
@@ -156,7 +156,7 @@ function ogSvg({ motif, eyebrow, title }) {
     <rect x="80" y="${h - 118}" width="44" height="44" rx="12" fill="${C.navy}"/>
     ${check(102, h - 98, 0.75, C.skyBrand)}
     <text x="140" y="${h - 84}" font-family="${FONT}" font-size="34" font-weight="800" fill="${C.navy}">ByeBye<tspan fill="${C.sky}">Loan</tspan></text>
-    <text x="350" y="${h - 84}" font-family="${FONT}" font-size="26" fill="#5B6B77">byebyeloan.online</text>
+    <text x="350" y="${h - 84}" font-family="${FONT}" font-size="26" fill="#55665D">byebyeloan.online</text>
     <rect x="0" y="${h - 12}" width="${w}" height="12" fill="${C.navy}"/>
   </svg>`;
 }

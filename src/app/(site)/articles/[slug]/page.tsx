@@ -108,7 +108,7 @@ export default async function ArticlePage({ params }: Props) {
         <div className="container-x grid gap-12 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-16">
           <div className="min-w-0 max-w-3xl">
             <p className="text-sm text-muted">
-              By <span className="font-semibold text-navy">{site.name} Editorial Team</span>
+              By <span className="font-semibold text-brand-dark">{site.name} Editorial Team</span>
               {updated && (
                 <>
                   {" · "}Updated <time dateTime={a.updated}>{updated}</time>
@@ -120,8 +120,8 @@ export default async function ArticlePage({ params }: Props) {
 
             {/* The direct answer comes first. */}
             {a.quickAnswer && (
-              <section aria-labelledby="quick-answer" className="mt-6 rounded-2xl border-l-4 border-sky-ink bg-sky-light/30 p-6 sm:p-7">
-                <h2 id="quick-answer" className="text-sm font-bold tracking-widest text-sky-ink uppercase">
+              <section aria-labelledby="quick-answer" className="mt-6 rounded-2xl border-l-4 border-brand-ink bg-brand-soft/30 p-6 sm:p-7">
+                <h2 id="quick-answer" className="text-sm font-bold tracking-widest text-brand-ink uppercase">
                   Quick answer
                 </h2>
                 <p className="mt-2 text-lg leading-relaxed font-medium text-ink">{a.quickAnswer}</p>
@@ -136,7 +136,7 @@ export default async function ArticlePage({ params }: Props) {
                 <ul className="mt-4 space-y-3">
                   {a.takeaways.map((t) => (
                     <li key={t} className="flex items-start gap-3 leading-relaxed text-ink">
-                      <CircleCheck size={20} className="mt-0.5 shrink-0 text-sky" aria-hidden="true" />
+                      <CircleCheck size={20} className="mt-0.5 shrink-0 text-brand" aria-hidden="true" />
                       {t}
                     </li>
                   ))}
@@ -147,11 +147,11 @@ export default async function ArticlePage({ params }: Props) {
             {/* Table of contents (mobile) */}
             {toc.length > 3 && (
               <nav aria-label="In this article" className="mt-8 rounded-2xl bg-surface p-6 lg:hidden">
-                <h2 className="text-sm font-bold tracking-widest text-navy uppercase">In this article</h2>
+                <h2 className="text-sm font-bold tracking-widest text-brand-dark uppercase">In this article</h2>
                 <ol className="mt-3 list-decimal space-y-1.5 pl-5 marker:text-muted">
                   {toc.map((t) => (
                     <li key={t.id}>
-                      <a href={`#${t.id}`} className="text-[15px] font-semibold text-navy underline decoration-sky-light underline-offset-4 hover:text-sky-ink">
+                      <a href={`#${t.id}`} className="text-[15px] font-semibold text-brand-dark underline decoration-brand-soft underline-offset-4 hover:text-brand-ink">
                         {t.label}
                       </a>
                     </li>
@@ -180,7 +180,7 @@ export default async function ArticlePage({ params }: Props) {
                     <ol className="mb-6 space-y-3">
                       {s.steps.map((st, i) => (
                         <li key={st} className="flex gap-4 leading-relaxed text-ink">
-                          <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-ink text-sm font-extrabold text-white" aria-hidden="true">
+                          <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-ink text-sm font-extrabold text-white" aria-hidden="true">
                             {i + 1}
                           </span>
                           <span className="pt-0.5">{st}</span>
@@ -191,8 +191,8 @@ export default async function ArticlePage({ params }: Props) {
                   {s.table && (
                     <div className="mb-6 overflow-x-auto rounded-2xl border border-line" tabIndex={0} role="region" aria-label={s.table.caption}>
                       <table className="w-full min-w-[560px] text-left text-[15px]">
-                        <caption className="bg-surface px-5 py-3 text-left text-sm font-bold text-navy">{s.table.caption}</caption>
-                        <thead className="bg-navy text-white">
+                        <caption className="bg-surface px-5 py-3 text-left text-sm font-bold text-brand-dark">{s.table.caption}</caption>
+                        <thead className="bg-brand-dark text-white">
                           <tr>
                             {s.table.headers.map((h) => (
                               <th key={h} scope="col" className="px-5 py-3 font-bold">
@@ -206,7 +206,7 @@ export default async function ArticlePage({ params }: Props) {
                             <tr key={r.join("|")} className="even:bg-surface">
                               {r.map((c, ci) =>
                                 ci === 0 ? (
-                                  <th key={ci} scope="row" className="px-5 py-3 align-top font-semibold text-navy">
+                                  <th key={ci} scope="row" className="px-5 py-3 align-top font-semibold text-brand-dark">
                                     {c}
                                   </th>
                                 ) : (
@@ -222,8 +222,8 @@ export default async function ArticlePage({ params }: Props) {
                     </div>
                   )}
                   {s.note && (
-                    <p className="!mb-6 flex gap-3 rounded-xl bg-sky-light/30 p-4 text-[15px] leading-relaxed text-ink">
-                      <Lightbulb size={20} className="mt-0.5 shrink-0 text-sky-ink" aria-hidden="true" />
+                    <p className="!mb-6 flex gap-3 rounded-xl bg-brand-soft/30 p-4 text-[15px] leading-relaxed text-ink">
+                      <Lightbulb size={20} className="mt-0.5 shrink-0 text-brand-ink" aria-hidden="true" />
                       <span>{s.note}</span>
                     </p>
                   )}
@@ -239,9 +239,9 @@ export default async function ArticlePage({ params }: Props) {
                 <div className="mt-5 space-y-3">
                   {a.faqs.map((f) => (
                     <details key={f.q} className="group rounded-2xl border border-line bg-white shadow-card">
-                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-2xl p-5 text-lg font-bold text-navy [&::-webkit-details-marker]:hidden">
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-2xl p-5 text-lg font-bold text-brand-dark [&::-webkit-details-marker]:hidden">
                         <h3 className="text-lg font-bold">{f.q}</h3>
-                        <ArrowRight size={20} aria-hidden="true" className="shrink-0 text-sky transition-transform group-open:rotate-90" />
+                        <ArrowRight size={20} aria-hidden="true" className="shrink-0 text-brand transition-transform group-open:rotate-90" />
                       </summary>
                       <p className="px-5 pb-5 leading-relaxed text-ink">{f.a}</p>
                     </details>
@@ -262,7 +262,7 @@ export default async function ArticlePage({ params }: Props) {
                         href={s.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 font-semibold text-navy underline decoration-sky underline-offset-4 hover:text-sky-ink"
+                        className="inline-flex items-center gap-1.5 font-semibold text-brand-dark underline decoration-brand underline-offset-4 hover:text-brand-ink"
                       >
                         {s.label} <ExternalLink size={15} aria-hidden="true" />
                         <span className="sr-only"> (opens in a new tab)</span>
@@ -283,7 +283,7 @@ export default async function ArticlePage({ params }: Props) {
               </DisclaimerNote>
             </div>
 
-            <div className="mt-8 flex flex-col gap-4 rounded-2xl bg-navy p-6 text-white sm:flex-row sm:items-center sm:justify-between sm:p-8 on-dark">
+            <div className="mt-8 flex flex-col gap-4 rounded-2xl bg-brand-dark p-6 text-white sm:flex-row sm:items-center sm:justify-between sm:p-8 on-dark">
               <div>
                 <p className="text-xl font-extrabold text-white">Need help with your own loan?</p>
                 <p className="mt-1 text-white/85">Get a free, no-obligation consultation.</p>
@@ -302,11 +302,11 @@ export default async function ArticlePage({ params }: Props) {
           {toc.length > 3 && (
             <aside className="hidden lg:block">
               <nav aria-label="In this article (sidebar)" className="sticky top-28 rounded-2xl border border-line bg-surface p-5">
-                <h2 className="text-sm font-bold tracking-widest text-navy uppercase">In this article</h2>
+                <h2 className="text-sm font-bold tracking-widest text-brand-dark uppercase">In this article</h2>
                 <ol className="mt-3 space-y-1">
                   {toc.map((t) => (
                     <li key={t.id}>
-                      <a href={`#${t.id}`} className="block rounded-lg px-2 py-1.5 text-sm font-semibold text-muted hover:bg-sky-light/30 hover:text-navy">
+                      <a href={`#${t.id}`} className="block rounded-lg px-2 py-1.5 text-sm font-semibold text-muted hover:bg-brand-soft/30 hover:text-brand-dark">
                         {t.label}
                       </a>
                     </li>

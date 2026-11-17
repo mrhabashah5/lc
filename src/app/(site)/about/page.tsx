@@ -56,7 +56,7 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-          <div className="rounded-3xl bg-sky-light/30 p-8 sm:p-10">
+          <div className="rounded-3xl bg-brand-soft/30 p-8 sm:p-10">
             <h2 className="text-2xl font-extrabold">Our mission</h2>
             <p className="mt-4 text-lg leading-relaxed text-ink">
               To give every borrower a clear understanding of their position and a practical,

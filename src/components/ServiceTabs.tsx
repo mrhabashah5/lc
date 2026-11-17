@@ -47,8 +47,8 @@ export function ServiceTabs() {
             onClick={() => setActive(i)}
             className={`shrink-0 cursor-pointer rounded-full border-2 px-5 py-2.5 text-sm font-bold transition-colors ${
               i === active
-                ? "border-navy bg-navy text-white"
-                : "border-field bg-white text-navy hover:border-sky-ink hover:text-sky-ink"
+                ? "border-brand-dark bg-brand-dark text-white"
+                : "border-field bg-white text-brand-dark hover:border-brand-ink hover:text-brand-ink"
             }`}
           >
             {t.label}
@@ -74,10 +74,10 @@ export function ServiceTabs() {
             </Link>
           </div>
         </div>
-        <ul className="space-y-4 rounded-2xl bg-sky-light/25 p-6">
+        <ul className="space-y-4 rounded-2xl bg-brand-soft/25 p-6">
           {tab.points.map((p) => (
             <li key={p} className="flex items-start gap-3 font-medium text-ink">
-              <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky text-white">
+              <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand text-white">
                 <Check size={14} strokeWidth={3.5} aria-hidden="true" />
               </span>
               {p}

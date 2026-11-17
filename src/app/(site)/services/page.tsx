@@ -42,7 +42,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section bg-sky-light/25">
+      <section className="section bg-brand-soft/25">
         <div className="container-x">
           <SectionHeading
             eyebrow="Loan types"

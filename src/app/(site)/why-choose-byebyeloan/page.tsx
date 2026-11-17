@@ -52,7 +52,7 @@ export default function WhyPage() {
         </div>
       </section>
 
-      <section className="section bg-sky-light/25">
+      <section className="section bg-brand-soft/25">
         <div className="container-x">
           <SectionHeading
             eyebrow="Our commitments"
@@ -65,7 +65,7 @@ export default function WhyPage() {
               <ul className="mt-5 space-y-4">
                 {will.map((t) => (
                   <li key={t} className="flex items-start gap-3 font-medium text-ink">
-                    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky text-white">
+                    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand text-white">
                       <Check size={14} strokeWidth={3.5} aria-hidden="true" />
                     </span>
                     {t}
@@ -78,7 +78,7 @@ export default function WhyPage() {
               <ul className="mt-5 space-y-4">
                 {wont.map((t) => (
                   <li key={t} className="flex items-start gap-3 font-medium text-ink">
-                    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-navy text-white">
+                    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-dark text-white">
                       <X size={14} strokeWidth={3.5} aria-hidden="true" />
                     </span>
                     {t}

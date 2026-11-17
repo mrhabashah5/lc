@@ -38,14 +38,14 @@ export default function FaqsPage() {
             {faqs.map((f) => (
               <details
                 key={f.q}
-                className="group rounded-2xl border border-line bg-white shadow-card open:border-sky-light"
+                className="group rounded-2xl border border-line bg-white shadow-card open:border-brand-soft"
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-2xl p-5 text-lg font-bold text-navy sm:p-6 [&::-webkit-details-marker]:hidden">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-2xl p-5 text-lg font-bold text-brand-dark sm:p-6 [&::-webkit-details-marker]:hidden">
                   {f.q}
                   <ChevronDown
                     size={22}
                     aria-hidden="true"
-                    className="shrink-0 text-sky transition-transform group-open:rotate-180"
+                    className="shrink-0 text-brand transition-transform group-open:rotate-180"
                   />
                 </summary>
                 <p className="px-5 pb-5 leading-relaxed text-ink sm:px-6 sm:pb-6">{f.a}</p>

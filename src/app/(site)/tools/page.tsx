@@ -33,7 +33,7 @@ export default function ToolsPage() {
                   <I size={24} aria-hidden="true" />
                 </span>
                 <h2 className="mt-5 text-xl font-bold">
-                  <Link href={`/tools/${t.slug}`} className="after:absolute after:inset-0 group-hover:text-sky-ink">
+                  <Link href={`/tools/${t.slug}`} className="after:absolute after:inset-0 group-hover:text-brand-ink">
                     {t.title}
                   </Link>
                 </h2>

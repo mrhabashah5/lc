@@ -37,12 +37,12 @@ export function ServiceDetail(p: ServiceDetailProps) {
               Request Consultation
             </Link>
           </div>
-          <aside className="self-start rounded-3xl bg-sky-light/30 p-8">
+          <aside className="self-start rounded-3xl bg-brand-soft/30 p-8">
             <h2 className="text-xl font-extrabold">This may be right for you if</h2>
             <ul className="mt-5 space-y-4">
               {p.forWhom.map((t) => (
                 <li key={t} className="flex items-start gap-3 font-medium text-ink">
-                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky text-white">
+                  <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand text-white">
                     <Check size={14} strokeWidth={3.5} aria-hidden="true" />
                   </span>
                   {t}
@@ -72,7 +72,7 @@ export function ServiceDetail(p: ServiceDetailProps) {
           <div className="grid gap-6 sm:grid-cols-2">
             {p.help.map((h, i) => (
               <div key={h.title} className="card flex gap-5">
-                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sky-light/50 text-lg font-extrabold text-navy">
+                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-soft/50 text-lg font-extrabold text-brand-dark">
                   {i + 1}
                 </span>
                 <div>
@@ -91,7 +91,7 @@ export function ServiceDetail(p: ServiceDetailProps) {
           <ul className="mt-6 space-y-4">
             {p.know.map((t) => (
               <li key={t} className="flex items-start gap-3 text-lg leading-relaxed text-ink">
-                <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-sky" aria-hidden="true" />
+                <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-brand" aria-hidden="true" />
                 {t}
               </li>
             ))}
@@ -102,7 +102,7 @@ export function ServiceDetail(p: ServiceDetailProps) {
         </div>
       </section>
 
-      <section className="section bg-sky-light/25">
+      <section className="section bg-brand-soft/25">
         <div className="container-x">
           <SectionHeading eyebrow="The process" title="Three steps to get started" />
           <StepCards />

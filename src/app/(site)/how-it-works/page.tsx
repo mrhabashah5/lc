@@ -63,17 +63,17 @@ export default function HowItWorksPage() {
       <section className="section border-y border-line bg-surface">
         <div className="container-x mx-auto max-w-4xl">
           <SectionHeading eyebrow="In detail" title="What to expect at each stage" />
-          <ol className="relative space-y-6 before:absolute before:top-2 before:bottom-2 before:left-[21px] before:w-0.5 before:bg-sky-light">
+          <ol className="relative space-y-6 before:absolute before:top-2 before:bottom-2 before:left-[21px] before:w-0.5 before:bg-brand-soft">
             {detail.map((d, i) => (
               <li key={d.title} className="relative flex gap-5">
-                <span className="relative z-10 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sky-ink text-lg font-extrabold text-white">
+                <span className="relative z-10 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-ink text-lg font-extrabold text-white">
                   {i + 1}
                 </span>
                 <div className="card flex-1 sm:p-6">
                   <h3 className="text-xl font-bold">{d.title}</h3>
                   <p className="mt-2 leading-relaxed text-muted">{d.text}</p>
-                  <p className="mt-3 text-sm font-semibold text-navy">
-                    <span className="text-sky-ink">Your part: </span>
+                  <p className="mt-3 text-sm font-semibold text-brand-dark">
+                    <span className="text-brand-ink">Your part: </span>
                     {d.you}
                   </p>
                 </div>

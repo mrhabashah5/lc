@@ -51,7 +51,7 @@ export default async function LegalPage({ params }: Props) {
             ))}
           </div>
           <aside className="order-first self-start rounded-2xl border border-line bg-surface p-5 lg:order-none lg:sticky lg:top-28">
-            <h2 className="mb-3 text-sm font-bold tracking-widest text-navy uppercase">Legal pages</h2>
+            <h2 className="mb-3 text-sm font-bold tracking-widest text-brand-dark uppercase">Legal pages</h2>
             <ul className="space-y-1">
               {legalDocs.map((d) => (
                 <li key={d.slug}>
@@ -59,7 +59,7 @@ export default async function LegalPage({ params }: Props) {
                     href={`/${d.slug}`}
                     aria-current={d.slug === doc.slug ? "page" : undefined}
                     className={`block rounded-lg px-3 py-2 text-[15px] font-semibold ${
-                      d.slug === doc.slug ? "bg-sky-light/40 text-navy" : "text-muted hover:text-navy"
+                      d.slug === doc.slug ? "bg-brand-soft/40 text-brand-dark" : "text-muted hover:text-brand-dark"
                     }`}
                   >
                     {d.title}

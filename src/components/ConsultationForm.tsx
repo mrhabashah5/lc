@@ -108,13 +108,13 @@ export function ConsultationForm({ initialApp }: { initialApp?: string }) {
   if (reference) {
     return (
       <div ref={topRef} className="card scroll-mt-28 text-center sm:p-12" role="status">
-        <CircleCheck size={56} className="mx-auto text-sky" aria-hidden="true" />
+        <CircleCheck size={56} className="mx-auto text-brand" aria-hidden="true" />
         <h2 className="mt-5 text-3xl font-extrabold">Request received</h2>
         <p className="lead mx-auto mt-3 max-w-md">
           Thank you, {data.fullName.split(" ")[0]}. A consultant will contact you by{" "}
           {data.contactMethod.toLowerCase()}.
         </p>
-        <p className="mx-auto mt-6 inline-block rounded-xl bg-sky-light/40 px-6 py-3 text-navy">
+        <p className="mx-auto mt-6 inline-block rounded-xl bg-brand-soft/40 px-6 py-3 text-brand-dark">
           Your reference: <strong className="font-extrabold">{reference}</strong>
         </p>
         <p className="mx-auto mt-6 max-w-md text-sm text-muted">
@@ -163,13 +163,13 @@ export function ConsultationForm({ initialApp }: { initialApp?: string }) {
                   <span
                     aria-current={current ? "step" : undefined}
                     className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base font-extrabold transition-colors ${
-                      done || current ? "bg-sky-ink text-white" : "border-2 border-field bg-white text-muted"
+                      done || current ? "bg-brand-ink text-white" : "border-2 border-field bg-white text-muted"
                     }`}
                   >
                     {done ? <Check size={18} strokeWidth={3.5} aria-hidden="true" /> : n}
                   </span>
                   <span
-                    className={`text-[13px] font-bold whitespace-nowrap sm:text-sm ${current || done ? "text-navy" : "text-muted"}`}
+                    className={`text-[13px] font-bold whitespace-nowrap sm:text-sm ${current || done ? "text-brand-dark" : "text-muted"}`}
                   >
                     {name}
                   </span>
@@ -177,7 +177,7 @@ export function ConsultationForm({ initialApp }: { initialApp?: string }) {
                 {i < stepNames.length - 1 && (
                   <span
                     aria-hidden="true"
-                    className={`mx-2 mb-6 h-1 flex-1 rounded-full sm:mx-4 sm:mb-0 ${done ? "bg-sky" : "bg-line"}`}
+                    className={`mx-2 mb-6 h-1 flex-1 rounded-full sm:mx-4 sm:mb-0 ${done ? "bg-brand" : "bg-line"}`}
                   />
                 )}
               </li>
@@ -190,7 +190,7 @@ export function ConsultationForm({ initialApp }: { initialApp?: string }) {
       </div>
 
       {initialApp && data.lenderName === initialApp && (
-        <p className="mb-6 rounded-xl bg-sky-light/40 px-4 py-3 text-sm text-navy">
+        <p className="mb-6 rounded-xl bg-brand-soft/40 px-4 py-3 text-sm text-brand-dark">
           Requesting clearance help for <strong className="font-extrabold">{initialApp}</strong>. You
           can change this in step 2.
         </p>
@@ -207,7 +207,7 @@ export function ConsultationForm({ initialApp }: { initialApp?: string }) {
 
         {step === 1 && (
           <fieldset className="grid gap-5 sm:grid-cols-2">
-            <legend className="mb-5 text-2xl font-extrabold text-navy sm:col-span-2">Tell us about you</legend>
+            <legend className="mb-5 text-2xl font-extrabold text-brand-dark sm:col-span-2">Tell us about you</legend>
             <div className="sm:col-span-2">
               <label htmlFor="fullName" className="label">
                 Full name
@@ -276,10 +276,10 @@ export function ConsultationForm({ initialApp }: { initialApp?: string }) {
                 {contactMethods.map((m) => (
                   <label
                     key={m}
-                    className={`cursor-pointer rounded-lg border-2 px-4 py-2.5 text-sm font-bold transition-colors has-focus-visible:outline-3 has-focus-visible:outline-offset-2 has-focus-visible:outline-sky-ink ${
+                    className={`cursor-pointer rounded-lg border-2 px-4 py-2.5 text-sm font-bold transition-colors has-focus-visible:outline-3 has-focus-visible:outline-offset-2 has-focus-visible:outline-brand-ink ${
                       data.contactMethod === m
-                        ? "border-sky-ink bg-sky-light/40 text-navy"
-                        : "border-field bg-white text-muted hover:border-sky-ink"
+                        ? "border-brand-ink bg-brand-soft/40 text-brand-dark"
+                        : "border-field bg-white text-muted hover:border-brand-ink"
                     }`}
                   >
                     <input
@@ -300,7 +300,7 @@ export function ConsultationForm({ initialApp }: { initialApp?: string }) {
 
         {step === 2 && (
           <fieldset className="grid gap-5 sm:grid-cols-2">
-            <legend className="mb-5 text-2xl font-extrabold text-navy sm:col-span-2">About your loan</legend>
+            <legend className="mb-5 text-2xl font-extrabold text-brand-dark sm:col-span-2">About your loan</legend>
             <Select id="serviceNeeded" label="What do you need help with?" options={servicesNeeded} value={data.serviceNeeded} onChange={(v) => set("serviceNeeded", v)} error={errors.serviceNeeded} />
             <Select id="loanType" label="Type of loan" options={loanTypes} value={data.loanType} onChange={(v) => set("loanType", v)} error={errors.loanType} />
             <div>
@@ -330,7 +330,7 @@ export function ConsultationForm({ initialApp }: { initialApp?: string }) {
 
         {step === 3 && (
           <fieldset>
-            <legend className="mb-5 text-2xl font-extrabold text-navy">Review and send</legend>
+            <legend className="mb-5 text-2xl font-extrabold text-brand-dark">Review and send</legend>
             <dl className="mb-6 grid gap-x-8 gap-y-3 rounded-xl bg-surface p-5 text-sm sm:grid-cols-2">
               {[
                 ["Name", data.fullName],
@@ -346,7 +346,7 @@ export function ConsultationForm({ initialApp }: { initialApp?: string }) {
               ].map(([k, v]) => (
                 <div key={k} className="flex justify-between gap-4 border-b border-line pb-2">
                   <dt className="text-muted">{k}</dt>
-                  <dd className="text-right font-semibold text-navy">{v}</dd>
+                  <dd className="text-right font-semibold text-brand-dark">{v}</dd>
                 </div>
               ))}
             </dl>
@@ -367,7 +367,7 @@ export function ConsultationForm({ initialApp }: { initialApp?: string }) {
             <label className="mt-6 flex cursor-pointer items-start gap-3 text-sm leading-relaxed text-ink">
               <input
                 type="checkbox"
-                className="mt-0.5 h-5 w-5 shrink-0 accent-sky"
+                className="mt-0.5 h-5 w-5 shrink-0 accent-brand"
                 checked={data.consent}
                 onChange={(e) => set("consent", e.target.checked)}
                 {...aria("consent")}
@@ -375,12 +375,12 @@ export function ConsultationForm({ initialApp }: { initialApp?: string }) {
               <span>
                 I agree to ByeByeLoan contacting me about this request and to the handling of my
                 information as described in the{" "}
-                <Link href="/privacy-policy" target="_blank" className="font-semibold text-navy underline decoration-sky underline-offset-4">
+                <Link href="/privacy-policy" target="_blank" className="font-semibold text-brand-dark underline decoration-brand underline-offset-4">
                   Privacy Policy
                 </Link>
                 . I understand that ByeByeLoan is not a lender and cannot guarantee any outcome, as
                 explained in the{" "}
-                <Link href="/disclaimer" target="_blank" className="font-semibold text-navy underline decoration-sky underline-offset-4">
+                <Link href="/disclaimer" target="_blank" className="font-semibold text-brand-dark underline decoration-brand underline-offset-4">
                   Disclaimer
                 </Link>
                 .

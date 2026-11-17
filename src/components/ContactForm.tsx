@@ -45,7 +45,7 @@ export function ContactForm() {
   if (sent) {
     return (
       <div className="card text-center sm:p-12" role="status">
-        <CircleCheck size={52} className="mx-auto text-sky" aria-hidden="true" />
+        <CircleCheck size={52} className="mx-auto text-brand" aria-hidden="true" />
         <h2 className="mt-4 text-2xl font-extrabold">Message sent</h2>
         <p className="lead mt-2">Thank you. We will get back to you as soon as we can.</p>
       </div>

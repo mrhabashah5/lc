@@ -44,19 +44,19 @@ export default function ContactPage() {
                       <a
                         href={href}
                         {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                        className="text-lg font-bold text-navy hover:text-sky-ink"
+                        className="text-lg font-bold text-brand-dark hover:text-brand-ink"
                       >
                         {value}
                         {external && <span className="sr-only"> (opens in a new tab)</span>}
                       </a>
                     ) : (
-                      <p className="text-lg font-semibold text-navy">{value}</p>
+                      <p className="text-lg font-semibold text-brand-dark">{value}</p>
                     )}
                   </div>
                 </li>
               ))}
             </ul>
-            <div className="mt-8 rounded-2xl bg-sky-light/30 p-6">
+            <div className="mt-8 rounded-2xl bg-brand-soft/30 p-6">
               <h2 className="text-lg font-extrabold">Need help with a loan?</h2>
               <p className="mt-2 text-[15px] leading-relaxed text-ink">
                 The consultation form gives us the details we need to help you faster.

@@ -34,12 +34,12 @@ export default async function AdminHome({ searchParams }: Props) {
             key={t.label}
             href={t.href}
             aria-current={t.active ? "page" : undefined}
-            className={`rounded-2xl border-2 bg-white p-5 shadow-card transition-colors hover:border-sky ${
-              t.active ? "border-sky" : "border-line"
+            className={`rounded-2xl border-2 bg-white p-5 shadow-card transition-colors hover:border-brand ${
+              t.active ? "border-brand" : "border-line"
             }`}
           >
             <p className="text-sm font-semibold text-muted">{t.label}</p>
-            <p className="mt-1 text-3xl font-extrabold text-navy">{t.value}</p>
+            <p className="mt-1 text-3xl font-extrabold text-brand-dark">{t.value}</p>
           </Link>
         ))}
       </div>
@@ -65,11 +65,11 @@ export default async function AdminHome({ searchParams }: Props) {
               </thead>
               <tbody className="divide-y divide-line">
                 {rows.map((r) => (
-                  <tr key={r.id} className="hover:bg-sky-light/15">
+                  <tr key={r.id} className="hover:bg-brand-soft/15">
                     <td className="px-5 py-4">
                       <Link
                         href={`/admin/consultations/${r.id}`}
-                        className="font-bold text-navy underline decoration-sky underline-offset-4 hover:text-sky-ink"
+                        className="font-bold text-brand-dark underline decoration-brand underline-offset-4 hover:text-brand-ink"
                       >
                         {r.reference}
                       </Link>

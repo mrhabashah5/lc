@@ -1,40 +1,64 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
-   ByeByeLoan brand tokens — the single source of truth for colour.
-   Use these (bg-navy, text-sky, border-line …) everywhere; do not
+   ByeByeLoan brand tokens: the single source of truth for colour.
+   Use these (bg-brand, text-brand-dark, border-line ...) everywhere; do not
    add one-off hex values in components.
+
+   Accessibility (WCAG 2.2 AA): every text/background pair is at least
+   4.5:1 (normal text) or 3:1 (large text, icons, field borders).
 ------------------------------------------------------------------- */
-/* Accessibility (WCAG 2.2 AA): every text/background pair below is at least
-   4.5:1 (normal text) or 3:1 (large text, icons, field borders). Brand hues
-   are kept; only the shades used under or as text are deepened. */
 @theme {
-  --color-navy: #00496e;
-  /* Sky blue for large headings, icons and fills (3.6:1 on white). */
-  --color-sky: #1890c4;
-  /* Original brand sky blue: decorative use only, never for text. */
-  --color-sky-brand: #20a7e2;
-  /* Sky blue for small text, links and fills behind white text (5.4:1). */
-  --color-sky-ink: #13729c;
-  --color-sky-light: #b5e2f9;
-  /* Original brand orange: decorative accents only, never behind text. */
-  --color-orange: #ff7026;
-  --color-orange-hover: #e95e18;
-  /* Orange for buttons and CTA areas with white text (4.9:1 / 6.3:1). */
-  --color-cta: #c4480a;
-  --color-cta-hover: #a3410e;
-  --color-surface: #fafcfd;
-  --color-ink: #263746;
-  /* Muted text: 5.1:1 or better on every light background used. */
-  --color-muted: #5b6b77;
-  --color-line: #e5edf2;
+  /* Deep green: headings, dark text and dark panels (9.9:1 on white). */
+  --color-brand-dark: #0b4d33;
+  /* Brand green for large headings, icons and fills (4.0:1 on white). */
+  --color-brand: #15934a;
+  /* Bright green: decorative only, never for text on light backgrounds. */
+  --color-brand-bright: #22c55e;
+  /* Green for small text, links and fills behind white text (5.4:1). */
+  --color-brand-ink: #0e7a3e;
+  /* Mint tint for soft backgrounds and highlights. */
+  --color-brand-soft: #d9f4e4;
+  /* Hero background mint. */
+  --color-brand-mist: #e9f8ef;
+  /* Orange accent: decorative only. */
+  --color-orange: #f97316;
+  --color-orange-hover: #ea580c;
+  /* Orange for secondary call-to-action buttons with white text (5.2:1). */
+  --color-orange-ink: #c2410c;
+  /* Primary buttons with white text (5.4:1 / 7.4:1). */
+  --color-cta: #0e7a3e;
+  --color-cta-hover: #0b6331;
+  --color-surface: #f4faf6;
+  --color-ink: #23332c;
+  /* Muted text: 5.2:1 or better on every light background used. */
+  --color-muted: #55665d;
+  --color-line: #e3efe8;
   /* Form field borders (3.3:1, WCAG 1.4.11 non-text contrast). */
-  --color-field: #7f8f9b;
+  --color-field: #7b9387;
+  /* Dark footer. */
+  --color-footer: #17232c;
+  --color-footer-muted: #b9c6cd;
+  /* Responsible-clearance notice. */
+  --color-notice: #fff6d6;
+  --color-notice-border: #f5c842;
+  --color-notice-ink: #5c4300;
+  --color-notice-icon: #b45309;
   /* Form validation errors only */
   --color-danger: #c0392b;
 
-  --shadow-card: 0 1px 2px rgb(0 73 110 / 0.04), 0 8px 24px rgb(0 73 110 / 0.07);
-  --shadow-float: 0 14px 36px rgb(0 73 110 / 0.16);
+  --shadow-card: 0 1px 2px rgb(11 77 51 / 0.04), 0 8px 24px rgb(11 77 51 / 0.07);
+  --shadow-float: 0 14px 36px rgb(11 77 51 / 0.14);
+
+  --animate-marquee: marquee 70s linear infinite;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 @theme inline {
@@ -56,7 +80,7 @@ body {
 
 /* Clearly visible keyboard focus on every interactive element (WCAG 2.4.7 / 2.4.11). */
 :focus-visible {
-  outline: 3px solid var(--color-sky-ink);
+  outline: 3px solid var(--color-brand-ink);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -84,13 +108,13 @@ body {
   h2,
   h3,
   h4 {
-    color: var(--color-navy);
+    color: var(--color-brand-dark);
     letter-spacing: -0.02em;
   }
 
   ::selection {
-    background: var(--color-sky-light);
-    color: var(--color-navy);
+    background: var(--color-brand-soft);
+    color: var(--color-brand-dark);
   }
 }
 
@@ -104,7 +128,7 @@ body {
   }
 
   .eyebrow {
-    @apply text-sm font-bold uppercase tracking-widest text-sky-ink;
+    @apply text-sm font-bold uppercase tracking-widest text-brand-ink;
   }
 
   .h-display {
@@ -127,16 +151,16 @@ body {
     @apply bg-cta text-white shadow-sm hover:bg-cta-hover;
   }
   .btn-secondary {
-    @apply border-2 border-navy bg-white text-navy hover:border-cta hover:text-cta;
+    @apply border-2 border-brand-dark bg-white text-brand-dark hover:border-cta hover:text-cta;
   }
   .btn-on-orange {
-    @apply bg-white text-navy hover:bg-sky-light;
+    @apply bg-white text-brand-dark hover:bg-brand-soft;
   }
   .btn-sm {
     @apply rounded-lg px-4 py-2.5 text-sm;
   }
   .link-arrow {
-    @apply inline-flex items-center gap-1.5 font-bold text-sky-ink underline-offset-4 transition-colors hover:text-navy hover:underline;
+    @apply inline-flex items-center gap-1.5 font-bold text-brand-ink underline-offset-4 transition-colors hover:text-brand-dark hover:underline;
   }
 
   /* Cards */
@@ -144,15 +168,15 @@ body {
     @apply rounded-2xl border border-line bg-white p-6 shadow-card sm:p-8;
   }
   .icon-tile {
-    @apply inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-sky-light/40 text-sky;
+    @apply inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-soft/40 text-brand;
   }
 
   /* Forms */
   .label {
-    @apply mb-1.5 block text-sm font-semibold text-navy;
+    @apply mb-1.5 block text-sm font-semibold text-brand-dark;
   }
   .field {
-    @apply block w-full rounded-lg border border-field bg-white px-4 py-3 text-base text-ink placeholder:text-muted focus:border-sky-ink focus:ring-3 focus:ring-sky/35 focus:outline-none;
+    @apply block w-full rounded-lg border border-field bg-white px-4 py-3 text-base text-ink placeholder:text-muted focus:border-brand-ink focus:ring-3 focus:ring-brand/35 focus:outline-none;
   }
   .field-error {
     @apply mt-1.5 text-sm text-danger;
@@ -169,9 +193,9 @@ body {
     @apply mb-4 leading-relaxed text-ink;
   }
   .prose-lc ul {
-    @apply mb-4 list-disc space-y-2 pl-6 marker:text-sky;
+    @apply mb-4 list-disc space-y-2 pl-6 marker:text-brand;
   }
   .prose-lc a {
-    @apply font-semibold text-navy underline decoration-sky underline-offset-4 hover:text-sky-ink;
+    @apply font-semibold text-brand-dark underline decoration-brand underline-offset-4 hover:text-brand-ink;
   }
 }

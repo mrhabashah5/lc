@@ -60,7 +60,7 @@ export default function LoanAppsPage() {
             eyebrow="How we help"
             title={
               <>
-                What clearance assistance <span className="text-sky">includes</span>
+                What clearance assistance <span className="text-brand">includes</span>
               </>
             }
             text="The same structured approach for every app on the list."

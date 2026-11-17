@@ -2,8 +2,8 @@ import { statusLabels, type ConsultationStatus } from "@/lib/options";
 
 const badge: Record<ConsultationStatus, string> = {
   new: "bg-cta text-white",
-  contacted: "bg-sky-light/50 text-navy",
-  in_progress: "bg-sky/15 text-navy",
+  contacted: "bg-brand-soft/50 text-brand-dark",
+  in_progress: "bg-brand/15 text-brand-dark",
   closed: "bg-line text-muted",
 };
 

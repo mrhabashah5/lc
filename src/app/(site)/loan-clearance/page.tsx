@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
 import { ServiceDetail } from "@/components/ServiceDetail";
 import { loanApps } from "@/lib/loan-apps";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Loan Clearance Assistance",
+export const metadata: Metadata = pageMetadata({
+  title: "Loan Clearance & NOC Help in Pakistan",
   description:
-    "Paid off or settled a loan in Pakistan? ByeByeLoan helps you follow up for your clearance letter (NOC), the release of documents and the correct update of your credit record.",
-  alternates: { canonical: "/loan-clearance" },
-};
+    "Paid off or settled a loan? We help you get your clearance letter (NOC), your original documents back and your credit record updated. Free consultation.",
+  path: "/loan-clearance",
+});
 
 export default function LoanClearancePage() {
   return (
     <ServiceDetail
       crumb="Loan Clearance"
+      path="/loan-clearance"
+      serviceType="Loan clearance assistance"
       title="Loan clearance"
       highlight="assistance."
       intro="Paying the last instalment is not the final step. We help you make sure the loan is closed on paper as well."

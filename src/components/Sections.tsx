@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { JsonLd } from "./JsonLd";
+import { breadcrumbJsonLd } from "@/lib/schema";
 import { ArrowRight, ChevronRight, MessageCircle } from "lucide-react";
 import { steps } from "@/lib/content";
 import { whatsappLink } from "@/lib/site";
@@ -10,16 +12,24 @@ export function PageHero({
   highlight,
   intro,
   crumb,
+  path,
+  breadcrumbs,
 }: {
   eyebrow?: string;
   title: string;
-  /** Optional trailing words of the title shown in sky blue. */
+  /** Optional trailing words of the title shown in the brand colour. */
   highlight?: string;
   intro?: string;
   crumb: string;
+  /** Page path; adds breadcrumb structured data (Home > crumb). */
+  path?: string;
+  /** Full breadcrumb trail after Home, for pages deeper than one level. */
+  breadcrumbs?: { name: string; path: string }[];
 }) {
+  const trail = breadcrumbs ?? (path ? [{ name: crumb, path }] : null);
   return (
     <section className="relative overflow-hidden border-b border-line bg-surface">
+      {trail && <JsonLd data={breadcrumbJsonLd(trail)} />}
       <div
         aria-hidden="true"
         className="absolute -top-24 -right-24 h-80 w-80 rounded-full bg-brand-soft/50"

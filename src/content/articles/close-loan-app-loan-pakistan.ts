@@ -3,8 +3,11 @@ import type { Article } from "./types";
 export const closeLoanAppLoan: Article = {
   slug: "close-loan-app-loan-pakistan",
   title: "How to Close a Loan App Loan in Pakistan and Get Written Clearance",
+  seoTitle: "How to Close a Loan App Loan in Pakistan",
   excerpt:
     "Check the amount in the app, pay only through the app's official payment method, then screenshot the closed status and ask for written confirmation. A step-by-step guide for digital loans in Pakistan.",
+  metaDescription:
+    "How to close a loan app loan in Pakistan safely: check the amount, pay only in the official app, screenshot the closed status and get written confirmation.",
   category: "Loan Apps",
   updated: "2026-11-16",
   quickAnswer:

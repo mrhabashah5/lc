@@ -3,8 +3,11 @@ import type { Article } from "./types";
 export const understandingCreditRecord: Article = {
   slug: "understanding-your-credit-record-in-pakistan",
   title: "Understanding Your Credit Record in Pakistan: How It Works and What Affects It",
+  seoTitle: "Understanding Your Credit Record in Pakistan",
   excerpt:
     "Lenders in Pakistan share repayment information through the State Bank's eCIB and licensed credit bureaus. Learn how your record is built, what lenders look for, common myths and how to rebuild after problems.",
+  metaDescription:
+    "How credit records work in Pakistan: who reports to eCIB and credit bureaus, what lenders look at, how settlement affects you and how to rebuild your record.",
   category: "Credit",
   updated: "2026-11-16",
   quickAnswer:

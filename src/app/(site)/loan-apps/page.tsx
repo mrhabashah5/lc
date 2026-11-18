@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
 import { IconTile } from "@/components/Icon";
+import { JsonLd } from "@/components/JsonLd";
+import { loanAppsItemList, serviceJsonLd } from "@/lib/schema";
 import { LoanAppDirectory } from "@/components/LoanAppDirectory";
 import { CtaBand, DisclaimerNote, PageHero, SectionHeading } from "@/components/Sections";
 import { appCategories, appsDisclaimer, loanApps } from "@/lib/loan-apps";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Loan App Clearance Assistance in Pakistan",
-  description: `Clearance assistance for loans taken through ${loanApps.length} digital lending apps in Pakistan, including personal loan, buy now pay later, salary advance, business and education financing apps.`,
-  alternates: { canonical: "/loan-apps" },
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Loan App Clearance Help in Pakistan",
+  description:
+    "Clearance help for loans from 31 digital lending apps in Pakistan, from personal loan apps to buy now, pay later. Find your app and request free help today.",
+  path: "/loan-apps",
+});
 
 const help = [
   {
@@ -36,7 +40,17 @@ const help = [
 export default function LoanAppsPage() {
   return (
     <>
+      <JsonLd
+        data={serviceJsonLd({
+          name: "Loan app clearance assistance",
+          description: `Clearance help for loans taken through ${loanApps.length} digital lending apps in Pakistan.`,
+          path: "/loan-apps",
+          serviceType: "Loan clearance assistance",
+        })}
+      />
+      <JsonLd data={loanAppsItemList()} />
       <PageHero
+        path="/loan-apps"
         crumb="Loan Apps"
         eyebrow="Loan app clearance"
         title="Clearance help for"

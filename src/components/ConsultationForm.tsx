@@ -14,6 +14,7 @@ import {
   type FieldErrors,
 } from "@/lib/options";
 import { loanApps } from "@/lib/loan-apps";
+import { trackEvent } from "@/lib/analytics";
 import { whatsappLink } from "@/lib/site";
 
 const stepNames = ["Your details", "Your loan", "Review & send"];
@@ -93,6 +94,7 @@ export function ConsultationForm({ initialApp }: { initialApp?: string }) {
       const json = await res.json().catch(() => null);
       if (res.ok && json?.ok) {
         setReference(json.reference);
+        trackEvent("generate_lead", { form: "consultation", service: data.serviceNeeded, loan_type: data.loanType });
         scrollTop();
       } else {
         if (json?.errors) setErrors(json.errors);

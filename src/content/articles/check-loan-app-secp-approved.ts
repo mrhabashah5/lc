@@ -5,6 +5,8 @@ export const checkLoanAppSecpApproved: Article = {
   title: "How to Check if a Loan App Is SECP-Approved in Pakistan",
   excerpt:
     "Before you borrow, confirm the app appears on SECP's list of approved digital lending apps and that the company behind it is a licensed NBFC. A practical checklist with the warning signs to watch for.",
+  metaDescription:
+    "How to check if a loan app is SECP-approved in Pakistan: find it on SECP's official list, match the company name and spot the warning signs of illegal apps.",
   category: "Loan Apps",
   updated: "2026-11-16",
   quickAnswer:

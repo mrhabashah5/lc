@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { ClearanceChecklist } from "@/components/tools/ClearanceChecklist";
 import { ToolPage } from "@/components/tools/ToolPage";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Loan Clearance Checklist (Pakistan)",
+export const metadata: Metadata = pageMetadata({
+  title: "Loan Clearance Checklist (Free & Printable)",
   description:
-    "Free step-by-step loan clearance checklist for personal loans, credit cards, car finance, home finance, loan apps and settled loans in Pakistan. Tick off each step and print it.",
-  alternates: { canonical: "/tools/clearance-checklist" },
-};
+    "Free step-by-step loan clearance checklist for personal loans, credit cards, car finance, home finance, loan apps and settled loans in Pakistan.",
+  path: "/tools/clearance-checklist",
+});
 
 export default function Page() {
   return (

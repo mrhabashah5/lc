@@ -1,3 +1,4 @@
+import { gaId } from "./analytics";
 import { site, whatsappDisplay } from "./site";
 
 // DRAFT legal content. Have these pages reviewed by a qualified Pakistani
@@ -32,6 +33,9 @@ export const legalDocs: LegalDoc[] = [
           "Loan details you provide: type of loan, lender name, approximate amount, current status and any message you write",
           "Documents you choose to share with us after a consultation begins",
           "Basic technical information needed to run the website securely, such as your IP address at the time of a form submission",
+          ...(gaId
+            ? ["Website usage statistics collected through Google Analytics, such as pages viewed and the device type you used"]
+            : []),
         ],
       },
       {
@@ -259,7 +263,9 @@ export const legalDocs: LegalDoc[] = [
       {
         heading: "Cookies we use",
         paragraphs: [
-          "The public ByeByeLoan website does not set advertising or tracking cookies.",
+          gaId
+            ? "We use Google Analytics cookies to understand how visitors use the website, for example which pages are viewed and how many people contact us, so we can improve it. These cookies do not identify you by name. You can block them in your browser settings."
+            : "The public ByeByeLoan website does not set advertising or tracking cookies.",
           "A single strictly necessary cookie is used only when a member of our staff signs in to the administration area. It keeps that session secure and is not used to track visitors.",
         ],
       },

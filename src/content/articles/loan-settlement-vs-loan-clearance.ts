@@ -3,8 +3,11 @@ import type { Article } from "./types";
 export const settlementVsClearance: Article = {
   slug: "loan-settlement-vs-loan-clearance",
   title: "Loan Settlement vs. Loan Clearance in Pakistan: What Is the Difference?",
+  seoTitle: "Loan Settlement vs Loan Clearance in Pakistan",
   excerpt:
     "Settlement is how a struggling loan may be closed; clearance is the proof that any loan is closed. Learn how each works, when each applies, and what they mean for your credit record.",
+  metaDescription:
+    "Loan settlement vs loan clearance in Pakistan: what each means, how settlement works, its effect on your credit record and why every loan needs an NOC.",
   category: "Basics",
   updated: "2026-11-16",
   quickAnswer:

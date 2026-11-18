@@ -18,8 +18,12 @@ export type ArticleSection = {
 export type Article = {
   slug: string;
   title: string;
+  /** Shorter title for search results (~60 characters) when the page heading is long. */
+  seoTitle?: string;
   /** Short summary used on cards and as the meta description. */
   excerpt: string;
+  /** Search result description, 140–160 characters. Falls back to a trimmed excerpt. */
+  metaDescription?: string;
   category: string;
   /** ISO date of the last review, e.g. "2026-11-16". */
   updated?: string;

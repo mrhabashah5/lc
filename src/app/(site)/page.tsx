@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   AlertTriangle,
@@ -21,9 +22,16 @@ import { AppTicker } from "@/components/home/AppTicker";
 import { HomeHero } from "@/components/home/HomeHero";
 import { articles } from "@/lib/content";
 import { loanApps } from "@/lib/loan-apps";
+import { pageMetadata } from "@/lib/seo";
 import { site, whatsappDisplay, whatsappLink } from "@/lib/site";
 
-export const metadata = { alternates: { canonical: "/" } };
+export const metadata: Metadata = pageMetadata({
+  title: "Loan Clearance & Settlement Help in Pakistan | ByeByeLoan",
+  absoluteTitle: true,
+  description:
+    "Get help clearing loans from banks and 31 digital loan apps in Pakistan. Free first consultation, written terms and help getting your clearance letter (NOC).",
+  path: "/",
+});
 
 const stats = [
   { icon: Layers, value: String(loanApps.length), label: "Loan apps covered" },
@@ -74,7 +82,7 @@ export default function HomePage() {
   const channels = [
     { icon: MessageCircle, label: "WhatsApp", value: whatsappDisplay, href: whatsappLink(), external: true },
     { icon: Mail, label: "Email", value: site.email, href: `mailto:${site.email}` },
-    { icon: MapPin, label: "Office", value: site.address },
+    ...(site.address ? [{ icon: MapPin, label: "Office", value: site.address }] : []),
   ];
 
   return (

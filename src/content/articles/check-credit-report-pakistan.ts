@@ -3,8 +3,11 @@ import type { Article } from "./types";
 export const checkCreditReportPakistan: Article = {
   slug: "check-credit-report-pakistan",
   title: "How to Check Your Credit Report in Pakistan and Correct Errors",
+  seoTitle: "How to Check & Correct Your Credit Report in Pakistan",
   excerpt:
     "Individuals can request their credit report from licensed credit bureaus such as Tasdeeq and DataCheck. Here is what the report shows, how to read it and how to correct a closed loan that still shows as outstanding.",
+  metaDescription:
+    "How to check your credit report in Pakistan through Tasdeeq or DataCheck, read it, and correct a closed loan that still shows as outstanding or overdue.",
   category: "Credit",
   updated: "2026-11-16",
   quickAnswer:

@@ -4,24 +4,27 @@ import { Clock, Mail, MapPin, MessageCircle } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/Sections";
 import { site, whatsappDisplay, whatsappLink } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact Us",
-  description: "Contact ByeByeLoan on WhatsApp, by email or through our contact form.",
-  alternates: { canonical: "/contact" },
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Contact Us on WhatsApp or Email",
+  description:
+    "Contact ByeByeLoan on WhatsApp or by email for help with loan clearance, NOC letters or loan settlement in Pakistan. Free, no-obligation first consultation.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   const items = [
     { icon: MessageCircle, label: "WhatsApp", value: whatsappDisplay, href: whatsappLink(), external: true },
     { icon: Mail, label: "Email", value: site.email, href: `mailto:${site.email}` },
-    { icon: MapPin, label: "Office", value: site.address },
+    ...(site.address ? [{ icon: MapPin, label: "Office", value: site.address }] : []),
     { icon: Clock, label: "Hours", value: site.hours },
   ];
 
   return (
     <>
       <PageHero
+        path="/contact"
         crumb="Contact Us"
         eyebrow="Contact us"
         title="We are here"

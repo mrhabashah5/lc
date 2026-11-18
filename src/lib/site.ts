@@ -6,7 +6,8 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://byebyeloan.online",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923101990325",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "info@byebyeloan.online",
-  address: process.env.NEXT_PUBLIC_ADDRESS ?? "Office address, City, Pakistan",
+  /** Real office address; leave unset to hide it everywhere (never show a placeholder). */
+  address: process.env.NEXT_PUBLIC_ADDRESS ?? "",
   hours: "Monday to Saturday, 10:00 am – 6:00 pm (PKT)",
 };
 

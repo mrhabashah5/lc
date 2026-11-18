@@ -39,7 +39,7 @@ export function ToolPage({ slug, title, highlight, quickAnswer, children, howItW
 
   return (
     <>
-      <PageHero crumb="Free Loan Tools" eyebrow="Free tool" title={title} highlight={highlight} />
+      <PageHero breadcrumbs={[{ name: "Free Loan Tools", path: "/tools" }, { name: `${title}${highlight ? ` ${highlight}` : ""}`.replace(/\.$/, ""), path: `/tools/${slug}` }]} crumb="Free Loan Tools" eyebrow="Free tool" title={title} highlight={highlight} />
 
       <section className="bg-white pt-10">
         <div className="container-x">

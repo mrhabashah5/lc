@@ -226,6 +226,16 @@ manifest.default = await writeOg(
   ogSvg({ motif: "doc", eyebrow: "Loan settlement & clearance in Pakistan", title: "Get Clarity. Find Your Way Forward." }),
 );
 
+// Square logo for structured data (Organization.logo), from the favicon artwork.
+{
+  const svg = fs.readFileSync(path.join(root, "src", "app", "icon.svg"));
+  const file = path.join(root, "public", "images", "logo.png");
+  const buf = await sharp(svg, { density: 1200 }).resize(512, 512).png({ palette: true, colors: 16, compressionLevel: 9, effort: 10 }).toBuffer();
+  if (buf.length >= MAX_BYTES) throw new Error("logo.png over limit");
+  fs.writeFileSync(file, buf);
+  log(buf, "png 512x512", file);
+}
+
 // The site reads this to publish correct image URLs and dimensions.
 fs.writeFileSync(
   path.join(root, "src", "content", "og-images.json"),

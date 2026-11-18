@@ -3,13 +3,14 @@ import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { CtaBand, PageHero } from "@/components/Sections";
 import { faqs } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "FAQs",
+export const metadata: Metadata = pageMetadata({
+  title: "Loan Clearance & Settlement FAQs",
   description:
-    "Answers to common questions about ByeByeLoan, loan settlement, loan clearance, fees, confidentiality and credit records in Pakistan.",
-  alternates: { canonical: "/faqs" },
-};
+    "Answers to common questions about loan clearance, settlement, NOC letters, fees, loan apps, credit records and confidentiality for borrowers in Pakistan.",
+  path: "/faqs",
+});
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -25,6 +26,7 @@ export default function FaqsPage() {
   return (
     <>
       <PageHero
+        path="/faqs"
         crumb="FAQs"
         eyebrow="FAQs"
         title="Questions,"

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { CircleCheck } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 import type { FieldErrors } from "@/lib/options";
 
 const empty = { name: "", email: "", phone: "", subject: "", message: "", website: "" };
@@ -31,6 +32,7 @@ export function ContactForm() {
       const json = await res.json().catch(() => null);
       if (res.ok && json?.ok) {
         setSent(true);
+        trackEvent("contact_form_submit", { form: "contact" });
       } else {
         setErrors(json?.errors ?? {});
         setServerError(json?.error ?? "Something went wrong. Please try again.");

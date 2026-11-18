@@ -3,13 +3,15 @@ import { Check, X } from "lucide-react";
 import { IconTile } from "@/components/Icon";
 import { CtaBand, PageHero, SectionHeading } from "@/components/Sections";
 import { reasons } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Why Choose Us",
+export const metadata: Metadata = pageMetadata({
+  title: "Why Choose ByeByeLoan for Loan Clearance Help",
+  absoluteTitle: true,
   description:
-    "Clear information, written terms and realistic expectations. See what makes ByeByeLoan a trustworthy choice for loan settlement and clearance assistance in Pakistan.",
-  alternates: { canonical: "/why-choose-byebyeloan" },
-};
+    "Clear information, written terms and realistic expectations. See what ByeByeLoan will and will not do when helping you settle or clear a loan in Pakistan.",
+  path: "/why-choose-byebyeloan",
+});
 
 const will = [
   "Explain your situation and options in plain language",
@@ -31,6 +33,7 @@ export default function WhyPage() {
   return (
     <>
       <PageHero
+        path="/why-choose-byebyeloan"
         crumb="Why Choose ByeByeLoan"
         eyebrow="Why choose ByeByeLoan"
         title="Straightforward help,"

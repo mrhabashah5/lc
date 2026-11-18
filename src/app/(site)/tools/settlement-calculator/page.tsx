@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { SettlementCalculator } from "@/components/tools/SettlementCalculator";
 import { ToolPage } from "@/components/tools/ToolPage";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Loan Settlement Offer Calculator (Pakistan)",
+export const metadata: Metadata = pageMetadata({
+  title: "Loan Settlement Offer Calculator",
   description:
-    "Compare a loan settlement offer with your outstanding balance. See the difference in rupees, the offer as a percentage and the amount of each payment, plus what to check before you accept.",
-  alternates: { canonical: "/tools/settlement-calculator" },
-};
+    "Compare a loan settlement offer with your outstanding balance. See the difference in rupees and percent, each payment amount, and what to check first.",
+  path: "/tools/settlement-calculator",
+});
 
 export default function Page() {
   return (

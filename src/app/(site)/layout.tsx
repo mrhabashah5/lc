@@ -1,17 +1,9 @@
+import { Analytics } from "@/components/Analytics";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { site } from "@/lib/site";
-
-const orgJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: site.name,
-  description: site.description,
-  url: site.url,
-  email: site.email,
-  areaServed: { "@type": "Country", name: "Pakistan" },
-};
+import { JsonLd } from "@/components/JsonLd";
+import { organizationGraph } from "@/lib/schema";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -28,10 +20,8 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       </main>
       <Footer />
       <WhatsAppButton />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd).replace(/</g, "\\u003c") }}
-      />
+      <JsonLd data={organizationGraph()} />
+      <Analytics />
     </>
   );
 }

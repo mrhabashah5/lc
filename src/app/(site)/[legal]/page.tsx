@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/Sections";
 import { legalDocs } from "@/lib/legal";
+import { pageMetadata } from "@/lib/seo";
 
 // Serves /privacy-policy, /terms-and-conditions, /disclaimer,
 // /complaints-policy and /cookie-policy from src/lib/legal.ts.
@@ -18,7 +19,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { legal } = await params;
   const doc = legalDocs.find((d) => d.slug === legal);
   if (!doc) return {};
-  return { title: doc.title, description: doc.description, alternates: { canonical: `/${doc.slug}` } };
+  return pageMetadata({
+    title: doc.title,
+    description: `${doc.description} Applies to the ByeByeLoan website and loan clearance services in Pakistan.`,
+    path: `/${doc.slug}`,
+  });
 }
 
 export default async function LegalPage({ params }: Props) {
@@ -28,7 +33,7 @@ export default async function LegalPage({ params }: Props) {
 
   return (
     <>
-      <PageHero crumb={doc.title} eyebrow="Legal" title={doc.title} intro={doc.description} />
+      <PageHero path={`/${doc.slug}`} crumb={doc.title} eyebrow="Legal" title={doc.title} intro={doc.description} />
       <section className="section bg-white">
         <div className="container-x grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-16">
           <div className="prose-lc max-w-3xl">

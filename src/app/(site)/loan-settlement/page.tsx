@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
 import { ServiceDetail } from "@/components/ServiceDetail";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Loan Settlement Assistance",
+export const metadata: Metadata = pageMetadata({
+  title: "Loan Settlement Assistance in Pakistan",
   description:
-    "Struggling with loan repayments in Pakistan? ByeByeLoan helps you understand your options, prepare your case and communicate with your lender about a possible settlement.",
-  alternates: { canonical: "/loan-settlement" },
-};
+    "Struggling with loan repayments? We help you understand your options, prepare your case and talk to your lender about a settlement. Free first consultation.",
+  path: "/loan-settlement",
+});
 
 export default function LoanSettlementPage() {
   return (
     <ServiceDetail
       crumb="Loan Settlement"
+      path="/loan-settlement"
+      serviceType="Loan settlement assistance"
       title="Loan settlement"
       highlight="assistance."
       intro="When repayments are no longer manageable, a structured approach to your lender is better than silence. We help you take it."

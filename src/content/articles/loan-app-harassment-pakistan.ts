@@ -3,8 +3,11 @@ import type { Article } from "./types";
 export const loanAppHarassment: Article = {
   slug: "loan-app-harassment-pakistan",
   title: "Loan App Harassment in Pakistan: Your Rights and Where to Complain",
+  seoTitle: "Loan App Harassment in Pakistan: Where to Complain",
   excerpt:
     "Threats, messages to your contacts and shared photos are not legitimate debt recovery. Learn what licensed lenders may not do, how to collect evidence and how to report harassment to SECP and NCCIA.",
+  metaDescription:
+    "Facing loan app harassment in Pakistan? Know your rights, collect evidence and report threats or blackmail to SECP and NCCIA. Never pay a personal account.",
   category: "Your Rights",
   updated: "2026-11-16",
   quickAnswer:

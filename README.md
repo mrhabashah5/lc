@@ -26,6 +26,8 @@ Production: `npm run build` then `npm start`, or deploy to Vercel (see below). R
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `MAIL_FROM`, `MAIL_TO` | Email notifications. Leave `SMTP_HOST` empty to disable |
 | `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN` | Hosted database (required on Vercel). Leave empty locally to use `data/loanclear.db` |
 | `DATABASE_DIR` | Optional. Folder for the local database file (default `./data`) |
+| `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, `NEXT_PUBLIC_BING_SITE_VERIFICATION` | Search Console / Bing Webmaster verification codes (adds the meta tags) |
+| `NEXT_PUBLIC_GA_ID` | Google Analytics 4 ID. Tracks WhatsApp clicks, consultation requests and contact messages, and updates the cookie and privacy policies |
 
 ## Brand colours
 
@@ -63,3 +65,11 @@ Use the Tailwind utilities (`bg-navy`, `text-sky`, …) and the shared classes
 6. After it is live, submit `https://byebyeloan.online/sitemap.xml` in Google Search Console.
 
 Note: the form rate limiter is in memory, so on Vercel each server instance counts separately. That is fine for normal traffic.
+
+## Search and answer-engine visibility
+
+- Every page uses `pageMetadata()` (`src/lib/seo.ts`): unique title, 140–160 character description, canonical URL and matching share tags.
+- Structured data lives in `src/lib/schema.ts` (business, website, services, breadcrumbs); articles and tools add their own.
+- `/llms.txt` is generated from the site data for answer engines; `robots.txt` names the main search and answer-engine crawlers.
+- Update `contentUpdated` in `src/lib/seo.ts` (and an article's `updated` date) when content really changes; the sitemap uses these dates.
+- The office address is hidden until `NEXT_PUBLIC_ADDRESS` is set; Google Ads requires a real address and published fees for financial services.

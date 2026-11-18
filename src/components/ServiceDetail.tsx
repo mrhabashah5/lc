@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { JsonLd } from "./JsonLd";
+import { serviceJsonLd } from "@/lib/schema";
 import { ArrowRight, Check } from "lucide-react";
 import { CtaBand, DisclaimerNote, PageHero, SectionHeading, StepCards } from "./Sections";
 
@@ -15,6 +17,10 @@ export type ServiceDetailProps = {
   knowTitle: string;
   know: string[];
   disclaimer: string;
+  /** Page path, for breadcrumb and Service structured data. */
+  path: string;
+  /** schema.org serviceType, e.g. "Loan clearance assistance". */
+  serviceType: string;
   /** Optional highlighted link shown under the introduction. */
   callout?: { title: string; text: string; href: string; label: string };
 };
@@ -22,7 +28,8 @@ export type ServiceDetailProps = {
 export function ServiceDetail(p: ServiceDetailProps) {
   return (
     <>
-      <PageHero crumb={p.crumb} eyebrow="Our services" title={p.title} highlight={p.highlight} intro={p.intro} />
+      <JsonLd data={serviceJsonLd({ name: `${p.title} ${p.highlight}`.replace(/\.$/, ""), description: p.intro, path: p.path, serviceType: p.serviceType })} />
+      <PageHero path={p.path} crumb={p.crumb} eyebrow="Our services" title={p.title} highlight={p.highlight} intro={p.intro} />
 
       <section className="section bg-white">
         <div className="container-x grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:gap-16">

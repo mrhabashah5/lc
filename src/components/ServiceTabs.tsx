@@ -8,7 +8,6 @@ import { serviceTabs } from "@/lib/content";
 export function ServiceTabs() {
   const [active, setActive] = useState(0);
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
-  const tab = serviceTabs[active];
 
   function onKey(e: React.KeyboardEvent) {
     const n = serviceTabs.length;
@@ -56,35 +55,41 @@ export function ServiceTabs() {
         ))}
       </div>
 
-      <div
-        role="tabpanel"
-        id={`panel-${tab.id}`}
-        aria-labelledby={`tab-${tab.id}`}
-        className="card mt-8 grid gap-8 lg:grid-cols-2 lg:gap-12 lg:p-10"
-      >
-        <div>
-          <h3 className="text-2xl font-extrabold">{tab.title}</h3>
-          <p className="mt-3 leading-relaxed text-muted">{tab.text}</p>
-          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
-            <Link href="/request-consultation" className="btn btn-primary">
-              Request Consultation
-            </Link>
-            <Link href="/services" className="link-arrow">
-              View all services <ArrowRight size={17} aria-hidden="true" />
-            </Link>
+      {/* Every panel is rendered in the HTML (inactive ones hidden), so search engines and
+          other crawlers that do not run JavaScript can read all loan types. */}
+      {serviceTabs.map((t, i) => (
+        <div
+          key={t.id}
+          role="tabpanel"
+          id={`panel-${t.id}`}
+          aria-labelledby={`tab-${t.id}`}
+          hidden={i !== active}
+          className="card mt-8 grid gap-8 lg:grid-cols-2 lg:gap-12 lg:p-10"
+        >
+          <div>
+            <h3 className="text-2xl font-extrabold">{t.title}</h3>
+            <p className="mt-3 leading-relaxed text-muted">{t.text}</p>
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <Link href="/request-consultation" className="btn btn-primary">
+                Request Consultation
+              </Link>
+              <Link href="/services" className="link-arrow">
+                View all services <ArrowRight size={17} aria-hidden="true" />
+              </Link>
+            </div>
           </div>
+          <ul className="space-y-4 rounded-2xl bg-brand-soft/25 p-6">
+            {t.points.map((p) => (
+              <li key={p} className="flex items-start gap-3 font-medium text-ink">
+                <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand text-white">
+                  <Check size={14} strokeWidth={3.5} aria-hidden="true" />
+                </span>
+                {p}
+              </li>
+            ))}
+          </ul>
         </div>
-        <ul className="space-y-4 rounded-2xl bg-brand-soft/25 p-6">
-          {tab.points.map((p) => (
-            <li key={p} className="flex items-start gap-3 font-medium text-ink">
-              <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand text-white">
-                <Check size={14} strokeWidth={3.5} aria-hidden="true" />
-              </span>
-              {p}
-            </li>
-          ))}
-        </ul>
-      </div>
+      ))}
     </div>
   );
 }

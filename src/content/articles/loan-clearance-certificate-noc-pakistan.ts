@@ -5,6 +5,8 @@ export const loanClearanceCertificateNoc: Article = {
   title: "How to Get a Loan Clearance Certificate (NOC) in Pakistan",
   excerpt:
     "Pay the final balance, then ask your lender in writing for a clearance certificate (NOC) that confirms nothing more is owed. Here is the full process, the documents you need and what to check.",
+  metaDescription:
+    "How to get a loan clearance certificate (NOC) in Pakistan: confirm the final amount, pay officially, request the letter in writing and check every detail.",
   category: "Documents",
   updated: "2026-11-16",
   quickAnswer:

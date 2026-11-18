@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { CtaBand, DisclaimerNote, PageHero, SectionHeading, StepCards } from "@/components/Sections";
 import { shortDisclaimer } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "How It Works",
+export const metadata: Metadata = pageMetadata({
+  title: "How Loan Clearance Works: 3 Simple Steps",
   description:
-    "See how ByeByeLoan's three-step process works: request a consultation, get your situation reviewed, and move forward with a clear, written plan.",
-  alternates: { canonical: "/how-it-works" },
-};
+    "See how ByeByeLoan helps you clear a loan in 3 steps: request a consultation, share your documents and get your clearance letter. No obligation to proceed.",
+  path: "/how-it-works",
+});
 
 const detail = [
   {
@@ -46,6 +47,7 @@ export default function HowItWorksPage() {
   return (
     <>
       <PageHero
+        path="/how-it-works"
         crumb="How It Works"
         eyebrow="How it works"
         title="A clear process,"

@@ -13,16 +13,23 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "ByeByeLoan | Loan Settlement & Clearance Assistance in Pakistan",
+    default: "Loan Clearance & Settlement Help in Pakistan | ByeByeLoan",
     template: "%s | ByeByeLoan",
   },
-  description: site.description,
+  description:
+    "Get help clearing loans from banks and 31 digital loan apps in Pakistan. Free first consultation, written terms and help getting your clearance letter (NOC).",
   applicationName: site.name,
+  verification: {
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } : {}),
+    ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { other: { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION } }
+      : {}),
+  },
   openGraph: {
     type: "website",
     siteName: site.name,
     locale: "en_PK",
-    title: "ByeByeLoan | Loan Settlement & Clearance Assistance in Pakistan",
+    title: "Loan Clearance & Settlement Help in Pakistan | ByeByeLoan",
     description: site.description,
     url: "/",
     images: [{ ...ogImageFor(), alt: "ByeByeLoan – loan settlement and clearance assistance in Pakistan" }],

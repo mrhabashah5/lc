@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { LoanCalculator } from "@/components/tools/LoanCalculator";
 import { ToolPage } from "@/components/tools/ToolPage";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Loan Repayment Calculator (Pakistan)",
+export const metadata: Metadata = pageMetadata({
+  title: "Loan Repayment (EMI) Calculator Pakistan",
   description:
-    "Free loan repayment calculator for Pakistan. Enter the amount, annual mark-up rate and term to see your monthly instalment, total mark-up and full repayment schedule in rupees.",
-  alternates: { canonical: "/tools/loan-repayment-calculator" },
-};
+    "Free loan repayment (EMI) calculator for Pakistan. Enter the amount, mark-up rate and term to see your monthly instalment, total mark-up and full schedule.",
+  path: "/tools/loan-repayment-calculator",
+});
 
 export default function Page() {
   return (

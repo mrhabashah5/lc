@@ -4,13 +4,14 @@ import { ConsultationForm } from "@/components/ConsultationForm";
 import { DisclaimerNote, PageHero } from "@/components/Sections";
 import { findLoanApp } from "@/lib/loan-apps";
 import { shortDisclaimer, site, whatsappDisplay, whatsappLink } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Request a Consultation",
+export const metadata: Metadata = pageMetadata({
+  title: "Free Loan Clearance Consultation",
   description:
-    "Request a free, no-obligation consultation with ByeByeLoan about loan settlement or loan clearance in Pakistan. It takes about two minutes.",
-  alternates: { canonical: "/request-consultation" },
-};
+    "Request a free, no-obligation consultation about clearing or settling your loan in Pakistan. It takes about two minutes and we reply by your chosen method.",
+  path: "/request-consultation",
+});
 
 type Props = { searchParams: Promise<{ app?: string | string[] }> };
 
@@ -22,6 +23,7 @@ export default async function RequestConsultationPage({ searchParams }: Props) {
   return (
     <>
       <PageHero
+        path="/request-consultation"
         crumb="Request Consultation"
         eyebrow="Free consultation"
         title="Request a"

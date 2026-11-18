@@ -6,18 +6,20 @@ import { CtaBand, DisclaimerNote, PageHero, SectionHeading } from "@/components/
 import { ServiceTabs } from "@/components/ServiceTabs";
 import { coreServices } from "@/lib/content";
 import { shortDisclaimer } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Our Services",
+export const metadata: Metadata = pageMetadata({
+  title: "Loan Settlement & Clearance Services",
   description:
-    "Loan settlement assistance, loan clearance assistance and documentation guidance for personal loans, credit cards, auto, home and business finance in Pakistan.",
-  alternates: { canonical: "/services" },
-};
+    "Loan settlement assistance, loan clearance and NOC follow-up for personal loans, credit cards, car finance and loan apps in Pakistan. Free first consultation.",
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (
     <>
       <PageHero
+        path="/services"
         crumb="Our Services"
         eyebrow="Our services"
         title="Practical help with"

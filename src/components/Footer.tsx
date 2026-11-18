@@ -66,9 +66,9 @@ export function Footer() {
                 <Mail size={17} aria-hidden="true" /> {site.email}
               </a>
             </li>
-            <li className="flex items-start gap-2.5 text-white/80">
+            {site.address && (<li className="flex items-start gap-2.5 text-white/80">
               <MapPin size={17} className="mt-0.5 shrink-0" aria-hidden="true" /> {site.address}
-            </li>
+            </li>)}
           </ul>
         </div>
       </div>

@@ -3,8 +3,11 @@ import type { Article } from "./types";
 export const removeBankLienCar: Article = {
   slug: "remove-bank-lien-car-registration-pakistan",
   title: "How to Remove the Bank's Name From Your Car Registration After a Car Loan in Pakistan",
+  seoTitle: "Remove a Bank Lien From Your Car Registration in Pakistan",
   excerpt:
     "Paying off car finance does not remove the bank's name from your registration. Get the bank's NOC and original documents, then apply at your provincial Excise office. Full steps, documents and tips.",
+  metaDescription:
+    "Paid off your car loan? How to get the bank's NOC and remove its name (lien) from your car registration at the Excise office in Pakistan, step by step.",
   category: "Auto Finance",
   updated: "2026-11-16",
   quickAnswer:

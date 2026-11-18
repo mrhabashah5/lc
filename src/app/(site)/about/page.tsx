@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import { IconTile } from "@/components/Icon";
 import { CtaBand, DisclaimerNote, PageHero, SectionHeading } from "@/components/Sections";
 import { shortDisclaimer } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About Us",
+export const metadata: Metadata = pageMetadata({
+  title: "About ByeByeLoan | Independent Loan Clearance Help",
+  absoluteTitle: true,
   description:
-    "ByeByeLoan is an independent service helping individuals in Pakistan understand and resolve loan settlement and clearance matters.",
-  alternates: { canonical: "/about" },
-};
+    "ByeByeLoan is an independent service helping people in Pakistan clear loans properly: checking what is owed, dealing with lenders and getting clearance letters.",
+  path: "/about",
+});
 
 const values = [
   {
@@ -32,6 +34,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
+        path="/about"
         crumb="About Us"
         eyebrow="About ByeByeLoan"
         title="Helping people move forward"

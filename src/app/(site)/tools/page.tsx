@@ -3,13 +3,14 @@ import Link from "next/link";
 import { ArrowRight, Calculator, ListChecks, Scale } from "lucide-react";
 import { CtaBand, PageHero } from "@/components/Sections";
 import { tools } from "@/lib/tools";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Free Loan Tools for Pakistan",
+export const metadata: Metadata = pageMetadata({
+  title: "Free Loan Calculators & Clearance Checklist",
   description:
-    "Free loan repayment calculator, settlement offer calculator and loan clearance checklist for borrowers in Pakistan. No sign-up needed.",
-  alternates: { canonical: "/tools" },
-};
+    "Free loan repayment calculator, settlement offer calculator and loan clearance checklist for borrowers in Pakistan. No sign-up, and nothing you enter is sent.",
+  path: "/tools",
+});
 
 const icons = { calculator: Calculator, scale: Scale, list: ListChecks } as const;
 
@@ -17,6 +18,7 @@ export default function ToolsPage() {
   return (
     <>
       <PageHero
+        path="/tools"
         crumb="Free Loan Tools"
         eyebrow="Free tools"
         title="Free loan tools,"

@@ -6,6 +6,8 @@ import { ArticleCard } from "@/components/ArticleCard";
 import { CtaBand, DisclaimerNote, PageHero } from "@/components/Sections";
 import { articles, articleWordCount, readMinutes, type Article } from "@/lib/content";
 import { ogImageFor } from "@/lib/images";
+import { orgId, websiteId } from "@/lib/schema";
+import { clampDescription, pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -31,20 +33,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const a = articles.find((x) => x.slug === slug);
   if (!a) return {};
-  return {
-    title: a.title,
-    description: a.excerpt,
-    alternates: { canonical: `/articles/${a.slug}` },
-    openGraph: {
-      type: "article",
-      title: a.title,
-      description: a.excerpt,
-      url: `/articles/${a.slug}`,
-      modifiedTime: a.updated,
-      images: [{ ...ogImageFor(a.slug), alt: a.title }],
-    },
-    twitter: { card: "summary_large_image", title: a.title, description: a.excerpt, images: [ogImageFor(a.slug).url] },
-  };
+  return pageMetadata({
+    title: a.seoTitle ?? a.title,
+    description: a.metaDescription ?? clampDescription(a.excerpt),
+    path: `/articles/${a.slug}`,
+    imageKey: a.slug,
+    type: "article",
+    modifiedTime: a.updated,
+  });
 }
 
 function jsonLd(a: Article) {
@@ -56,11 +52,13 @@ function jsonLd(a: Article) {
       image: [`${site.url}${ogImageFor(a.slug).url}`],
       description: a.excerpt,
       mainEntityOfPage: url,
+      datePublished: a.updated,
       dateModified: a.updated,
       wordCount: articleWordCount(a),
       inLanguage: "en-PK",
-      author: { "@type": "Organization", name: `${site.name} Editorial Team`, url: site.url },
-      publisher: { "@type": "Organization", name: site.name, url: site.url },
+      author: { "@type": "Organization", name: `${site.name} Editorial Team`, url: `${site.url}/about` },
+      publisher: { "@id": orgId },
+      isPartOf: { "@id": websiteId },
       articleSection: a.category,
     },
     {

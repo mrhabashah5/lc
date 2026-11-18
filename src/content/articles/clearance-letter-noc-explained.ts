@@ -3,8 +3,11 @@ import type { Article } from "./types";
 export const clearanceLetterExplained: Article = {
   slug: "clearance-letter-noc-explained",
   title: "The Clearance Letter (NOC) Explained: What It Must Say and Why You Should Never Skip It",
+  seoTitle: "Clearance Letter (NOC) Explained: What It Must Say",
   excerpt:
     "A clearance letter is your lender's written proof that a loan is closed. Learn exactly what it should say, how to spot a weak or fake letter, a request template you can use, and how long to keep it.",
+  metaDescription:
+    "What a loan clearance letter (NOC) must say, how to spot a fake one, a request template you can copy and how long to keep it after closing your loan.",
   category: "Documents",
   updated: "2026-11-16",
   quickAnswer:

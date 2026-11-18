@@ -2,18 +2,20 @@ import type { Metadata } from "next";
 import { ArticleCard } from "@/components/ArticleCard";
 import { CtaBand, PageHero } from "@/components/Sections";
 import { articles } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Financial Education",
+export const metadata: Metadata = pageMetadata({
+  title: "Loan Clearance Guides for Pakistan",
   description:
-    "Plain-language guides on loan settlement, clearance letters and credit records in Pakistan from ByeByeLoan.",
-  alternates: { canonical: "/articles" },
-};
+    "Free, plain-language guides on loan clearance letters (NOC), loan app loans, settlement, credit reports and your rights as a borrower in Pakistan.",
+  path: "/articles",
+});
 
 export default function ArticlesPage() {
   return (
     <>
       <PageHero
+        path="/articles"
         crumb="Financial Education"
         eyebrow="Financial education"
         title="Understand your options"

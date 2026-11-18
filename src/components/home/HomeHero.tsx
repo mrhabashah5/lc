@@ -62,7 +62,7 @@ export function HomeHero() {
                 <MiniCheck label="Clearance letter requested" />
                 <MiniCheck done={false} label="Credit record updated" />
               </div>
-              <div className="rounded-xl bg-cta py-2.5 text-center text-[11px] font-bold text-white">Track my clearance</div>
+              <div className="rounded-xl bg-cta py-2.5 text-center text-[11px] font-bold text-white">Request consultation</div>
             </div>
           </PhoneFrame>
 

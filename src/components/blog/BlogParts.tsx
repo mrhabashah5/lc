@@ -85,19 +85,19 @@ export function PostListItem({ post }: { post: Article }) {
 
 /** Row of category links ("pills"); highlights the current category. */
 export function CategoryPills({ current }: { current?: string }) {
-  const base = "inline-flex shrink-0 items-center gap-2 rounded-full border-2 px-4 py-2 text-sm font-bold transition-colors";
+  const base = "inline-flex items-center whitespace-nowrap gap-2 rounded-full border-2 px-4 py-2 text-sm font-bold transition-colors";
   const on = "border-brand-dark bg-brand-dark text-white";
   const off = "border-field bg-white text-brand-dark hover:border-brand-ink hover:text-brand-ink";
   return (
     <nav aria-label="Blog categories" className="-mx-5 overflow-x-auto px-5 pb-1 sm:mx-0 sm:px-0">
       <ul className="flex gap-2 sm:flex-wrap">
-        <li>
+        <li className="shrink-0">
           <Link href="/blog" aria-current={!current ? "page" : undefined} className={`${base} ${!current ? on : off}`}>
             All posts
           </Link>
         </li>
         {blogCategories.map((c) => (
-          <li key={c.slug}>
+          <li key={c.slug} className="shrink-0">
             <Link
               href={categoryPath(c.slug)}
               aria-current={current === c.slug ? "page" : undefined}

@@ -8,12 +8,12 @@ function TickerRow({ hidden = false }: { hidden?: boolean }) {
       {loanApps.map((a) => (
         <li
           key={a.name}
-          className="flex shrink-0 items-center gap-2.5 rounded-full border border-line bg-white py-1.5 pr-4 pl-1.5 shadow-card"
+          className="flex shrink-0 items-center gap-2.5 rounded-xl border border-line bg-white py-1.5 pr-4 pl-1.5 shadow-card"
         >
           {a.logo ? (
-            <Image src={a.logo} alt="" width={28} height={28} unoptimized className="h-7 w-7 rounded-full object-cover" />
+            <Image src={a.logo} alt="" width={32} height={32} unoptimized className="h-8 w-8 rounded-lg object-cover" />
           ) : (
-            <span className="h-7 w-7 rounded-full bg-brand-soft" />
+            <span className="h-8 w-8 rounded-lg bg-brand-soft" />
           )}
           <span className="text-sm font-semibold whitespace-nowrap text-brand-dark">{a.name}</span>
         </li>

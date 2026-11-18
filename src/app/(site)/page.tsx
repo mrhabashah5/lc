@@ -5,6 +5,7 @@ import { ArticleCard } from "@/components/ArticleCard";
 import { BlogSearch } from "@/components/blog/BlogSearch";
 import { CategoryTiles, FeaturedPost, PostListItem } from "@/components/blog/BlogParts";
 import { HeroIllustration } from "@/components/HeroIllustration";
+import { AppCategoryWall } from "@/components/home/AppCategoryWall";
 import { AppTicker } from "@/components/home/AppTicker";
 import { blogPath } from "@/lib/blog";
 import { articles } from "@/lib/content";
@@ -64,6 +65,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <AppTicker />
 
       {/* Featured guide */}
       <section className="bg-white pt-14 sm:pt-16">
@@ -136,10 +139,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <AppTicker />
+      <AppCategoryWall />
 
       {/* Optional help (secondary) */}
-      <section className="section bg-surface">
+      <section className="section bg-white">
         <div className="container-x">
           <div className="grid items-center gap-8 overflow-hidden rounded-3xl bg-brand-soft lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
             <div className="p-8 sm:p-12">

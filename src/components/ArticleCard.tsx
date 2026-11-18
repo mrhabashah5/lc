@@ -50,7 +50,7 @@ export function ArticleCard({
           {article.category} · {readMinutes(article)} min read
         </p>
         <H className="text-xl leading-snug font-bold">
-          <Link href={`/articles/${article.slug}`} className="after:absolute after:inset-0 group-hover:text-brand-ink">
+          <Link href={`/blog/${article.slug}`} className="after:absolute after:inset-0 group-hover:text-brand-ink">
             {article.title}
           </Link>
         </H>

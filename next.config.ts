@@ -16,6 +16,9 @@ const nextConfig: NextConfig = {
     return [
       // Page renamed when the brand changed from LoanClear to ByeByeLoan.
       { source: "/why-choose-loanclear", destination: "/why-choose-byebyeloan", permanent: true },
+      // Articles moved to /blog when the site became a blog.
+      { source: "/articles", destination: "/blog", permanent: true },
+      { source: "/articles/:slug", destination: "/blog/:slug", permanent: true },
       // One canonical host: send www to the bare domain.
       {
         source: "/:path*",

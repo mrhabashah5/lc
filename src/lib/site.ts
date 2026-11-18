@@ -18,31 +18,20 @@ export function whatsappLink(message = "Hello ByeByeLoan, I would like to reques
   return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
 }
 
-export const mainNav = [
-  { href: "/about", label: "About Us" },
-  { href: "/how-it-works", label: "Clearance Process" },
-  {
-    href: "/services",
-    label: "Services",
-    children: [
-      { href: "/services", label: "All Services" },
-      { href: "/loan-settlement", label: "Loan Settlement" },
-      { href: "/loan-clearance", label: "Loan Clearance" },
-      { href: "/loan-apps", label: "Loan Apps We Cover" },
-    ],
-  },
-  {
-    href: "/articles",
-    label: "Resources",
-    children: [
-      { href: "/articles", label: "Financial Education" },
-      { href: "/tools", label: "Free Loan Tools" },
-      { href: "/why-choose-byebyeloan", label: "Why Choose Us" },
-      { href: "/faqs", label: "FAQs" },
-    ],
-  },
-  { href: "/contact", label: "Contact" },
-];
+export type NavItem = { href: string; label: string; children?: { href: string; label: string }[] };
+
+/** Menu entries that do not depend on blog data. The site layout adds the blog categories. */
+export const helpNav: NavItem = {
+  href: "/services",
+  label: "Get Help",
+  children: [
+    { href: "/services", label: "Our Services" },
+    { href: "/loan-clearance", label: "Loan Clearance" },
+    { href: "/loan-settlement", label: "Loan Settlement" },
+    { href: "/how-it-works", label: "How It Works" },
+    { href: "/request-consultation", label: "Free Consultation" },
+  ],
+};
 
 export const legalNav = [
   { href: "/privacy-policy", label: "Privacy Policy" },

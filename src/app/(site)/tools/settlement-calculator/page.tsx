@@ -18,8 +18,8 @@ export default function Page() {
       highlight="calculator."
       quickAnswer="Enter your outstanding balance, the settlement amount your lender has offered in writing and how many payments it will be split into. The calculator shows how much less you would pay in rupees and percent, and the amount of each payment, so you can judge the offer clearly before you decide."
       related={[
-        { href: "/articles/loan-settlement-vs-loan-clearance", label: "Loan settlement vs. loan clearance" },
-        { href: "/articles/check-credit-report-pakistan", label: "How settlement can appear on your credit report" },
+        { href: "/blog/loan-settlement-vs-loan-clearance", label: "Loan settlement vs. loan clearance" },
+        { href: "/blog/check-credit-report-pakistan", label: "How settlement can appear on your credit report" },
         { href: "/loan-settlement", label: "Loan settlement assistance" },
       ]}
       howItWorks={[

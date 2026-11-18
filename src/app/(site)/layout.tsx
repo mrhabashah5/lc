@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { JsonLd } from "@/components/JsonLd";
+import { mainNav } from "@/lib/nav";
 import { organizationGraph } from "@/lib/schema";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
@@ -14,7 +15,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       >
         Skip to content
       </a>
-      <Header />
+      <Header nav={mainNav()} />
       <main id="main" className="flex-1">
         {children}
       </main>

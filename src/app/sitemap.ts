@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { blogCategories, categoryPath } from "@/lib/blog";
 import { articles } from "@/lib/content";
 import { legalDocs } from "@/lib/legal";
 import { contentUpdated } from "@/lib/seo";
@@ -19,8 +20,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/about", updated: contentUpdated, priority: 0.6 },
     { path: "/why-choose-byebyeloan", updated: contentUpdated, priority: 0.6 },
     { path: "/contact", updated: contentUpdated, priority: 0.6 },
-    { path: "/articles", updated: contentUpdated, priority: 0.7 },
-    ...articles.map((a) => ({ path: `/articles/${a.slug}`, updated: a.updated ?? contentUpdated, priority: 0.8 })),
+    { path: "/blog", updated: contentUpdated, priority: 0.9 },
+    ...blogCategories.map((c) => ({ path: categoryPath(c.slug), updated: contentUpdated, priority: 0.6 })),
+    ...articles.map((a) => ({ path: `/blog/${a.slug}`, updated: a.updated ?? contentUpdated, priority: 0.8 })),
     { path: "/tools", updated: contentUpdated, priority: 0.6 },
     ...tools.map((t) => ({ path: `/tools/${t.slug}`, updated: contentUpdated, priority: 0.6 })),
     ...legalDocs.map((d) => ({ path: `/${d.slug}`, updated: contentUpdated, priority: 0.3 })),

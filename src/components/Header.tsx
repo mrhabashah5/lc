@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Calculator, ChevronDown, Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
-import { mainNav } from "@/lib/site";
+import type { NavItem } from "@/lib/site";
 
-export function Header() {
+export function Header({ nav }: { nav: NavItem[] }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -21,7 +21,7 @@ export function Header() {
         </div>
 
         <nav aria-label="Main" className="hidden items-center gap-6 xl:flex 2xl:gap-8">
-          {mainNav.map((item) =>
+          {nav.map((item) =>
             item.children ? (
               <div key={item.href} className="group relative">
                 <Link
@@ -36,14 +36,14 @@ export function Header() {
                   {item.label}
                   <ChevronDown size={16} aria-hidden="true" />
                 </Link>
-                <div className="invisible absolute top-full left-0 w-56 pt-2 opacity-0 transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                <div className="invisible absolute top-full left-0 w-max min-w-56 pt-2 opacity-0 transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
                   <div className="rounded-xl border border-line bg-white p-2 shadow-float">
                     {item.children.map((c) => (
                       <Link
                         key={c.label}
                         href={c.href}
                         aria-current={isActive(c.href) ? "page" : undefined}
-                        className="block rounded-lg px-3 py-2.5 text-[15px] font-semibold text-brand-dark hover:bg-brand-soft/30"
+                        className="block rounded-lg px-3 py-2.5 text-[15px] font-semibold whitespace-nowrap text-brand-dark hover:bg-brand-soft/30"
                       >
                         {c.label}
                       </Link>
@@ -102,7 +102,7 @@ export function Header() {
             <Link href="/" className="py-3 text-base font-semibold text-brand-dark">
               Home
             </Link>
-            {mainNav.map((item) => (
+            {nav.map((item) => (
               <div key={item.href} className="border-t border-line">
                 <Link
                   href={item.href}

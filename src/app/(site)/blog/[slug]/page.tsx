@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, CircleCheck, ExternalLink, Lightbulb } from "lucide-react";
+import { ArrowLeft, ArrowRight, CircleCheck, ExternalLink, Lightbulb, PenLine } from "lucide-react";
 import { ArticleCard } from "@/components/ArticleCard";
+import { ShareButtons } from "@/components/blog/ShareButtons";
 import { CtaBand, DisclaimerNote, PageHero } from "@/components/Sections";
+import { adjacentPosts, blogPath, categoryFor, categoryPath } from "@/lib/blog";
 import { articles, articleWordCount, readMinutes, type Article } from "@/lib/content";
 import { ogImageFor } from "@/lib/images";
 import { orgId, websiteId } from "@/lib/schema";
@@ -36,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return pageMetadata({
     title: a.seoTitle ?? a.title,
     description: a.metaDescription ?? clampDescription(a.excerpt),
-    path: `/articles/${a.slug}`,
+    path: blogPath(a.slug),
     imageKey: a.slug,
     type: "article",
     modifiedTime: a.updated,
@@ -44,10 +46,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 function jsonLd(a: Article) {
-  const url = `${site.url}/articles/${a.slug}`;
+  const url = `${site.url}${blogPath(a.slug)}`;
+  const cat = categoryFor(a);
   const graph: Record<string, unknown>[] = [
     {
-      "@type": "Article",
+      "@type": "BlogPosting",
       headline: a.title,
       image: [`${site.url}${ogImageFor(a.slug).url}`],
       description: a.excerpt,
@@ -58,15 +61,16 @@ function jsonLd(a: Article) {
       inLanguage: "en-PK",
       author: { "@type": "Organization", name: `${site.name} Editorial Team`, url: `${site.url}/about` },
       publisher: { "@id": orgId },
-      isPartOf: { "@id": websiteId },
+      isPartOf: [{ "@id": `${site.url}/blog#blog` }, { "@id": websiteId }],
       articleSection: a.category,
     },
     {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: site.url },
-        { "@type": "ListItem", position: 2, name: "Financial Education", item: `${site.url}/articles` },
-        { "@type": "ListItem", position: 3, name: a.title, item: url },
+        { "@type": "ListItem", position: 2, name: "Blog", item: `${site.url}/blog` },
+        { "@type": "ListItem", position: 3, name: cat.label, item: `${site.url}${categoryPath(cat.slug)}` },
+        { "@type": "ListItem", position: 4, name: a.title, item: url },
       ],
     },
   ];
@@ -97,24 +101,37 @@ export default async function ArticlePage({ params }: Props) {
     ...(a.faqs?.length ? [{ id: "faqs", label: "Frequently asked questions" }] : []),
   ];
   const updated = dateLabel(a.updated);
+  const cat = categoryFor(a);
+  const postUrl = `${site.url}${blogPath(a.slug)}`;
+  const { prev, next } = adjacentPosts(a.slug);
 
   return (
     <>
-      <PageHero crumb="Financial Education" eyebrow={a.category} title={a.title} />
+      <PageHero crumb="Blog" eyebrow={a.category} title={a.title} />
 
       <article className="section bg-white">
         <div className="container-x grid gap-12 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-16">
           <div className="min-w-0 max-w-3xl">
-            <p className="text-sm text-muted">
-              By <span className="font-semibold text-brand-dark">{site.name} Editorial Team</span>
-              {updated && (
-                <>
-                  {" · "}Updated <time dateTime={a.updated}>{updated}</time>
-                </>
-              )}
-              {" · "}
-              {readMinutes(a)} min read
-            </p>
+            <div className="flex flex-col gap-4 border-b border-line pb-6 sm:flex-row sm:items-center sm:justify-between">
+              <div className="text-sm text-muted">
+                <p>
+                  By <span className="font-semibold text-brand-dark">{site.name} Editorial Team</span>
+                  {updated && (
+                    <>
+                      {" · "}Updated <time dateTime={a.updated}>{updated}</time>
+                    </>
+                  )}
+                </p>
+                <p className="mt-1">
+                  <Link href={categoryPath(cat.slug)} className="font-bold text-brand-ink hover:underline">
+                    {cat.label}
+                  </Link>
+                  {" · "}
+                  {readMinutes(a)} min read
+                </p>
+              </div>
+              <ShareButtons url={postUrl} title={a.title} />
+            </div>
 
             {/* The direct answer comes first. */}
             {a.quickAnswer && (
@@ -274,6 +291,29 @@ export default async function ArticlePage({ params }: Props) {
               </section>
             ) : null}
 
+            {/* Author box */}
+            <section aria-labelledby="about-author" className="mt-12 flex gap-4 rounded-2xl border border-line bg-surface p-6">
+              <span className="icon-tile shrink-0">
+                <PenLine size={22} aria-hidden="true" />
+              </span>
+              <div>
+                <h2 id="about-author" className="text-lg font-extrabold">
+                  Written by the {site.name} Editorial Team
+                </h2>
+                <p className="mt-1 leading-relaxed text-muted">
+                  We publish free, plain-language guides for borrowers in Pakistan, based on official sources such as
+                  the State Bank of Pakistan, SECP and the Banking Mohtasib.{updated && ` This guide was last reviewed on ${updated}.`}
+                </p>
+                <Link href="/about" className="link-arrow mt-2 text-sm">
+                  About {site.name} <ArrowRight size={15} aria-hidden="true" />
+                </Link>
+              </div>
+            </section>
+
+            <div className="mt-8">
+              <ShareButtons url={postUrl} title={a.title} />
+            </div>
+
             <div className="mt-10">
               <DisclaimerNote>
                 This article is general information only. It is not legal, financial or credit advice and may not
@@ -291,8 +331,29 @@ export default async function ArticlePage({ params }: Props) {
               </Link>
             </div>
 
-            <Link href="/articles" className="link-arrow mt-8">
-              <ArrowLeft size={17} aria-hidden="true" /> All articles
+            {/* Previous / next posts */}
+            <nav aria-label="More posts" className="mt-10 grid gap-4 sm:grid-cols-2">
+              {prev ? (
+                <Link href={blogPath(prev.slug)} className="group rounded-2xl border border-line p-5 hover:border-brand-ink">
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-muted">
+                    <ArrowLeft size={15} aria-hidden="true" /> Previous guide
+                  </span>
+                  <span className="mt-1 block font-bold text-brand-dark group-hover:text-brand-ink">{prev.seoTitle ?? prev.title}</span>
+                </Link>
+              ) : (
+                <span />
+              )}
+              {next && (
+                <Link href={blogPath(next.slug)} className="group rounded-2xl border border-line p-5 text-right hover:border-brand-ink">
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-muted">
+                    Next guide <ArrowRight size={15} aria-hidden="true" />
+                  </span>
+                  <span className="mt-1 block font-bold text-brand-dark group-hover:text-brand-ink">{next.seoTitle ?? next.title}</span>
+                </Link>
+              )}
+            </nav>
+            <Link href="/blog" className="link-arrow mt-8">
+              <ArrowLeft size={17} aria-hidden="true" /> All blog posts
             </Link>
           </div>
 
@@ -322,7 +383,7 @@ export default async function ArticlePage({ params }: Props) {
       {more.length > 0 && (
         <section className="section border-t border-line bg-surface">
           <div className="container-x">
-            <h2 className="h-section mb-8">Related guides</h2>
+            <h2 className="h-section mb-8">More from the blog</h2>
             <div className="grid gap-6 md:grid-cols-3">
               {more.map((r) => (
                 <ArticleCard key={r.slug} article={r} headingLevel={3} />

@@ -1,24 +1,29 @@
 import Link from "next/link";
 import { AlertTriangle, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Logo } from "./Logo";
+import { blogCategories, categoryPath } from "@/lib/blog";
 import { legalNav, shortDisclaimer, site, whatsappDisplay, whatsappLink } from "@/lib/site";
+
+const blog = [
+  { href: "/blog", label: "All Posts" },
+  ...blogCategories.map((c) => ({ href: categoryPath(c.slug), label: c.label })),
+];
+
+const help = [
+  { href: "/services", label: "Our Services" },
+  { href: "/loan-clearance", label: "Loan Clearance" },
+  { href: "/loan-settlement", label: "Loan Settlement" },
+  { href: "/loan-apps", label: "Loan Apps We Cover" },
+  { href: "/tools", label: "Free Loan Tools" },
+  { href: "/request-consultation", label: "Free Consultation" },
+];
 
 const company = [
   { href: "/about", label: "About Us" },
   { href: "/how-it-works", label: "How It Works" },
   { href: "/why-choose-byebyeloan", label: "Why Choose ByeByeLoan" },
-  { href: "/articles", label: "Financial Education" },
-  { href: "/tools", label: "Free Loan Tools" },
   { href: "/faqs", label: "FAQs" },
   { href: "/contact", label: "Contact Us" },
-];
-
-const services = [
-  { href: "/services", label: "Our Services" },
-  { href: "/loan-settlement", label: "Loan Settlement" },
-  { href: "/loan-clearance", label: "Loan Clearance" },
-  { href: "/loan-apps", label: "Loan Apps We Cover" },
-  { href: "/request-consultation", label: "Request Consultation" },
 ];
 
 function Col({ title, links }: { title: string; links: { href: string; label: string }[] }) {
@@ -41,13 +46,14 @@ function Col({ title, links }: { title: string; links: { href: string; label: st
 export function Footer() {
   return (
     <footer className="on-dark bg-footer text-white">
-      <div className="container-x grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+      <div className="container-x grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr_1.2fr]">
         <div>
           <Logo onDark />
           <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-white/80">{site.description}</p>
         </div>
+        <Col title="Blog" links={blog} />
+        <Col title="Get Help" links={help} />
         <Col title="Company" links={company} />
-        <Col title="Services" links={services} />
         <div>
           <h2 className="mb-4 text-sm font-bold tracking-widest text-white uppercase">Get in touch</h2>
           <ul className="space-y-3 text-[15px] text-footer-muted">

@@ -28,6 +28,7 @@ export function GET() {
 - Last reviewed: ${contentUpdated}
 
 ## Main pages
+- [Blog](${u("/blog")}): plain-language guides on loan clearance, loan apps, credit records and borrower rights in Pakistan
 - [Loan clearance assistance](${u("/loan-clearance")}): getting a clearance letter (NOC), documents and credit record updates after a loan is closed
 - [Loan settlement assistance](${u("/loan-settlement")}): help when repayments have become unmanageable
 - [Loan apps we cover](${u("/loan-apps")}): the ${loanApps.length} digital lending apps we provide clearance help for
@@ -36,8 +37,8 @@ export function GET() {
 - [Request a consultation](${u("/request-consultation")}): free, no-obligation form
 - [Contact](${u("/contact")})
 
-## Guides
-${articles.map((a) => `- [${a.title}](${u(`/articles/${a.slug}`)}): ${a.quickAnswer ?? a.excerpt}`).join("\n")}
+## Blog guides
+${articles.map((a) => `- [${a.title}](${u(`/blog/${a.slug}`)}): ${a.quickAnswer ?? a.excerpt}`).join("\n")}
 
 ## Free tools
 ${tools.map((t) => `- [${t.title}](${u(`/tools/${t.slug}`)}): ${t.short}`).join("\n")}

@@ -1,240 +1,170 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  AlertTriangle,
-  ArrowRight,
-  BookOpen,
-  Check,
-  Clock,
-  FileText,
-  Footprints,
-  Gift,
-  Layers,
-  Lock,
-  Mail,
-  MapPin,
-  MessageCircle,
-  ShieldCheck,
-  Smartphone,
-} from "lucide-react";
-import { AboutScreens } from "@/components/home/AboutScreens";
+import { ArrowRight, BookOpen, Calculator, ListChecks, MessageCircle, Scale } from "lucide-react";
+import { ArticleCard } from "@/components/ArticleCard";
+import { BlogSearch } from "@/components/blog/BlogSearch";
+import { CategoryTiles, FeaturedPost, PostListItem } from "@/components/blog/BlogParts";
+import { HeroIllustration } from "@/components/HeroIllustration";
 import { AppTicker } from "@/components/home/AppTicker";
-import { HomeHero } from "@/components/home/HomeHero";
+import { blogPath } from "@/lib/blog";
 import { articles } from "@/lib/content";
-import { loanApps } from "@/lib/loan-apps";
 import { pageMetadata } from "@/lib/seo";
-import { site, whatsappDisplay, whatsappLink } from "@/lib/site";
+import { whatsappLink } from "@/lib/site";
+import { tools } from "@/lib/tools";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Loan Clearance & Settlement Help in Pakistan | ByeByeLoan",
+  title: "Loan Clearance Guides & Help for Pakistan | ByeByeLoan",
   absoluteTitle: true,
   description:
-    "Get help clearing loans from banks and 31 digital loan apps in Pakistan. Free first consultation, written terms and help getting your clearance letter (NOC).",
+    "Free, plain-language guides on loan clearance letters (NOC), loan app loans, credit reports and your rights as a borrower in Pakistan, plus free loan tools.",
   path: "/",
 });
 
-const stats = [
-  { icon: Layers, value: String(loanApps.length), label: "Loan apps covered" },
-  { icon: Footprints, value: "3", label: "Simple steps" },
-  { icon: Gift, value: "Free", label: "First consultation" },
-  { icon: BookOpen, value: String(articles.length), label: "Free clearance guides" },
-];
-
-const reasons = [
-  {
-    icon: Clock,
-    title: "Quick & Simple",
-    text: "Tell us about your loan in about two minutes. A consultant reviews it and explains your options in plain language.",
-  },
-  {
-    icon: Gift,
-    title: "Free First Consultation",
-    text: "Your first consultation is free and places you under no obligation. Decide only after you understand your options.",
-  },
-  {
-    icon: FileText,
-    title: "Transparent Fees",
-    text: "If you choose our help, the scope and the fee are set out in writing before any work begins. No surprises.",
-  },
-  {
-    icon: Lock,
-    title: "Private & Secure",
-    text: "Your details are handled confidentially. We never ask for your PIN, password, OTP or full card number.",
-  },
-];
-
-const steps = [
-  {
-    title: "Request a Consultation",
-    text: "Fill in the short form or message us on WhatsApp with the basics: your loan, the lender and where it stands.",
-  },
-  {
-    title: "Share Your Documents",
-    text: "We review your statements and payment records and explain the realistic route to closing the loan.",
-  },
-  {
-    title: "Get Your Clearance",
-    text: "You pay your lender directly and we follow up until you have the clearance letter and an updated record.",
-  },
-];
+const toolIcons = { calculator: Calculator, scale: Scale, list: ListChecks } as const;
 
 export default function HomePage() {
-  const channels = [
-    { icon: MessageCircle, label: "WhatsApp", value: whatsappDisplay, href: whatsappLink(), external: true },
-    { icon: Mail, label: "Email", value: site.email, href: `mailto:${site.email}` },
-    ...(site.address ? [{ icon: MapPin, label: "Office", value: site.address }] : []),
-  ];
+  const [featured, ...others] = articles;
+  const latest = others.slice(0, 6);
+  const searchItems = articles.map((a) => ({
+    title: a.title,
+    href: blogPath(a.slug),
+    category: a.category,
+    text: `${a.excerpt} ${a.quickAnswer ?? ""} ${(a.takeaways ?? []).join(" ")}`,
+  }));
 
   return (
     <>
-      <HomeHero />
-      <AppTicker />
-
-      {/* Stats */}
-      <section className="bg-white py-14 sm:py-16">
-        <ul className="container-x grid grid-cols-2 gap-4 lg:grid-cols-4">
-          {stats.map((s) => (
-            <li key={s.label} className="rounded-2xl border border-line bg-white p-6 text-center shadow-card">
-              <s.icon size={30} className="mx-auto text-brand" aria-hidden="true" />
-              <p className="mt-3 text-3xl font-extrabold text-brand-dark sm:text-4xl">{s.value}</p>
-              <p className="mt-1 text-sm text-muted">{s.label}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* Why choose */}
-      <section className="section bg-surface">
-        <div className="container-x">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
-            <h2 className="h-section">Why Choose ByeByeLoan?</h2>
-            <p className="lead mt-3">Fast, honest and reliable loan clearance help</p>
-          </div>
-          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2">
-            {reasons.map((r) => (
-              <div key={r.title} className="rounded-2xl border border-line bg-white p-7 shadow-card transition-shadow hover:shadow-float">
-                <span className="icon-tile">
-                  <r.icon size={24} aria-hidden="true" />
-                </span>
-                <h3 className="mt-5 text-lg font-bold">{r.title}</h3>
-                <p className="mt-2 leading-relaxed text-muted">{r.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About */}
-      <section className="section bg-white">
-        <div className="container-x">
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-block rounded-full bg-brand-soft px-4 py-1.5 text-sm font-bold text-brand-ink">About Us</span>
-            <h2 className="h-section mt-4">Your Trusted Loan Clearance Partner in Pakistan</h2>
-            <p className="lead mt-5">
-              ByeByeLoan is an independent service that helps individuals in Pakistan close loans properly. We are
-              not a bank or a lender, and we do not give loans.
+      {/* Hero: blog intro, search and featured guide */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-brand-mist via-brand-mist/60 to-white">
+        <div aria-hidden="true" className="absolute top-10 -right-32 h-96 w-96 rounded-full bg-brand-soft/70 blur-3xl" />
+        <div className="container-x relative grid grid-cols-1 items-center gap-10 py-14 sm:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:py-20">
+          <div>
+            <p className="eyebrow mb-3">ByeByeLoan Blog</p>
+            <h1 className="text-4xl leading-[1.1] font-extrabold text-brand-dark sm:text-5xl">
+              Clear answers on <span className="text-brand">loans in Pakistan</span>
+            </h1>
+            <p className="lead mt-5 max-w-xl">
+              Free, plain-language guides on clearance letters (NOC), loan apps, credit records and your rights as a
+              borrower. Written to help you close loans the right way.
             </p>
-            <p className="mt-4 leading-relaxed text-ink">
-              Whether your loan is with a bank or one of {loanApps.length} digital lending apps, we help you confirm what
-              you owe, communicate with your lender, and follow through until you have a clearance letter and an
-              accurate credit record.
+            <div className="mt-7 max-w-xl">
+              <BlogSearch items={searchItems} />
+            </div>
+            <p className="mt-4 text-sm text-muted">
+              {articles.length} in-depth guides · {tools.length} free tools · updated regularly
             </p>
-            <ul className="mt-7 flex flex-wrap justify-center gap-3">
-              {["Online & WhatsApp Support", "Quick Response", "Secure & Confidential"].map((p) => (
-                <li
-                  key={p}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-brand-dark shadow-card"
-                >
-                  <Check size={15} strokeWidth={3} className="text-brand-ink" aria-hidden="true" />
-                  {p}
-                </li>
+          </div>
+          <div>
+            <h2 className="mb-3 text-sm font-bold tracking-widest text-brand-ink uppercase">Most read</h2>
+            <ul className="space-y-5 rounded-3xl border border-line bg-white p-6 shadow-card">
+              {articles.slice(0, 4).map((a) => (
+                <PostListItem key={a.slug} post={a} />
               ))}
             </ul>
           </div>
-          <AboutScreens />
         </div>
       </section>
 
-      {/* Process */}
-      <section className="section bg-surface">
+      {/* Featured guide */}
+      <section className="bg-white pt-14 sm:pt-16">
         <div className="container-x">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
-            <h2 className="h-section">Simple Clearance Process</h2>
-            <p className="lead mt-3">Clear your loan in just 3 easy steps</p>
-          </div>
-          <ol className="grid grid-cols-1 gap-5 md:grid-cols-3">
-            {steps.map((s, i) => (
-              <li key={s.title} className="rounded-2xl border border-line bg-white p-7 shadow-card">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand-ink text-lg font-extrabold text-white">
-                  {i + 1}
-                </span>
-                <h3 className="mt-5 text-lg font-bold">{s.title}</h3>
-                <p className="mt-2 leading-relaxed text-muted">{s.text}</p>
-              </li>
-            ))}
-          </ol>
-          <div className="mt-10 text-center">
-            <Link href="/how-it-works" className="link-arrow">
-              See the full clearance process <ArrowRight size={17} aria-hidden="true" />
-            </Link>
-          </div>
+          <FeaturedPost post={featured} />
         </div>
       </section>
 
-      {/* Privacy */}
+      {/* Browse by topic */}
       <section className="section bg-white">
         <div className="container-x">
-          <div className="mx-auto max-w-3xl rounded-3xl bg-gradient-to-b from-surface to-white px-6 py-12 text-center shadow-float sm:px-12">
-            <ShieldCheck size={44} className="mx-auto text-brand" aria-hidden="true" />
-            <h2 className="mt-4 text-2xl font-extrabold sm:text-3xl">Privacy Policy</h2>
-            <p className="mx-auto mt-3 max-w-xl leading-relaxed text-muted">
-              Your data security and privacy are our top priorities. Learn how we protect your information.
-            </p>
-            <Link href="/privacy-policy" className="btn mt-6 bg-orange-ink text-white hover:bg-orange-hover">
-              View Privacy Policy <ArrowRight size={17} aria-hidden="true" />
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p className="eyebrow mb-2">Browse by topic</p>
+              <h2 className="h-section">What do you need help with?</h2>
+            </div>
+            <Link href="/blog" className="link-arrow">
+              All guides <ArrowRight size={17} aria-hidden="true" />
             </Link>
+          </div>
+          <CategoryTiles />
+        </div>
+      </section>
+
+      {/* Latest guides */}
+      <section className="section border-y border-line bg-surface">
+        <div className="container-x">
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p className="eyebrow mb-2">Latest</p>
+              <h2 className="h-section">New on the blog</h2>
+            </div>
+            <Link href="/blog" className="link-arrow">
+              View all posts <ArrowRight size={17} aria-hidden="true" />
+            </Link>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {latest.map((a) => (
+              <ArticleCard key={a.slug} article={a} headingLevel={3} />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Official contact channels */}
+      {/* Free tools */}
+      <section className="section bg-white">
+        <div className="container-x">
+          <div className="mb-8">
+            <p className="eyebrow mb-2">Free tools</p>
+            <h2 className="h-section">Work it out in minutes</h2>
+          </div>
+          <ul className="grid gap-5 md:grid-cols-3">
+            {tools.map((t) => {
+              const I = toolIcons[t.icon];
+              return (
+                <li key={t.slug} className="group relative rounded-2xl border border-line bg-white p-6 shadow-card transition-shadow hover:shadow-float">
+                  <span className="icon-tile">
+                    <I size={24} aria-hidden="true" />
+                  </span>
+                  <h3 className="mt-4 text-lg font-bold">
+                    <Link href={`/tools/${t.slug}`} className="after:absolute after:inset-0 group-hover:text-brand-ink">
+                      {t.title}
+                    </Link>
+                  </h3>
+                  <p className="mt-2 leading-relaxed text-muted">{t.short}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
+      <AppTicker />
+
+      {/* Optional help (secondary) */}
       <section className="section bg-surface">
         <div className="container-x">
-          <div className="mx-auto mb-10 max-w-2xl text-center">
-            <Smartphone size={40} className="mx-auto text-brand" aria-hidden="true" />
-            <h2 className="h-section mt-3">Official Contact Channels</h2>
-            <p className="lead mt-3">These are our only official contact details. Please verify before you respond.</p>
+          <div className="grid items-center gap-8 overflow-hidden rounded-3xl bg-brand-soft lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+            <div className="p-8 sm:p-12">
+              <p className="eyebrow mb-2">Need more than a guide?</p>
+              <h2 className="h-section">Get help with your own loan</h2>
+              <p className="mt-4 leading-relaxed text-ink">
+                If you would like someone to look at your situation, ByeByeLoan offers a free, no-obligation
+                consultation. We are an independent service, not a lender, and we never ask you to pay a personal
+                account.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Link href="/request-consultation" className="btn btn-primary">
+                  Free Consultation
+                </Link>
+                <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                  <MessageCircle size={18} aria-hidden="true" /> WhatsApp Us
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              </div>
+              <Link href="/services" className="link-arrow mt-5 text-sm">
+                <BookOpen size={15} aria-hidden="true" /> How our help works
+              </Link>
+            </div>
+            <HeroIllustration className="h-auto w-full self-end" />
           </div>
-          <ul className="mx-auto grid max-w-4xl grid-cols-1 gap-4 rounded-3xl border border-line bg-white p-5 shadow-card sm:grid-cols-2 sm:p-8">
-            {channels.map((c, i) => (
-              <li key={c.label} className="flex items-center gap-4 rounded-2xl border border-line p-4">
-                <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-soft text-sm font-extrabold text-brand-ink">
-                  {i + 1}
-                </span>
-                <c.icon size={22} className="shrink-0 text-brand" aria-hidden="true" />
-                <div className="min-w-0">
-                  <p className="text-sm text-muted">{c.label}</p>
-                  {c.href ? (
-                    <a
-                      href={c.href}
-                      {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                      className="font-bold break-words text-brand-dark hover:text-brand-ink"
-                    >
-                      {c.value}
-                      {c.external && <span className="sr-only"> (opens in a new tab)</span>}
-                    </a>
-                  ) : (
-                    <p className="font-bold text-brand-dark">{c.value}</p>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
-          <p className="mx-auto mt-6 flex max-w-4xl items-start gap-3 rounded-xl border border-notice-border/60 bg-notice px-5 py-4 text-sm text-notice-ink">
-            <AlertTriangle size={18} className="mt-0.5 shrink-0 text-notice-icon" aria-hidden="true" />
-            If someone contacts you claiming to be ByeByeLoan from any other number, or asks you to pay into a personal
-            account, do not pay. Please report it to us immediately.
-          </p>
         </div>
       </section>
     </>

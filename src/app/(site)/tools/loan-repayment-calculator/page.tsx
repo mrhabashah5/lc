@@ -18,8 +18,8 @@ export default function Page() {
       highlight="calculator."
       quickAnswer="Enter your loan amount in rupees, the annual mark-up rate and the term in months. The calculator shows your monthly instalment, the total mark-up you will pay and a month-by-month schedule, using either the reducing-balance method most lenders use or a flat rate."
       related={[
-        { href: "/articles/loan-clearance-certificate-noc-pakistan", label: "How to get a loan clearance certificate (NOC)" },
-        { href: "/articles/check-credit-report-pakistan", label: "How to check your credit report in Pakistan" },
+        { href: "/blog/loan-clearance-certificate-noc-pakistan", label: "How to get a loan clearance certificate (NOC)" },
+        { href: "/blog/check-credit-report-pakistan", label: "How to check your credit report in Pakistan" },
         { href: "/loan-settlement", label: "Loan settlement assistance" },
       ]}
       howItWorks={[

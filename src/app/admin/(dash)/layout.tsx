@@ -19,6 +19,9 @@ export default async function DashLayout({ children }: { children: React.ReactNo
               <Link href="/admin" className="text-brand-soft hover:text-white">
                 Consultations
               </Link>
+              <Link href="/admin/analytics" className="text-brand-soft hover:text-white">
+                Analytics
+              </Link>
               <Link href="/admin/messages" className="inline-flex items-center gap-2 text-brand-soft hover:text-white">
                 Messages
                 {unread > 0 && (

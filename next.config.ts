@@ -19,6 +19,9 @@ const nextConfig: NextConfig = {
       // Articles moved to /blog when the site became a blog.
       { source: "/articles", destination: "/blog", permanent: true },
       { source: "/articles/:slug", destination: "/blog/:slug", permanent: true },
+      // Settlement service withdrawn; send old links to the clearance pages.
+      { source: "/loan-settlement", destination: "/loan-clearance", permanent: true },
+      { source: "/tools/settlement-calculator", destination: "/tools", permanent: true },
       // One canonical host: send www to the bare domain.
       {
         source: "/:path*",

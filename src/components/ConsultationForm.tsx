@@ -42,7 +42,7 @@ export function ConsultationForm({ initialApp }: { initialApp?: string }) {
           ...empty,
           lenderName: initialApp,
           loanType: "Microfinance or digital lending app",
-          serviceNeeded: "Loan clearance",
+          serviceNeeded: "Closing a loan app loan",
         }
       : empty,
   );

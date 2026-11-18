@@ -6,9 +6,9 @@ import { faqs } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Loan Clearance & Settlement FAQs",
+  title: "Loan Clearance & NOC FAQs for Pakistan",
   description:
-    "Answers to common questions about loan clearance, settlement, NOC letters, fees, loan apps, credit records and confidentiality for borrowers in Pakistan.",
+    "Answers to common questions about loan clearance, NOC letters, consultations, loan apps, credit records and confidentiality for borrowers in Pakistan.",
   path: "/faqs",
 });
 

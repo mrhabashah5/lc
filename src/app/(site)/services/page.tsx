@@ -9,9 +9,9 @@ import { shortDisclaimer } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Loan Settlement & Clearance Services",
+  title: "Loan Clearance & NOC Services in Pakistan",
   description:
-    "Loan settlement assistance, loan clearance and NOC follow-up for personal loans, credit cards, car finance and loan apps in Pakistan. Free first consultation.",
+    "Loan clearance and NOC follow-up for paid-off personal loans, credit cards, car finance and loan apps in Pakistan. Free, no-obligation first consultation.",
   path: "/services",
 });
 
@@ -23,8 +23,8 @@ export default function ServicesPage() {
         crumb="Our Services"
         eyebrow="Our services"
         title="Practical help with"
-        highlight="settlement and clearance."
-        intro="From the first conversation with your lender to the final clearance letter, we help you handle each stage properly."
+        highlight="loan clearance."
+        intro="From checking your final payment to receiving the clearance letter and your documents, we help you close every loan properly."
       />
 
       <section className="section bg-white">

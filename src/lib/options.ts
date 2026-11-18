@@ -22,14 +22,19 @@ export const amountRanges = [
 ] as const;
 
 export const loanStatuses = [
-  "Payments are up to date",
-  "1–3 months overdue",
-  "More than 3 months overdue",
-  "Legal or recovery notice received",
-  "Already paid or settled – need clearance",
+  "Fully paid – need clearance letter",
+  "Paying the final amount now",
+  "Paid, but the lender still shows a balance",
+  "Paid, but documents or lien not released",
+  "Not sure",
 ] as const;
 
-export const servicesNeeded = ["Loan settlement", "Loan clearance", "Not sure yet"] as const;
+export const servicesNeeded = [
+  "Clearance letter (NOC)",
+  "Return of documents or lien removal",
+  "Closing a loan app loan",
+  "Not sure yet",
+] as const;
 
 export const consultationStatuses = ["new", "contacted", "in_progress", "closed"] as const;
 export type ConsultationStatus = (typeof consultationStatuses)[number];

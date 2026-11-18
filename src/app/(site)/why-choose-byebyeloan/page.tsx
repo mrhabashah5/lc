@@ -9,20 +9,20 @@ export const metadata: Metadata = pageMetadata({
   title: "Why Choose ByeByeLoan for Loan Clearance Help",
   absoluteTitle: true,
   description:
-    "Clear information, written terms and realistic expectations. See what ByeByeLoan will and will not do when helping you settle or clear a loan in Pakistan.",
+    "Clear information, honest guidance and realistic expectations. See what ByeByeLoan will and will not do when helping you clear a loan in Pakistan.",
   path: "/why-choose-byebyeloan",
 });
 
 const will = [
   "Explain your situation and options in plain language",
-  "Tell you honestly when settlement may not be the best route",
-  "Put the scope of our work and our fee in writing first",
+  "Tell you honestly what we can and cannot help with",
+  "Remind you to pay your lender only through official channels",
   "Keep your information confidential",
   "Stay with your case until the paperwork is complete",
 ];
 
 const wont = [
-  "Guarantee a settlement, a reduction or a timeline",
+  "Negotiate settlements, reduce debts or promise a timeline",
   "Advise you to stop paying your lender",
   "Ask for your PIN, password, OTP or full card number",
   "Collect loan repayments on a lender's behalf",

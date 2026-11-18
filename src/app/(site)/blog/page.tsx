@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   ...pageMetadata({
     title: "Loan Clearance Blog: Guides for Pakistan",
     description:
-      "Plain-language guides on loan clearance letters (NOC), loan app loans, settlement, credit reports and your rights as a borrower in Pakistan. Free to read.",
+      "Plain-language guides on loan clearance letters (NOC), loan app loans, credit reports and your rights as a borrower in Pakistan. Free to read.",
     path: "/blog",
   }),
   alternates: { canonical: "/blog", types: { "application/rss+xml": `${site.url}/blog/rss.xml` } },

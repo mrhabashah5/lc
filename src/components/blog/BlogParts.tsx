@@ -63,26 +63,6 @@ export function FeaturedPost({ post, priority = false }: { post: Article; priori
   );
 }
 
-/** Compact list item for sidebars and "latest" lists. */
-export function PostListItem({ post }: { post: Article }) {
-  const thumb = thumbnailFor(post.slug);
-  return (
-    <li className="group relative flex gap-4">
-      {thumb && (
-        <Image src={thumb} alt="" width={112} height={63} unoptimized className="aspect-video h-auto w-28 shrink-0 rounded-lg bg-brand-soft object-cover" />
-      )}
-      <div className="min-w-0">
-        <h3 className="text-[15px] leading-snug font-bold">
-          <Link href={blogPath(post.slug)} className="after:absolute after:inset-0 group-hover:text-brand-ink">
-            {post.seoTitle ?? post.title}
-          </Link>
-        </h3>
-        <p className="mt-1 text-xs text-muted">{readMinutes(post)} min read</p>
-      </div>
-    </li>
-  );
-}
-
 /** Row of category links ("pills"); highlights the current category. */
 export function CategoryPills({ current }: { current?: string }) {
   const base = "inline-flex items-center whitespace-nowrap gap-2 rounded-full border-2 px-4 py-2 text-sm font-bold transition-colors";
@@ -113,29 +93,5 @@ export function CategoryPills({ current }: { current?: string }) {
         ))}
       </ul>
     </nav>
-  );
-}
-
-/** Grid of category tiles for the blog and home pages. */
-export function CategoryTiles() {
-  return (
-    <ul className="grid grid-cols-2 gap-4 md:grid-cols-3">
-      {blogCategories.map((c) => (
-        <li key={c.slug} className="group relative rounded-2xl border border-line bg-white p-5 shadow-card transition-shadow hover:shadow-float sm:p-6">
-          <span className="icon-tile">
-            <CategoryIcon icon={c.icon} size={24} />
-          </span>
-          <h3 className="mt-4 text-lg font-bold">
-            <Link href={categoryPath(c.slug)} className="after:absolute after:inset-0 group-hover:text-brand-ink">
-              {c.label}
-            </Link>
-          </h3>
-          <p className="mt-1 hidden text-sm leading-relaxed text-muted sm:block">{c.description}</p>
-          <p className="mt-2 text-sm font-semibold text-brand-ink">
-            {c.posts.length} {c.posts.length === 1 ? "guide" : "guides"}
-          </p>
-        </li>
-      ))}
-    </ul>
   );
 }

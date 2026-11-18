@@ -2,7 +2,7 @@ export const site = {
   name: "ByeByeLoan",
   tagline: "Get Clarity. Find Your Way Forward.",
   description:
-    "Professional loan settlement and clearance assistance for individuals in Pakistan.",
+    "Professional loan clearance assistance for individuals in Pakistan.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://byebyeloan.online",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923101990325",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "info@byebyeloan.online",
@@ -27,7 +27,6 @@ export const helpNav: NavItem = {
   children: [
     { href: "/services", label: "Our Services" },
     { href: "/loan-clearance", label: "Loan Clearance" },
-    { href: "/loan-settlement", label: "Loan Settlement" },
     { href: "/how-it-works", label: "How It Works" },
     { href: "/request-consultation", label: "Free Consultation" },
   ],

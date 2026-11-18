@@ -13,11 +13,11 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Loan Clearance & Settlement Help in Pakistan | ByeByeLoan",
+    default: "Loan Clearance Help in Pakistan | ByeByeLoan",
     template: "%s | ByeByeLoan",
   },
   description:
-    "Get help clearing loans from banks and 31 digital loan apps in Pakistan. Free first consultation, written terms and help getting your clearance letter (NOC).",
+    "Get help with the clearance letter (NOC) and documents for paid-off loans from banks and 31 digital loan apps in Pakistan. Free, no-obligation first consultation.",
   applicationName: site.name,
   verification: {
     ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } : {}),
@@ -29,10 +29,10 @@ export const metadata: Metadata = {
     type: "website",
     siteName: site.name,
     locale: "en_PK",
-    title: "Loan Clearance & Settlement Help in Pakistan | ByeByeLoan",
+    title: "Loan Clearance Help in Pakistan | ByeByeLoan",
     description: site.description,
     url: "/",
-    images: [{ ...ogImageFor(), alt: "ByeByeLoan – loan settlement and clearance assistance in Pakistan" }],
+    images: [{ ...ogImageFor(), alt: "ByeByeLoan – loan clearance assistance in Pakistan" }],
   },
   twitter: { card: "summary_large_image", images: [ogImageFor().url] },
 };

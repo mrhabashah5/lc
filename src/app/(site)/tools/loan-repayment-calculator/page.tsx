@@ -20,7 +20,7 @@ export default function Page() {
       related={[
         { href: "/blog/loan-clearance-certificate-noc-pakistan", label: "How to get a loan clearance certificate (NOC)" },
         { href: "/blog/check-credit-report-pakistan", label: "How to check your credit report in Pakistan" },
-        { href: "/loan-settlement", label: "Loan settlement assistance" },
+        { href: "/loan-apps", label: "Loan apps we cover" },
       ]}
       howItWorks={[
         {

@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Loan Clearance & NOC Help in Pakistan",
   description:
-    "Paid off or settled a loan? We help you get your clearance letter (NOC), your original documents back and your credit record updated. Free consultation.",
+    "Paid off a loan? We help you request your clearance letter (NOC) and get your original documents and vehicle papers back from the lender. Free consultation.",
   path: "/loan-clearance",
 });
 
@@ -21,13 +21,13 @@ export default function LoanClearancePage() {
       intro="Paying the last instalment is not the final step. We help you make sure the loan is closed on paper as well."
       whatTitle="What is loan clearance?"
       what={[
-        "Loan clearance is the paperwork that proves a loan is closed and that the lender has no further claim. It applies whether you repaid in full, repaid early or settled.",
-        "It usually involves a clearance letter or no-objection certificate (NOC), the return of any original documents or security, and an accurate update of the account on your credit record. Without it, an old loan can cause problems years later.",
+        "Loan clearance is the paperwork that proves a loan is closed and that the lender has no further claim. It applies however the loan was closed, whether you repaid on schedule or early.",
+        "It usually involves a clearance letter or no-objection certificate (NOC), and the return of any original documents or security. Without it, an old loan can cause problems years later.",
       ]}
       forWhom={[
-        "You have repaid or settled a loan but never received a clearance letter",
+        "You have paid off a loan but never received a clearance letter",
         "Your lender still holds your original vehicle or property documents",
-        "A closed loan still appears as outstanding or overdue on your credit record",
+        "You need written proof that a loan is closed, for example for a new application",
         "You are being contacted about a loan you believe is already closed",
       ]}
       callout={{
@@ -40,7 +40,7 @@ export default function LoanClearancePage() {
       help={[
         {
           title: "Checking what you have",
-          text: "We review your payment receipts, settlement letter and any correspondence to confirm what has been paid and what is still missing.",
+          text: "We review your payment receipts, final statement and any correspondence to confirm what has been paid and what is still missing.",
         },
         {
           title: "Requesting the clearance letter",
@@ -51,14 +51,14 @@ export default function LoanClearancePage() {
           text: "For secured finance, we guide you through getting original documents back and the lender's lien or charge removed.",
         },
         {
-          title: "Credit record follow-up",
-          text: "We help you ask the lender to update your credit record and explain how to raise a correction if the record is wrong.",
+          title: "Proof for your records",
+          text: "We help you keep a complete file of receipts, the clearance letter and returned documents, so you can show the loan is closed whenever you need to.",
         },
       ]}
       knowTitle="What you should know"
       know={[
         "Only the lender can issue a clearance letter and only the lender can report updates to a credit bureau. We assist with the request and follow-up.",
-        "An accurate record cannot be changed. If a loan was settled, it may continue to be shown as settled.",
+        "We do not offer credit repair. Accurate information on a credit report cannot be removed, and we do not ask credit bureaus to change records.",
         "Timeframes depend on the lender's internal process and cannot be guaranteed.",
         "If a lender does not respond to a valid request, official complaint channels are available, and we can explain how to use them.",
       ]}

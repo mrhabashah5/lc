@@ -122,9 +122,9 @@ export const settlementVsClearance: Article = {
       ],
     },
     {
-      heading: "How ByeByeLoan can help",
+      heading: "Where ByeByeLoan fits in",
       paragraphs: [
-        "ByeByeLoan helps individuals in Pakistan with both stages. If you are struggling, we help you understand your options, prepare your case and communicate with your lender about a possible settlement. If your loan is closed, we help you obtain the clearance letter, the return of documents and an accurate record. We never promise a particular result, because the lender makes the final decision, but we make sure every step is documented.",
+        "ByeByeLoan helps with the clearance stage only. We do not negotiate settlements, reduce debts or arrange repayment plans; if you are considering a settlement, speak to your lender directly. Once your loan is closed, we help you request the clearance letter, follow up for the return of documents and keep a complete record that the loan is finished. We never promise a particular result, because the lender makes the final decision.",
       ],
     },
   ],
@@ -146,8 +146,8 @@ export const settlementVsClearance: Article = {
       a: "Yes. Every closed loan should have a clearance letter, however it was repaid.",
     },
     {
-      q: "How do I compare a settlement offer with my balance?",
-      a: "Use our free settlement offer calculator to see the difference in rupees and percent, then check the written terms and how the account will be reported.",
+      q: "Does ByeByeLoan negotiate settlements?",
+      a: "No. ByeByeLoan does not negotiate settlements or reduce debts. We help with the clearance paperwork after a loan has been closed with your lender.",
     },
   ],
   sources: [

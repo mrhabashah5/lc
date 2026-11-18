@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Free Loan Calculators & Clearance Checklist",
   description:
-    "Free loan repayment calculator, settlement offer calculator and loan clearance checklist for borrowers in Pakistan. No sign-up, and nothing you enter is sent.",
+    "Free loan repayment calculator and step-by-step loan clearance checklist for borrowers in Pakistan. No sign-up needed, and nothing you enter is sent.",
   path: "/tools",
 });
 
@@ -23,7 +23,7 @@ export default function ToolsPage() {
         eyebrow="Free tools"
         title="Free loan tools,"
         highlight="no sign-up needed."
-        intro="Work out your instalments, compare a settlement offer and follow a clearance checklist. Everything runs in your browser and nothing you enter is sent to us."
+        intro="Work out your instalments and follow a step-by-step clearance checklist. Everything runs in your browser and nothing you enter is sent to us."
       />
       <section className="section bg-white">
         <div className="container-x grid gap-6 md:grid-cols-3">

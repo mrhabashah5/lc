@@ -109,7 +109,7 @@ export const legalDocs: LegalDoc[] = [
       {
         heading: "About our service",
         paragraphs: [
-          "ByeByeLoan provides information and assistance to individuals in Pakistan in relation to loan settlement and loan clearance. ByeByeLoan is not a bank, a financial institution, a lender, a debt collector, a credit bureau or a law firm.",
+          "ByeByeLoan provides information and assistance to individuals in Pakistan in relation to loan clearance. ByeByeLoan does not negotiate settlements, reduce debts, arrange repayment plans or offer credit repair. ByeByeLoan is not a bank, a financial institution, a lender, a debt collector, a credit bureau or a law firm.",
         ],
       },
       {
@@ -127,7 +127,7 @@ export const legalDocs: LegalDoc[] = [
       {
         heading: "No guarantee of outcome",
         paragraphs: [
-          "Decisions about settlements, restructuring, clearance letters and credit reporting are made by lenders and other third parties. ByeByeLoan does not guarantee any outcome, reduction, approval or timeline.",
+          "Decisions about clearance letters, the release of documents and credit reporting are made by lenders and other third parties. ByeByeLoan does not guarantee any outcome, approval or timeline.",
         ],
       },
       {
@@ -180,7 +180,7 @@ export const legalDocs: LegalDoc[] = [
       {
         heading: "No guaranteed results",
         paragraphs: [
-          "Whether a lender agrees to a settlement, restructuring or any other arrangement, and how quickly it issues a clearance letter or updates a credit record, is entirely the lender's decision. ByeByeLoan does not and cannot guarantee any specific result, reduction, saving or timeframe. Examples and descriptions on this website are illustrative only.",
+          "Whether and how quickly a lender issues a clearance letter, returns documents or updates a credit record is entirely the lender's decision. ByeByeLoan does not and cannot guarantee any specific result or timeframe. Examples and descriptions on this website are illustrative only.",
         ],
       },
       {
@@ -192,7 +192,7 @@ export const legalDocs: LegalDoc[] = [
       {
         heading: "Effect on your credit record",
         paragraphs: [
-          "A loan settlement may be reported on your credit record differently from a loan repaid in full and may affect your ability to obtain credit in future. ByeByeLoan cannot remove or alter accurate information held by lenders or credit bureaus.",
+          "ByeByeLoan does not provide credit repair and cannot remove or alter accurate information held by lenders or credit bureaus. Only the lender can report updates to a credit bureau.",
         ],
       },
       {

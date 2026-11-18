@@ -12,7 +12,6 @@ const blog = [
 const help = [
   { href: "/services", label: "Our Services" },
   { href: "/loan-clearance", label: "Loan Clearance" },
-  { href: "/loan-settlement", label: "Loan Settlement" },
   { href: "/loan-apps", label: "Loan Apps We Cover" },
   { href: "/tools", label: "Free Loan Tools" },
   { href: "/request-consultation", label: "Free Consultation" },
@@ -88,7 +87,7 @@ export function Footer() {
               <p className="mt-1 text-sm leading-relaxed text-white/80">
                 Always make loan payments directly to your lender through its official app, branch or account, and keep
                 your receipts. {site.name} never collects loan repayments and never asks you to pay a personal account.
-                Lenders make the final decision on any settlement, so no result or timeline can be guaranteed.
+                Clearance letters are issued by your lender, so no result or timeline can be guaranteed.
               </p>
               <p className="mt-1.5 text-sm font-bold text-white">Your financial peace of mind is our priority.</p>
             </div>

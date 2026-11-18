@@ -49,13 +49,13 @@ export default function AboutPage() {
             <div className="mt-5 space-y-4 text-lg leading-relaxed text-ink">
               <p>
                 ByeByeLoan is an independent assistance service for individuals in Pakistan. We help
-                people who are under pressure from loan repayments, and people who have repaid or
-                settled a loan and need the paperwork completed properly.
+                people who have paid off a loan get the paperwork completed properly: the clearance
+                letter, their original documents and proof that nothing more is owed.
               </p>
               <p>
                 We are not a bank and we do not lend money. Our role is to sit on your side of the
-                table: to review your situation, explain your options and assist you in dealing with
-                your lender in an organised, documented way.
+                table: to review your records, explain what is still needed and help you follow up
+                with your lender in an organised, documented way.
               </p>
             </div>
           </div>

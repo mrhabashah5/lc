@@ -13,7 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/loan-clearance", updated: contentUpdated, priority: 0.9 },
     { path: "/loan-apps", updated: contentUpdated, priority: 0.9 },
     { path: "/request-consultation", updated: contentUpdated, priority: 0.9 },
-    { path: "/loan-settlement", updated: contentUpdated, priority: 0.8 },
     { path: "/services", updated: contentUpdated, priority: 0.8 },
     { path: "/how-it-works", updated: contentUpdated, priority: 0.7 },
     { path: "/faqs", updated: contentUpdated, priority: 0.7 },

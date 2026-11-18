@@ -55,7 +55,7 @@ export function AppCategoryWall() {
   const count = (id: string) => loanApps.filter((a) => a.category === id).length;
 
   return (
-    <section aria-labelledby="apps-wall-title" className="section border-y border-line bg-surface">
+    <section aria-labelledby="apps-wall-title" className="section border-y border-line bg-brand-mist">
       <div className="container-x">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-3">
           <div>

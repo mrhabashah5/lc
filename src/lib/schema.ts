@@ -18,14 +18,13 @@ export function organizationGraph() {
     logo: { "@type": "ImageObject", url: abs("/images/logo.png"), width: 512, height: 512 },
     image: abs("/images/og/default.png"),
     description:
-      "Independent loan clearance and loan settlement assistance for individuals in Pakistan. Not a bank or lender; does not give loans or collect repayments.",
+      "Independent loan clearance assistance for individuals in Pakistan. Not a bank or lender; does not give loans or collect repayments.",
     slogan: site.tagline,
     email: site.email,
     areaServed: { "@type": "Country", name: "Pakistan" },
     knowsAbout: [
       "Loan clearance",
       "Loan clearance certificate (NOC)",
-      "Loan settlement",
       "Digital lending apps in Pakistan",
       "Credit reports in Pakistan",
       "Vehicle lien removal after car finance",

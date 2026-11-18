@@ -17,6 +17,8 @@ import {
   ShieldCheck,
   Smartphone,
 } from "lucide-react";
+import { ArticleCard } from "@/components/ArticleCard";
+import { CategoryPills, FeaturedPost } from "@/components/blog/BlogParts";
 import { AboutScreens } from "@/components/home/AboutScreens";
 import { AppTicker } from "@/components/home/AppTicker";
 import { AppCategoryWall } from "@/components/home/AppCategoryWall";
@@ -80,6 +82,8 @@ const steps = [
 ];
 
 export default function HomePage() {
+  const [featured, ...others] = articles;
+  const latest = others.slice(0, 3);
   const channels = [
     { icon: MessageCircle, label: "WhatsApp", value: whatsappDisplay, href: whatsappLink(), external: true },
     { icon: Mail, label: "Email", value: site.email, href: `mailto:${site.email}` },
@@ -102,6 +106,32 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* From the blog */}
+      <section aria-labelledby="home-blog-title" className="bg-white pb-16 sm:pb-20">
+        <div className="container-x">
+          <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p className="eyebrow mb-2">From the blog</p>
+              <h2 id="home-blog-title" className="h-section">
+                Free guides to close your loan properly
+              </h2>
+            </div>
+            <Link href="/blog" className="link-arrow">
+              All guides <ArrowRight size={17} aria-hidden="true" />
+            </Link>
+          </div>
+          <div className="mb-8">
+            <CategoryPills current={null} />
+          </div>
+          <FeaturedPost post={featured} headingLevel={3} />
+          <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {latest.map((a) => (
+              <ArticleCard key={a.slug} article={a} headingLevel={3} />
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Why choose */}

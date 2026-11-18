@@ -37,8 +37,17 @@ export function PostMeta({ post, linkCategory = true }: { post: Article; linkCat
 }
 
 /** Large featured post card. */
-export function FeaturedPost({ post, priority = false }: { post: Article; priority?: boolean }) {
+export function FeaturedPost({
+  post,
+  priority = false,
+  headingLevel = 2,
+}: {
+  post: Article;
+  priority?: boolean;
+  headingLevel?: 2 | 3;
+}) {
   const thumb = thumbnailFor(post.slug);
+  const H = headingLevel === 2 ? "h2" : "h3";
   return (
     <article className="group relative grid overflow-hidden rounded-3xl border border-line bg-white shadow-card transition-shadow hover:shadow-float md:grid-cols-2">
       {thumb && (
@@ -46,11 +55,11 @@ export function FeaturedPost({ post, priority = false }: { post: Article; priori
       )}
       <div className="flex flex-col justify-center p-6 sm:p-8">
         <p className="mb-2 text-xs font-bold tracking-widest text-orange-ink uppercase">Featured guide</p>
-        <h2 className="text-2xl leading-snug font-extrabold sm:text-3xl">
+        <H className="text-2xl leading-snug font-extrabold sm:text-3xl">
           <Link href={blogPath(post.slug)} className="after:absolute after:inset-0 group-hover:text-brand-ink">
             {post.title}
           </Link>
-        </h2>
+        </H>
         <p className="mt-3 leading-relaxed text-muted">{post.excerpt}</p>
         <div className="mt-4">
           <PostMeta post={post} />
@@ -64,7 +73,9 @@ export function FeaturedPost({ post, priority = false }: { post: Article; priori
 }
 
 /** Row of category links ("pills"); highlights the current category. */
-export function CategoryPills({ current }: { current?: string }) {
+/** `current`: a category slug, undefined on the blog home, or null where no item is current. */
+export function CategoryPills({ current }: { current?: string | null }) {
+  const allCurrent = current === undefined;
   const base = "inline-flex items-center whitespace-nowrap gap-2 rounded-full border-2 px-4 py-2 text-sm font-bold transition-colors";
   const on = "border-brand-dark bg-brand-dark text-white";
   const off = "border-field bg-white text-brand-dark hover:border-brand-ink hover:text-brand-ink";
@@ -72,7 +83,7 @@ export function CategoryPills({ current }: { current?: string }) {
     <nav aria-label="Blog categories" className="-mx-5 overflow-x-auto px-5 pb-1 sm:mx-0 sm:px-0">
       <ul className="flex gap-2 sm:flex-wrap">
         <li className="shrink-0">
-          <Link href="/blog" aria-current={!current ? "page" : undefined} className={`${base} ${!current ? on : off}`}>
+          <Link href="/blog" aria-current={allCurrent ? "page" : undefined} className={`${base} ${allCurrent ? on : off}`}>
             All posts
           </Link>
         </li>

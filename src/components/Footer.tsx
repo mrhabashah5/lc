@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AlertTriangle, Mail, MapPin, MessageCircle } from "lucide-react";
+import { FileCheck, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Logo } from "./Logo";
 import { blogCategories, categoryPath } from "@/lib/blog";
 import { legalNav, shortDisclaimer, site, whatsappDisplay, whatsappLink } from "@/lib/site";
@@ -80,16 +80,50 @@ export function Footer() {
 
       <div className="border-t border-white/15">
         <div className="container-x py-8">
-          <div className="mb-6 flex gap-3 rounded-2xl border border-notice-border/40 bg-white/5 p-5">
-            <AlertTriangle size={22} className="mt-0.5 shrink-0 text-notice-border" aria-hidden="true" />
-            <div>
-              <h2 className="text-base font-extrabold text-white">Clear Responsibly</h2>
-              <p className="mt-1 text-sm leading-relaxed text-white/80">
-                Always make loan payments directly to your lender through its official app, branch or account, and keep
-                your receipts. {site.name} never collects loan repayments and never asks you to pay a personal account.
-                Clearance letters are issued by your lender, so no result or timeline can be guaranteed.
-              </p>
-              <p className="mt-1.5 text-sm font-bold text-white">Your financial peace of mind is our priority.</p>
+          <div className="mb-6 rounded-2xl border border-white/15 bg-white/5 p-5 sm:p-6">
+            <div className="flex gap-3">
+              <FileCheck size={22} className="mt-0.5 shrink-0 text-brand-bright" aria-hidden="true" />
+              <div className="min-w-0 flex-1">
+                <h2 className="text-base font-extrabold text-white">Need help with your clearance documents?</h2>
+                <p className="mt-1 text-sm leading-relaxed text-white/80">
+                  Getting started takes a few minutes, and your first consultation is free.
+                </p>
+                <ol className="mt-4 grid gap-3 text-sm text-white/85 md:grid-cols-3">
+                  {[
+                    ["Contact us", `Message us on WhatsApp at ${whatsappDisplay.replace(/ /g, String.fromCharCode(160))} or fill in the free consultation form.`],
+                    ["Share your details", "Tell us your lender and send your payment receipts or final statement."],
+                    ["Get your paperwork", "We help you request the clearance letter (NOC) and get your documents back."],
+                  ].map(([title, text], i) => (
+                    <li key={title} className="flex gap-3 rounded-xl bg-white/5 p-3">
+                      <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-ink text-xs font-extrabold text-white">
+                        {i + 1}
+                      </span>
+                      <span>
+                        <strong className="block text-white">{title}</strong>
+                        <span className="leading-relaxed">{text}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+                <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                  <a
+                    href={whatsappLink()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary"
+                  >
+                    <MessageCircle size={18} aria-hidden="true" /> WhatsApp Us
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </a>
+                  <Link href="/request-consultation" className="btn border-2 border-white/70 text-white hover:bg-white/10">
+                    Request Free Consultation
+                  </Link>
+                </div>
+                <p className="mt-4 text-xs leading-relaxed text-white/70">
+                  Please keep paying your lender only through its official app, branch or account. {site.name} never
+                  collects loan repayments or asks you to pay a personal account.
+                </p>
+              </div>
             </div>
           </div>
           <p className="text-sm leading-relaxed text-white/70">

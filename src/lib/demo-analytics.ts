@@ -45,7 +45,7 @@ function mulberry32(seed: number) {
 
 // Relative daily volume per app (higher = more clearances).
 const weight: Record<string, number> = {
-  Paisayaar: 17, JazzCash: 15, SmartQarza: 12, Aitemaad: 10, "Fori Raqam": 8.5, "Money Tap": 4, Daira: 3.5,
+  Paisayaar: 17, SmartQarza: 12, Aitemaad: 10, "Fori Raqam": 8.5, "Money Tap": 4, Daira: 3.5,
   CashBazar: 4, Pakcredit: 3.5, Hakeem: 3.2, "Fauri Cash": 3, Sahara: 2.8, PaisaGhur: 2.5, QarzMitra: 2.3,
   ForiQarz: 2, Ishtirak: 1.6, "Loan Lado": 1.2, QistBazaar: 2.6, Baadmay: 2, "Alif Shop": 1.6, PalmPay: 1.4,
   ZoodPay: 0.8, ZoodMall: 0.6, NeemPaymenow: 1.5, "Nova Finance": 1.1, Tijara: 1.2, "Digi Khata": 1.3,

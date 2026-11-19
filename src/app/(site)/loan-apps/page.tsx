@@ -10,7 +10,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Loan App Clearance Help in Pakistan",
   description:
-    "Clearance help for loans from 31 digital lending apps in Pakistan, from personal loan apps to buy now, pay later. Find your app and request free help today.",
+    `Clearance help for loans from ${loanApps.length} digital lending apps in Pakistan, from personal loan apps to buy now, pay later. Find your app and request free help today.`,
   path: "/loan-apps",
 });
 

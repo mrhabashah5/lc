@@ -32,7 +32,7 @@ export const metadata: Metadata = pageMetadata({
   title: "ByeByeLoan | Get Your Loan Clearance Letter (NOC) in Pakistan",
   absoluteTitle: true,
   description:
-    "Paid off a loan? Get help with your clearance letter (NOC) and documents for loans from banks and 31 digital loan apps in Pakistan. Free first consultation.",
+    `Paid off a loan? Get help with your clearance letter (NOC) and documents for loans from banks and ${loanApps.length} digital loan apps in Pakistan. Free first consultation.`,
   path: "/",
 });
 

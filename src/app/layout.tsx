@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { ogImageFor } from "@/lib/images";
+import { loanApps } from "@/lib/loan-apps";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | ByeByeLoan",
   },
   description:
-    "Get help with the clearance letter (NOC) and documents for paid-off loans from banks and 31 digital loan apps in Pakistan. Free, no-obligation first consultation.",
+    `Get help with the clearance letter (NOC) and documents for paid-off loans from banks and ${loanApps.length} digital loan apps in Pakistan. Free, no-obligation first consultation.`,
   applicationName: site.name,
   verification: {
     ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } : {}),

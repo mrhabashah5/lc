@@ -48,7 +48,6 @@ export const loanApps: LoanApp[] = [
   { name: "Hakeem", logo: "/logos/hakeem.png", company: "Walee Financial Services", category: "personal" },
   { name: "Fauri Cash", logo: "/logos/fauri-cash.jpg", company: "Pakisnova Microfinance", category: "personal" },
   { name: "SmartQarza", logo: "/logos/smartqarza.png", company: "Goldlion Financial", category: "personal" },
-  { name: "JazzCash", logo: "/logos/jazzcash.jpg", company: "JazzCash (Private) Limited", category: "personal" },
   { name: "Money Tap", logo: "/logos/money-tap.jpg", company: "Zanda Financials", category: "personal" },
   { name: "Pakcredit", logo: "/logos/pakcredit.png", company: "VisionCred Financial Services", category: "personal" },
   { name: "Daira", logo: "/logos/daira.png", company: "Finleap Financial Services", category: "personal" },

@@ -22,13 +22,8 @@ const nextConfig: NextConfig = {
       // Settlement service withdrawn; send old links to the clearance pages.
       { source: "/loan-settlement", destination: "/loan-clearance", permanent: true },
       { source: "/tools/settlement-calculator", destination: "/tools", permanent: true },
-      // One canonical host: send www to the bare domain.
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.byebyeloan.online" }],
-        destination: "https://byebyeloan.online/:path*",
-        permanent: true,
-      },
+      // The www -> bare-domain redirect is set in Vercel's Domains settings, not here,
+      // so the two can never point at each other and cause a redirect loop.
     ];
   },
   async headers() {

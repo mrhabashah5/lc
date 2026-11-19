@@ -119,10 +119,6 @@ export function Footer() {
                     Request Free Consultation
                   </Link>
                 </div>
-                <p className="mt-4 text-xs leading-relaxed text-white/70">
-                  Please keep paying your lender only through its official app, branch or account. {site.name} never
-                  collects loan repayments or asks you to pay a personal account.
-                </p>
               </div>
             </div>
           </div>

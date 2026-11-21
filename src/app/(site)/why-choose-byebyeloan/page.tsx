@@ -6,10 +6,10 @@ import { reasons } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Why Choose ByeByeLoan for Loan Clearance Help",
+  title: "Why Choose SmartGuru for Loan Clearance Help",
   absoluteTitle: true,
   description:
-    "Clear information, honest guidance and realistic expectations. See what ByeByeLoan will and will not do when helping you clear a loan in Pakistan.",
+    "Clear information, honest guidance and realistic expectations. See what SmartGuru will and will not do when helping you clear a loan in Pakistan.",
   path: "/why-choose-byebyeloan",
 });
 
@@ -34,8 +34,8 @@ export default function WhyPage() {
     <>
       <PageHero
         path="/why-choose-byebyeloan"
-        crumb="Why Choose ByeByeLoan"
-        eyebrow="Why choose ByeByeLoan"
+        crumb="Why Choose SmartGuru"
+        eyebrow="Why choose SmartGuru"
         title="Straightforward help,"
         highlight="honestly delivered."
         intro="When you are under financial pressure, the last thing you need is another promise that does not hold. Here is how we are different."

@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // Page renamed when the brand changed from LoanClear to ByeByeLoan.
+      // Preserve the prior route after the SmartGuru rebrand.
       { source: "/why-choose-loanclear", destination: "/why-choose-byebyeloan", permanent: true },
       // Articles moved to /blog when the site became a blog.
       { source: "/articles", destination: "/blog", permanent: true },

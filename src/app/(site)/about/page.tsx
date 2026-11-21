@@ -5,10 +5,10 @@ import { shortDisclaimer } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "About ByeByeLoan | Independent Loan Clearance Help",
+  title: "About SmartGuru | Independent Loan Clearance Help",
   absoluteTitle: true,
   description:
-    "ByeByeLoan is an independent service helping people in Pakistan clear loans properly: checking what is owed, dealing with lenders and getting clearance letters.",
+    "SmartGuru is an independent service helping people in Pakistan clear loans properly: checking what is owed, dealing with lenders and getting clearance letters.",
   path: "/about",
 });
 
@@ -36,10 +36,10 @@ export default function AboutPage() {
       <PageHero
         path="/about"
         crumb="About Us"
-        eyebrow="About ByeByeLoan"
+        eyebrow="About SmartGuru"
         title="Helping people move forward"
         highlight="with clarity."
-        intro="ByeByeLoan exists for one reason: dealing with a loan problem is far harder when you do not understand where you stand."
+        intro="SmartGuru exists for one reason: dealing with a loan problem is far harder when you do not understand where you stand."
       />
 
       <section className="section bg-white">
@@ -48,7 +48,7 @@ export default function AboutPage() {
             <h2 className="h-section">Who we are</h2>
             <div className="mt-5 space-y-4 text-lg leading-relaxed text-ink">
               <p>
-                ByeByeLoan is an independent assistance service for individuals in Pakistan. We help
+                SmartGuru is an independent assistance service for individuals in Pakistan. We help
                 people who have paid off a loan get the paperwork completed properly: the clearance
                 letter, their original documents and proof that nothing more is owed.
               </p>

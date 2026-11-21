@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!doc) return {};
   return pageMetadata({
     title: doc.title,
-    description: `${doc.description} Applies to the ByeByeLoan website and loan clearance services in Pakistan.`,
+    description: `${doc.description} Applies to the SmartGuru website and loan clearance services in Pakistan.`,
     path: `/${doc.slug}`,
   });
 }

@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Contact Us on WhatsApp or Email",
   description:
-    "Contact ByeByeLoan on WhatsApp or by email for help with loan clearance, NOC letters or closing a loan app loan in Pakistan. Free first consultation.",
+    "Contact SmartGuru on WhatsApp or by email for help with loan clearance, NOC letters or closing a loan app loan in Pakistan. Free first consultation.",
   path: "/contact",
 });
 

@@ -155,8 +155,8 @@ function ogSvg({ motif, eyebrow, title }) {
     ${text}
     <rect x="80" y="${h - 118}" width="44" height="44" rx="12" fill="${C.navy}"/>
     ${check(102, h - 98, 0.75, C.skyBrand)}
-    <text x="140" y="${h - 84}" font-family="${FONT}" font-size="34" font-weight="800" fill="${C.navy}">ByeBye<tspan fill="${C.sky}">Loan</tspan></text>
-    <text x="350" y="${h - 84}" font-family="${FONT}" font-size="26" fill="#55665D">byebyeloan.online</text>
+    <text x="140" y="${h - 84}" font-family="${FONT}" font-size="34" font-weight="800" fill="${C.navy}">SmartGuru</text>
+    <text x="350" y="${h - 84}" font-family="${FONT}" font-size="26" fill="#55665D">smartguru.site</text>
     <rect x="0" y="${h - 12}" width="${w}" height="12" fill="${C.navy}"/>
   </svg>`;
 }

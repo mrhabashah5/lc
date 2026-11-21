@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
-   ByeByeLoan brand tokens: the single source of truth for colour.
+   SmartGuru brand tokens: the single source of truth for colour.
    Use these (bg-brand, text-brand-dark, border-line ...) everywhere; do not
    add one-off hex values in components.
 
@@ -197,5 +197,11 @@ body {
   }
   .prose-lc a {
     @apply font-semibold text-brand-dark underline decoration-brand underline-offset-4 hover:text-brand-ink;
+  }
+}
+
+@media (width < 48rem) {
+  body:has([data-home-page]) .home-whatsapp-floating {
+    display: none;
   }
 }

@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "How Loan Clearance Works: 3 Simple Steps",
   description:
-    "See how ByeByeLoan helps you clear a loan in 3 steps: request a consultation, share your documents and get your clearance letter. No obligation to proceed.",
+    "See how SmartGuru helps you clear a loan in 3 steps: request a consultation, share your documents and get your clearance letter. No obligation to proceed.",
   path: "/how-it-works",
 });
 
@@ -52,7 +52,7 @@ export default function HowItWorksPage() {
         eyebrow="How it works"
         title="A clear process,"
         highlight="from first call to clearance."
-        intro="No jargon and no surprises. Here is exactly what happens when you contact ByeByeLoan."
+        intro="No jargon and no surprises. Here is exactly what happens when you contact SmartGuru."
       />
 
       <section className="section bg-white">

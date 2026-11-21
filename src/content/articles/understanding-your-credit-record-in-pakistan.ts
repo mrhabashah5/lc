@@ -138,9 +138,9 @@ export const understandingCreditRecord: Article = {
       ],
     },
     {
-      heading: "How ByeByeLoan can help",
+      heading: "How SmartGuru can help",
       paragraphs: [
-        "If a closed loan is still showing on your record, or you are not sure what your report means, ByeByeLoan can help you understand it, gather the right documents and pursue corrections with the lenders that reported the information. We cannot change credit records ourselves, and we never promise to remove accurate information, but we can make sure your record reflects what actually happened.",
+        "If a closed loan is still showing on your record, or you are not sure what your report means, SmartGuru can help you understand it, gather the right documents and pursue corrections with the lenders that reported the information. We cannot change credit records ourselves, and we never promise to remove accurate information, but we can make sure your record reflects what actually happened.",
       ],
     },
   ],

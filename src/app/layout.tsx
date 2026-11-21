@@ -14,8 +14,8 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Loan Clearance Help in Pakistan | ByeByeLoan",
-    template: "%s | ByeByeLoan",
+    default: "Loan Clearance Help in Pakistan | SmartGuru",
+    template: "%s | SmartGuru",
   },
   description:
     `Get help with the clearance letter (NOC) and documents for paid-off loans from banks and ${loanApps.length} digital loan apps in Pakistan. Free, no-obligation first consultation.`,
@@ -30,10 +30,10 @@ export const metadata: Metadata = {
     type: "website",
     siteName: site.name,
     locale: "en_PK",
-    title: "Loan Clearance Help in Pakistan | ByeByeLoan",
+    title: "Loan Clearance Help in Pakistan | SmartGuru",
     description: site.description,
     url: "/",
-    images: [{ ...ogImageFor(), alt: "ByeByeLoan – loan clearance assistance in Pakistan" }],
+    images: [{ ...ogImageFor(), alt: "SmartGuru – loan clearance assistance in Pakistan" }],
   },
   twitter: { card: "summary_large_image", images: [ogImageFor().url] },
 };

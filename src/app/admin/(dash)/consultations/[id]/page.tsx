@@ -73,7 +73,7 @@ export default async function ConsultationDetail({ params }: Props) {
               <MessageCircle size={16} aria-hidden="true" /> WhatsApp
             </a>
             {c.email && (
-              <a href={`mailto:${c.email}?subject=${encodeURIComponent(`Your ByeByeLoan request ${c.reference}`)}`} className="btn btn-secondary btn-sm">
+              <a href={`mailto:${c.email}?subject=${encodeURIComponent(`Your SmartGuru request ${c.reference}`)}`} className="btn btn-secondary btn-sm">
                 <Mail size={16} aria-hidden="true" /> Email
               </a>
             )}

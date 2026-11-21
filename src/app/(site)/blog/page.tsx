@@ -47,7 +47,7 @@ export default function BlogPage() {
       <PageHero
         path="/blog"
         crumb="Blog"
-        eyebrow="ByeByeLoan Blog"
+        eyebrow="SmartGuru Blog"
         title="Clear answers on"
         highlight="loans in Pakistan."
         intro="Practical, plain-language guides on clearance letters, loan apps, credit records and your rights as a borrower."

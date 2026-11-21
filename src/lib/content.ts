@@ -158,16 +158,16 @@ export const reasons = [
 
 export const faqs = [
   {
-    q: "What does ByeByeLoan do?",
-    a: "ByeByeLoan helps individuals in Pakistan complete the clearance of a loan. We review your payment records, explain what paperwork you need and help you follow up with your lender for the clearance letter (NOC) and the return of your documents.",
+    q: "What does SmartGuru do?",
+    a: "SmartGuru helps individuals in Pakistan complete the clearance of a loan. We review your payment records, explain what paperwork you need and help you follow up with your lender for the clearance letter (NOC) and the return of your documents.",
   },
   {
-    q: "Is ByeByeLoan a bank or a lender?",
-    a: "No. ByeByeLoan is an independent assistance service. We do not provide loans, we do not collect repayments on behalf of lenders, and we are not a law firm.",
+    q: "Is SmartGuru a bank or a lender?",
+    a: "No. SmartGuru is an independent assistance service. We do not provide loans, we do not collect repayments on behalf of lenders, and we are not a law firm.",
   },
   {
     q: "Do you negotiate settlements or reduce loans?",
-    a: "No. ByeByeLoan does not negotiate settlements, reduce debts or arrange repayment plans. We help with the clearance paperwork once a loan has been paid or closed with your lender.",
+    a: "No. SmartGuru does not negotiate settlements, reduce debts or arrange repayment plans. We help with the clearance paperwork once a loan has been paid or closed with your lender.",
   },
   {
     q: "Can you guarantee when I will get my clearance letter?",

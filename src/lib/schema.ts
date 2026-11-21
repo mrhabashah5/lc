@@ -13,7 +13,7 @@ export function organizationGraph() {
     "@type": ["Organization", "ProfessionalService"],
     "@id": orgId,
     name: site.name,
-    alternateName: "Bye Bye Loan",
+    alternateName: "SmartGuru",
     url: site.url,
     logo: { "@type": "ImageObject", url: abs("/images/logo.png"), width: 512, height: 512 },
     image: abs("/images/og/default.png"),

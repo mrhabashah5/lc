@@ -7,13 +7,14 @@ import { AppCategoryWall } from "@/components/home/AppCategoryWall";
 import { AppTicker } from "@/components/home/AppTicker";
 import { ChatPreview } from "@/components/home/ChatPreview";
 import { WhatsAppCta } from "@/components/home/WhatsAppCta";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { articles } from "@/lib/content";
 import { loanApps } from "@/lib/loan-apps";
 import { pageMetadata } from "@/lib/seo";
 import { whatsappDisplay, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "ByeByeLoan | Get Your Loan Clearance Letter (NOC) in Pakistan",
+  title: "SmartGuru | Get Your Loan Clearance Letter (NOC) in Pakistan",
   absoluteTitle: true,
   description: `Paid off a loan? Get help with your clearance letter (NOC) and documents for loans from banks and ${loanApps.length} digital loan apps in Pakistan. Free first consultation.`,
   path: "/",
@@ -21,11 +22,11 @@ export const metadata: Metadata = pageMetadata({
 
 // Each button sends its own WhatsApp message, so you can tell which part of the page a lead came from.
 const msg = {
-  hero: "Hi ByeByeLoan, I paid off my loan and I need help getting my clearance letter (NOC).",
-  situations: "Hi ByeByeLoan, I think I need a clearance letter for my loan. Can you help?",
-  steps: "Hi ByeByeLoan, I want to start. Here are my loan details:",
-  faq: "Hi ByeByeLoan, I have a question about loan clearance.",
-  final: "Hi ByeByeLoan, I would like a free chat about my loan clearance.",
+  hero: "Hi SmartGuru, I paid off my loan and I need help getting my clearance letter (NOC).",
+  situations: "Hi SmartGuru, I think I need a clearance letter for my loan. Can you help?",
+  steps: "Hi SmartGuru, I want to start. Here are my loan details:",
+  faq: "Hi SmartGuru, I have a question about loan clearance.",
+  final: "Hi SmartGuru, I would like a free chat about my loan clearance.",
 };
 
 const situations = [
@@ -61,27 +62,30 @@ export default function HomePage() {
   const guides = articles.slice(0, 3);
 
   return (
-    <>
+    <div
+      className="home-page pb-[calc(6rem+env(safe-area-inset-bottom))] md:pb-0"
+      data-home-page
+    >
       {/* Hero: one message, one main action */}
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-mist via-brand-mist/60 to-white">
         <div aria-hidden="true" className="absolute top-16 -right-32 h-96 w-96 rounded-full bg-brand-soft/70 blur-3xl" />
-        <div className="container-x relative grid grid-cols-1 items-center gap-12 py-14 sm:py-20 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+        <div className="container-x relative grid grid-cols-1 items-center gap-12 py-7 sm:py-20 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
           <div>
             <p className="eyebrow mb-3">Free help on WhatsApp</p>
-            <h1 className="text-4xl leading-[1.1] font-extrabold text-brand-dark sm:text-5xl lg:text-[3.3rem]">
+            <h1 className="text-3xl leading-[1.08] font-extrabold text-brand-dark sm:text-5xl lg:text-[3.3rem]">
               Paid off your loan? <span className="text-brand">Get your clearance letter.</span>
             </h1>
-            <p className="lead mt-5 max-w-xl">
+            <p className="lead mt-4 max-w-xl">
               Many people pay their loan but never get proof that it is closed. We help you get the clearance letter
               (NOC) and your documents back from the bank or loan app.
             </p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center">
               <WhatsAppCta message={msg.hero} />
               <Link href="/request-consultation" className="link-arrow">
                 Or fill a short form <ArrowRight size={17} aria-hidden="true" />
               </Link>
             </div>
-            <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-brand-dark">
+            <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-brand-dark">
               {["Free first chat", "No obligation", "We are not a lender"].map((t) => (
                 <li key={t} className="inline-flex items-center gap-1.5">
                   <Check size={16} strokeWidth={3} className="text-brand-ink" aria-hidden="true" />
@@ -222,6 +226,18 @@ export default function HomePage() {
           <WhatsAppCta message={msg.final} label={`WhatsApp ${whatsappDisplay}`} variant="light" className="mt-8" />
         </div>
       </section>
-    </>
+      <a
+        href={whatsappLink("Hi ByeByeLoan, I need help with my loan clearance letter (NOC).")}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed inset-x-0 bottom-0 z-50 flex min-h-16 items-center justify-center gap-3 bg-cta px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] text-center text-sm leading-tight font-bold text-white shadow-float md:hidden"
+      >
+        <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
+          <WhatsAppIcon size={24} />
+        </span>
+        <span>Chat with us on WhatsApp — it&apos;s free</span>
+        <span className="sr-only"> (opens in a new tab)</span>
+      </a>
+    </div>
   );
 }

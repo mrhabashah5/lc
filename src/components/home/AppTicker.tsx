@@ -41,7 +41,7 @@ export function AppTicker() {
         </div>
       </div>
       <p className="container-x mt-3 text-xs text-muted">
-        ByeByeLoan is an independent service and is not affiliated with, endorsed by or acting for any of these apps.
+        SmartGuru is an independent service and is not affiliated with, endorsed by or acting for any of these apps.
         App names and logos belong to their owners and are shown only to identify the loans we help clear.
       </p>
     </section>

@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { whatsappLink } from "@/lib/site";
 
 /**
@@ -27,9 +27,11 @@ export function WhatsAppCta({
       rel="noopener noreferrer"
       className={`btn ${look} w-full px-6 py-4 text-center text-lg leading-snug whitespace-normal shadow-float sm:w-auto sm:px-7 ${className}`}
     >
-      <MessageCircle size={22} aria-hidden="true" />
+      <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
+        <WhatsAppIcon size={20} />
+      </span>
       {label}
-      <span className="sr-only"> (opens WhatsApp in a new tab)</span>
+      <span className="sr-only"> (opens in a new tab)</span>
     </a>
   );
 }

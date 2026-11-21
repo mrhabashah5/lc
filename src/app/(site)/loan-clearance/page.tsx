@@ -36,7 +36,7 @@ export default function LoanClearancePage() {
         href: "/loan-apps",
         label: "See the apps we cover",
       }}
-      helpTitle="How ByeByeLoan assists with clearance"
+      helpTitle="How SmartGuru assists with clearance"
       help={[
         {
           title: "Checking what you have",
@@ -62,7 +62,7 @@ export default function LoanClearancePage() {
         "Timeframes depend on the lender's internal process and cannot be guaranteed.",
         "If a lender does not respond to a valid request, official complaint channels are available, and we can explain how to use them.",
       ]}
-      disclaimer="ByeByeLoan is not a bank, lender, credit bureau or law firm. We do not issue clearance letters and cannot alter credit records. We cannot guarantee the outcome or timing of any request made to a lender."
+      disclaimer="SmartGuru is not a bank, lender, credit bureau or law firm. We do not issue clearance letters and cannot alter credit records. We cannot guarantee the outcome or timing of any request made to a lender."
     />
   );
 }

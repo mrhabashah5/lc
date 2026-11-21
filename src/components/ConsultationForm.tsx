@@ -124,7 +124,7 @@ export function ConsultationForm({ initialApp }: { initialApp?: string }) {
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <a
-            href={whatsappLink(`Hello ByeByeLoan, I have submitted a consultation request. My reference is ${reference}.`)}
+            href={whatsappLink(`Hello SmartGuru, I have submitted a consultation request. My reference is ${reference}.`)}
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary"
@@ -375,12 +375,12 @@ export function ConsultationForm({ initialApp }: { initialApp?: string }) {
                 {...aria("consent")}
               />
               <span>
-                I agree to ByeByeLoan contacting me about this request and to the handling of my
+                I agree to SmartGuru contacting me about this request and to the handling of my
                 information as described in the{" "}
                 <Link href="/privacy-policy" target="_blank" className="font-semibold text-brand-dark underline decoration-brand underline-offset-4">
                   Privacy Policy
                 </Link>
-                . I understand that ByeByeLoan is not a lender and cannot guarantee any outcome, as
+                . I understand that SmartGuru is not a lender and cannot guarantee any outcome, as
                 explained in the{" "}
                 <Link href="/disclaimer" target="_blank" className="font-semibold text-brand-dark underline decoration-brand underline-offset-4">
                   Disclaimer

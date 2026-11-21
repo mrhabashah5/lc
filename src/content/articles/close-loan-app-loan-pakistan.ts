@@ -118,9 +118,9 @@ export const closeLoanAppLoan: Article = {
       ],
     },
     {
-      heading: "How ByeByeLoan can help",
+      heading: "How SmartGuru can help",
       paragraphs: [
-        "ByeByeLoan provides clearance assistance for a wide range of digital lending apps in Pakistan. We can help you check the amount you owe against your records, collect the right proof, request written confirmation from the lender and follow up if your loan still shows as open. We are an independent service, not affiliated with any app, and the final decision on closure and reporting always rests with the lender.",
+        "SmartGuru provides clearance assistance for a wide range of digital lending apps in Pakistan. We can help you check the amount you owe against your records, collect the right proof, request written confirmation from the lender and follow up if your loan still shows as open. We are an independent service, not affiliated with any app, and the final decision on closure and reporting always rests with the lender.",
       ],
     },
   ],

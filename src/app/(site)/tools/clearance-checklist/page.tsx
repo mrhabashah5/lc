@@ -38,7 +38,7 @@ export default function Page() {
         },
         {
           q: "Is my progress saved?",
-          a: "No. Nothing is stored or sent to ByeByeLoan. Use the print button to keep a copy.",
+          a: "No. Nothing is stored or sent to SmartGuru. Use the print button to keep a copy.",
         },
       ]}
     >

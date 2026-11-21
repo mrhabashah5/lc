@@ -20,10 +20,10 @@ export const legalDocs: LegalDoc[] = [
   {
     slug: "privacy-policy",
     title: "Privacy Policy",
-    description: "How ByeByeLoan collects, uses, stores and protects your personal information.",
+    description: "How SmartGuru collects, uses, stores and protects your personal information.",
     updated,
     intro:
-      "This Privacy Policy explains what personal information ByeByeLoan collects, why we collect it and how we handle it. By using this website or submitting a form, you agree to the practices described here.",
+      "This Privacy Policy explains what personal information SmartGuru collects, why we collect it and how we handle it. By using this website or submitting a form, you agree to the practices described here.",
     sections: [
       {
         heading: "Information we collect",
@@ -41,7 +41,7 @@ export const legalDocs: LegalDoc[] = [
       {
         heading: "Information we do not ask for",
         paragraphs: [
-          "We will never ask you for a PIN, password, one-time password (OTP), CVV or full card number. Please do not send these to us or to anyone claiming to represent ByeByeLoan.",
+          "We will never ask you for a PIN, password, one-time password (OTP), CVV or full card number. Please do not send these to us or to anyone claiming to represent SmartGuru.",
         ],
       },
       {
@@ -101,15 +101,15 @@ export const legalDocs: LegalDoc[] = [
   {
     slug: "terms-and-conditions",
     title: "Terms & Conditions",
-    description: "The terms that apply to your use of the ByeByeLoan website.",
+    description: "The terms that apply to your use of the SmartGuru website.",
     updated,
     intro:
-      "These Terms & Conditions govern your use of the ByeByeLoan website. By using the website, you accept them. If you do not agree, please do not use the website.",
+      "These Terms & Conditions govern your use of the SmartGuru website. By using the website, you accept them. If you do not agree, please do not use the website.",
     sections: [
       {
         heading: "About our service",
         paragraphs: [
-          "ByeByeLoan provides information and assistance to individuals in Pakistan in relation to loan clearance. ByeByeLoan does not negotiate settlements, reduce debts, arrange repayment plans or offer credit repair. ByeByeLoan is not a bank, a financial institution, a lender, a debt collector, a credit bureau or a law firm.",
+          "SmartGuru provides information and assistance to individuals in Pakistan in relation to loan clearance. SmartGuru does not negotiate settlements, reduce debts, arrange repayment plans or offer credit repair. SmartGuru is not a bank, a financial institution, a lender, a debt collector, a credit bureau or a law firm.",
         ],
       },
       {
@@ -121,13 +121,13 @@ export const legalDocs: LegalDoc[] = [
       {
         heading: "Consultation requests",
         paragraphs: [
-          "Submitting a consultation request does not create a client relationship and does not oblige you or ByeByeLoan to proceed. Any engagement is subject to a separate written agreement setting out the scope of assistance and the applicable fee.",
+          "Submitting a consultation request does not create a client relationship and does not oblige you or SmartGuru to proceed. Any engagement is subject to a separate written agreement setting out the scope of assistance and the applicable fee.",
         ],
       },
       {
         heading: "No guarantee of outcome",
         paragraphs: [
-          "Decisions about clearance letters, the release of documents and credit reporting are made by lenders and other third parties. ByeByeLoan does not guarantee any outcome, approval or timeline.",
+          "Decisions about clearance letters, the release of documents and credit reporting are made by lenders and other third parties. SmartGuru does not guarantee any outcome, approval or timeline.",
         ],
       },
       {
@@ -142,13 +142,13 @@ export const legalDocs: LegalDoc[] = [
       {
         heading: "Intellectual property",
         paragraphs: [
-          "The ByeByeLoan name, logo, text and design of this website belong to ByeByeLoan. You may view and print pages for your personal use but may not reproduce them for commercial purposes without our written permission.",
+          "The SmartGuru name, logo, text and design of this website belong to SmartGuru. You may view and print pages for your personal use but may not reproduce them for commercial purposes without our written permission.",
         ],
       },
       {
         heading: "Limitation of liability",
         paragraphs: [
-          "To the extent permitted by law, ByeByeLoan is not liable for any loss arising from reliance on the general information on this website, from the website being unavailable, or from the decisions of lenders or other third parties.",
+          "To the extent permitted by law, SmartGuru is not liable for any loss arising from reliance on the general information on this website, from the website being unavailable, or from the decisions of lenders or other third parties.",
         ],
       },
       {
@@ -166,21 +166,21 @@ export const legalDocs: LegalDoc[] = [
   {
     slug: "disclaimer",
     title: "Disclaimer",
-    description: "Important information about the nature and limits of ByeByeLoan's service.",
+    description: "Important information about the nature and limits of SmartGuru's service.",
     updated,
     intro:
-      "Please read this disclaimer carefully. It explains what ByeByeLoan is, what it is not, and the limits of what we can do.",
+      "Please read this disclaimer carefully. It explains what SmartGuru is, what it is not, and the limits of what we can do.",
     sections: [
       {
         heading: "We are not a lender or a law firm",
         paragraphs: [
-          "ByeByeLoan is an independent assistance service. We are not a bank, financial institution, lender, debt collector, credit bureau or law firm. We do not provide loans, we do not accept deposits and we do not collect repayments on behalf of any lender.",
+          "SmartGuru is an independent assistance service. We are not a bank, financial institution, lender, debt collector, credit bureau or law firm. We do not provide loans, we do not accept deposits and we do not collect repayments on behalf of any lender.",
         ],
       },
       {
         heading: "No guaranteed results",
         paragraphs: [
-          "Whether and how quickly a lender issues a clearance letter, returns documents or updates a credit record is entirely the lender's decision. ByeByeLoan does not and cannot guarantee any specific result or timeframe. Examples and descriptions on this website are illustrative only.",
+          "Whether and how quickly a lender issues a clearance letter, returns documents or updates a credit record is entirely the lender's decision. SmartGuru does not and cannot guarantee any specific result or timeframe. Examples and descriptions on this website are illustrative only.",
         ],
       },
       {
@@ -192,7 +192,7 @@ export const legalDocs: LegalDoc[] = [
       {
         heading: "Effect on your credit record",
         paragraphs: [
-          "ByeByeLoan does not provide credit repair and cannot remove or alter accurate information held by lenders or credit bureaus. Only the lender can report updates to a credit bureau.",
+          "SmartGuru does not provide credit repair and cannot remove or alter accurate information held by lenders or credit bureaus. Only the lender can report updates to a credit bureau.",
         ],
       },
       {
@@ -204,7 +204,7 @@ export const legalDocs: LegalDoc[] = [
       {
         heading: "Protect yourself",
         paragraphs: [
-          "ByeByeLoan will never ask for your PIN, password, OTP or full card number. Always pay your lender directly through its official channels and keep your receipts.",
+          "SmartGuru will never ask for your PIN, password, OTP or full card number. Always pay your lender directly through its official channels and keep your receipts.",
         ],
       },
     ],
@@ -212,7 +212,7 @@ export const legalDocs: LegalDoc[] = [
   {
     slug: "complaints-policy",
     title: "Complaints Policy",
-    description: "How to make a complaint about ByeByeLoan and how we will handle it.",
+    description: "How to make a complaint about SmartGuru and how we will handle it.",
     updated,
     intro:
       "We want to put things right if our service has fallen short. This policy explains how to raise a complaint and what you can expect from us.",
@@ -241,7 +241,7 @@ export const legalDocs: LegalDoc[] = [
       {
         heading: "Complaints about your lender",
         paragraphs: [
-          "This policy covers complaints about ByeByeLoan's own service. If your complaint is about a bank or other lender, it should be raised with that institution through its complaint procedure. We can explain the official escalation channels that are available.",
+          "This policy covers complaints about SmartGuru's own service. If your complaint is about a bank or other lender, it should be raised with that institution through its complaint procedure. We can explain the official escalation channels that are available.",
         ],
       },
       {
@@ -255,17 +255,17 @@ export const legalDocs: LegalDoc[] = [
   {
     slug: "cookie-policy",
     title: "Cookie Policy",
-    description: "How the ByeByeLoan website uses cookies.",
+    description: "How the SmartGuru website uses cookies.",
     updated,
     intro:
-      "Cookies are small text files stored on your device by a website. This page explains how ByeByeLoan uses them.",
+      "Cookies are small text files stored on your device by a website. This page explains how SmartGuru uses them.",
     sections: [
       {
         heading: "Cookies we use",
         paragraphs: [
           gaId
             ? "We use Google Analytics cookies to understand how visitors use the website, for example which pages are viewed and how many people contact us, so we can improve it. These cookies do not identify you by name. You can block them in your browser settings."
-            : "The public ByeByeLoan website does not set advertising or tracking cookies.",
+            : "The public SmartGuru website does not set advertising or tracking cookies.",
           "A single strictly necessary cookie is used only when a member of our staff signs in to the administration area. It keeps that session secure and is not used to track visitors.",
         ],
       },

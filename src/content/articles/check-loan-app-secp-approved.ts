@@ -126,9 +126,9 @@ export const checkLoanAppSecpApproved: Article = {
       ],
     },
     {
-      heading: "How ByeByeLoan can help",
+      heading: "How SmartGuru can help",
       paragraphs: [
-        "ByeByeLoan helps borrowers in Pakistan understand where they stand with digital loans. If you are not sure whether your app is licensed, what you actually owe or how to close a loan properly, we can review your situation, explain your options and help you collect the right proof. We are independent and not affiliated with any lending app or company.",
+        "SmartGuru helps borrowers in Pakistan understand where they stand with digital loans. If you are not sure whether your app is licensed, what you actually owe or how to close a loan properly, we can review your situation, explain your options and help you collect the right proof. We are independent and not affiliated with any lending app or company.",
       ],
     },
   ],

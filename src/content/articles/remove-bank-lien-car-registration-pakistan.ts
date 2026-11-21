@@ -143,9 +143,9 @@ export const removeBankLienCar: Article = {
       ],
     },
     {
-      heading: "How ByeByeLoan can help",
+      heading: "How SmartGuru can help",
       paragraphs: [
-        "ByeByeLoan helps borrowers close car finance properly. We can help you request the final figure, follow up for the NOC and original documents, check that every detail matches your registration and explain the next steps with the Excise office. The bank issues the NOC and the Excise department removes the lien; we help make sure nothing is missed in between.",
+        "SmartGuru helps borrowers close car finance properly. We can help you request the final figure, follow up for the NOC and original documents, check that every detail matches your registration and explain the next steps with the Excise office. The bank issues the NOC and the Excise department removes the lien; we help make sure nothing is missed in between.",
       ],
     },
   ],

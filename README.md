@@ -1,6 +1,6 @@
-# ByeByeLoan
+# SmartGuru
 
-Marketing website, consultation intake and admin dashboard for ByeByeLoan
+Marketing website, consultation intake and admin dashboard for SmartGuru
 (loan settlement and clearance assistance, Pakistan).
 
 Next.js (App Router) · Tailwind CSS v4 · libSQL / Turso database · Nodemailer.
@@ -19,7 +19,7 @@ Production: `npm run build` then `npm start`, or deploy to Vercel (see below). R
 
 | Variable | Purpose |
 | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Public URL (`https://byebyeloan.online`), used for canonical links, sitemap, robots and structured data |
+| `NEXT_PUBLIC_SITE_URL` | Public URL (`https://smartguru.site`), used for canonical links, sitemap, robots and structured data |
 | `NEXT_PUBLIC_WHATSAPP_NUMBER`, `NEXT_PUBLIC_CONTACT_EMAIL`, `NEXT_PUBLIC_ADDRESS` | Contact details shown on the site. WhatsApp number in international format without `+` |
 | `ADMIN_PASSWORD` | Password for `/admin` |
 | `SESSION_SECRET` | 32+ character secret used to sign the admin session cookie |
@@ -57,12 +57,12 @@ Use the Tailwind utilities (`bg-navy`, `text-sky`, …) and the shared classes
 2. Create the database: in Vercel open **Storage → Create Database → Turso** (Marketplace), or create one at turso.tech.
    Make sure the project has `TURSO_DATABASE_URL` (starts with `libsql://`) and `TURSO_AUTH_TOKEN`.
    Tables are created automatically on the first request.
-3. Add the other environment variables in **Settings → Environment Variables**: `NEXT_PUBLIC_SITE_URL=https://byebyeloan.online`,
+3. Add the other environment variables in **Settings → Environment Variables**: `NEXT_PUBLIC_SITE_URL=https://smartguru.site`,
    a new `ADMIN_PASSWORD`, a new `SESSION_SECRET`, contact details and (optional) SMTP settings. Redeploy after changing them.
-4. **Settings → Domains**: add `byebyeloan.online` and `www.byebyeloan.online`; make the apex primary and redirect www to it.
+4. **Settings → Domains**: add `smartguru.site` and `www.smartguru.site`; make the apex primary and redirect www to it.
 5. In GoDaddy **DNS → DNS Records**, set the records Vercel shows (usually A `@` → `76.76.21.21` and CNAME `www` → `cname.vercel-dns.com`).
    Leave MX and TXT records alone (they handle email) and turn off any GoDaddy forwarding.
-6. After it is live, submit `https://byebyeloan.online/sitemap.xml` in Google Search Console.
+6. After it is live, submit `https://smartguru.site/sitemap.xml` in Google Search Console.
 
 Note: the form rate limiter is in memory, so on Vercel each server instance counts separately. That is fine for normal traffic.
 

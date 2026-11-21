@@ -131,9 +131,9 @@ export const checkCreditReportPakistan: Article = {
       ],
     },
     {
-      heading: "How ByeByeLoan can help",
+      heading: "How SmartGuru can help",
       paragraphs: [
-        "If a closed loan is still holding you back, ByeByeLoan can help you gather the right documents, prepare a clear written request to the lender and follow up until the reporting is corrected. We cannot change credit records ourselves, and we do not promise to remove accurate information, but we can make sure your correction request is complete and properly pursued.",
+        "If a closed loan is still holding you back, SmartGuru can help you gather the right documents, prepare a clear written request to the lender and follow up until the reporting is corrected. We cannot change credit records ourselves, and we do not promise to remove accurate information, but we can make sure your correction request is complete and properly pursued.",
       ],
     },
   ],

@@ -135,9 +135,9 @@ export const clearanceLetterExplained: Article = {
       ],
     },
     {
-      heading: "How ByeByeLoan can help",
+      heading: "How SmartGuru can help",
       paragraphs: [
-        "ByeByeLoan helps borrowers request clearance letters properly, check that the letter they receive is complete and follow up when it is delayed or incorrect. For secured loans, we also help you follow through to the return of documents and lien removal. Only your lender can issue the letter, but we make sure nothing is missed on the way. For the full step-by-step process, read our guide on how to get a loan clearance certificate (NOC) in Pakistan.",
+        "SmartGuru helps borrowers request clearance letters properly, check that the letter they receive is complete and follow up when it is delayed or incorrect. For secured loans, we also help you follow through to the return of documents and lien removal. Only your lender can issue the letter, but we make sure nothing is missed on the way. For the full step-by-step process, read our guide on how to get a loan clearance certificate (NOC) in Pakistan.",
       ],
     },
   ],

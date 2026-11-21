@@ -122,9 +122,9 @@ export const settlementVsClearance: Article = {
       ],
     },
     {
-      heading: "Where ByeByeLoan fits in",
+      heading: "Where SmartGuru fits in",
       paragraphs: [
-        "ByeByeLoan helps with the clearance stage only. We do not negotiate settlements, reduce debts or arrange repayment plans; if you are considering a settlement, speak to your lender directly. Once your loan is closed, we help you request the clearance letter, follow up for the return of documents and keep a complete record that the loan is finished. We never promise a particular result, because the lender makes the final decision.",
+        "SmartGuru helps with the clearance stage only. We do not negotiate settlements, reduce debts or arrange repayment plans; if you are considering a settlement, speak to your lender directly. Once your loan is closed, we help you request the clearance letter, follow up for the return of documents and keep a complete record that the loan is finished. We never promise a particular result, because the lender makes the final decision.",
       ],
     },
   ],
@@ -146,8 +146,8 @@ export const settlementVsClearance: Article = {
       a: "Yes. Every closed loan should have a clearance letter, however it was repaid.",
     },
     {
-      q: "Does ByeByeLoan negotiate settlements?",
-      a: "No. ByeByeLoan does not negotiate settlements or reduce debts. We help with the clearance paperwork after a loan has been closed with your lender.",
+      q: "Does SmartGuru negotiate settlements?",
+      a: "No. SmartGuru does not negotiate settlements or reduce debts. We help with the clearance paperwork after a loan has been closed with your lender.",
     },
   ],
   sources: [

@@ -1,4 +1,4 @@
-// Digital lending apps ByeByeLoan provides clearance assistance for.
+// Digital lending apps SmartGuru provides clearance assistance for.
 // To add or remove an app, edit this list; every page reads from it.
 
 export const appCategories = [
@@ -96,4 +96,4 @@ export const consultationLinkFor = (app: LoanApp) =>
   `/request-consultation?app=${encodeURIComponent(app.name)}`;
 
 export const appsDisclaimer =
-  "ByeByeLoan is an independent service. We are not affiliated with, endorsed by or acting on behalf of any app or company listed here. App names, company names and logos are trademarks of their respective owners and are shown only to identify the loans we can assist with. A clearance can only be issued by the lender itself, and outcomes and timelines cannot be guaranteed.";
+  "SmartGuru is an independent service. We are not affiliated with, endorsed by or acting on behalf of any app or company listed here. App names, company names and logos are trademarks of their respective owners and are shown only to identify the loans we can assist with. A clearance can only be issued by the lender itself, and outcomes and timelines cannot be guaranteed.";

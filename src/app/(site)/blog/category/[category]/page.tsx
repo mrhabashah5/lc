@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!c) return {};
   return pageMetadata({
     title: `${c.label} Guides for Borrowers in Pakistan`,
-    description: clampDescription(`${c.description} Free, plain-language guides from the ByeByeLoan blog.`),
+    description: clampDescription(`${c.description} Free, plain-language guides from the SmartGuru blog.`),
     path: categoryPath(c.slug),
   });
 }

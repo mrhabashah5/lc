@@ -142,9 +142,9 @@ export const loanClearanceCertificateNoc: Article = {
       ],
     },
     {
-      heading: "How ByeByeLoan can help",
+      heading: "How SmartGuru can help",
       paragraphs: [
-        "ByeByeLoan is an independent assistance service. We can help you check your documents, prepare a clear written request, follow up with your lender and explain the complaint options if the certificate is delayed. We cannot issue a clearance certificate ourselves, and the timing is decided by your lender, but we can make sure your request is complete, documented and followed through.",
+        "SmartGuru is an independent assistance service. We can help you check your documents, prepare a clear written request, follow up with your lender and explain the complaint options if the certificate is delayed. We cannot issue a clearance certificate ourselves, and the timing is decided by your lender, but we can make sure your request is complete, documented and followed through.",
       ],
     },
   ],

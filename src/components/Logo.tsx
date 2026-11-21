@@ -18,10 +18,10 @@ export function LogoMark({ onDark = false, size = 36 }: { onDark?: boolean; size
 
 export function Logo({ onDark = false, href = "/" }: { onDark?: boolean; href?: string }) {
   return (
-    <Link href={href} className="inline-flex items-center gap-2.5" aria-label="ByeByeLoan home">
+    <Link href={href} className="inline-flex items-center gap-2.5" aria-label="SmartGuru home">
       <LogoMark onDark={onDark} />
       <span className={`text-2xl font-extrabold tracking-tight ${onDark ? "text-white" : "text-brand-dark"}`}>
-        ByeBye<span className={onDark ? "text-brand-soft" : "text-brand"}>Loan</span>
+        SmartGuru
       </span>
     </Link>
   );

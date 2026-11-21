@@ -137,9 +137,9 @@ export const loanAppHarassment: Article = {
       ],
     },
     {
-      heading: "How ByeByeLoan can help",
+      heading: "How SmartGuru can help",
       paragraphs: [
-        "ByeByeLoan can help you organise your evidence, understand what you genuinely owe, communicate with a licensed lender through official channels and close the loan with proper written confirmation. We can also explain the complaint routes available to you. We are not a law firm or a law enforcement agency; for threats to your safety, contact the police, and for blackmail or online abuse, contact NCCIA.",
+        "SmartGuru can help you organise your evidence, understand what you genuinely owe, communicate with a licensed lender through official channels and close the loan with proper written confirmation. We can also explain the complaint routes available to you. We are not a law firm or a law enforcement agency; for threats to your safety, contact the police, and for blackmail or online abuse, contact NCCIA.",
       ],
     },
   ],

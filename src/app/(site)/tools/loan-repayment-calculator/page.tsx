@@ -48,7 +48,7 @@ export default function Page() {
         },
         {
           q: "Is the information I enter saved?",
-          a: "No. The calculation runs in your browser and nothing you enter is sent to ByeByeLoan.",
+          a: "No. The calculation runs in your browser and nothing you enter is sent to SmartGuru.",
         },
       ]}
     >

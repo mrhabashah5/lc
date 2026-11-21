@@ -15,7 +15,7 @@ function transport() {
   });
 }
 
-const from = () => process.env.MAIL_FROM ?? `ByeByeLoan <${site.email}>`;
+const from = () => process.env.MAIL_FROM ?? `SmartGuru <${site.email}>`;
 
 /** Sends an email if SMTP is configured. Never throws: a mail failure must not lose a submission. */
 export async function sendMail(opts: { to: string; subject: string; text: string; replyTo?: string }) {

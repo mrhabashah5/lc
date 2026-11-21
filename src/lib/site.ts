@@ -1,9 +1,9 @@
 export const site = {
-  name: "ByeByeLoan",
+  name: "SmartGuru",
   tagline: "Get Clarity. Find Your Way Forward.",
   description:
     "Professional loan clearance assistance for individuals in Pakistan.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://byebyeloan.online",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://smartguru.site",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923101990325",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "info@byebyeloan.online",
   /** Real office address; leave unset to hide it everywhere (never show a placeholder). */
@@ -14,7 +14,7 @@ export const site = {
 /** WhatsApp number formatted for display, e.g. +92 310 1990325. */
 export const whatsappDisplay = site.whatsapp.replace(/^(92)(\d{3})(\d+)$/, "+$1 $2 $3");
 
-export function whatsappLink(message = "Hello ByeByeLoan, I would like to request a consultation.") {
+export function whatsappLink(message = "Hello SmartGuru, I would like to request a consultation.") {
   return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
 }
 
@@ -41,4 +41,4 @@ export const legalNav = [
 ];
 
 export const shortDisclaimer =
-  "ByeByeLoan is an independent assistance service. We are not a bank, lender or law firm, and we do not provide loans. Outcomes depend on your circumstances and on your lender's decision; no specific result, reduction or timeline is guaranteed.";
+  "SmartGuru is an independent assistance service. We are not a bank, lender or law firm, and we do not provide loans. Outcomes depend on your circumstances and on your lender's decision; no specific result, reduction or timeline is guaranteed.";

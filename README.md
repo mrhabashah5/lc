@@ -27,7 +27,8 @@ Production: `npm run build` then `npm start`, or deploy to Vercel (see below). R
 | `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN` | Hosted database (required on Vercel). Leave empty locally to use `data/loanclear.db` |
 | `DATABASE_DIR` | Optional. Folder for the local database file (default `./data`) |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, `NEXT_PUBLIC_BING_SITE_VERIFICATION` | Search Console / Bing Webmaster verification codes (adds the meta tags) |
-| `NEXT_PUBLIC_GA_ID` | Google Analytics 4 ID. Tracks WhatsApp clicks, consultation requests and contact messages, and updates the cookie and privacy policies |
+| `NEXT_PUBLIC_GA_ID` | Google Analytics 4 ID. Tracks WhatsApp clicks, consultation requests and contact messages |
+| `NEXT_PUBLIC_META_PIXEL_ID` | Meta Pixel ID for PageView tracking (defaults to the configured site Pixel ID) |
 
 ## Brand colours
 

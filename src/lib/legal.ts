@@ -1,4 +1,4 @@
-import { gaId } from "./analytics";
+import { gaId, metaPixelId } from "./analytics";
 import { site, whatsappDisplay } from "./site";
 
 // DRAFT legal content. Have these pages reviewed by a qualified Pakistani
@@ -14,14 +14,24 @@ export type LegalDoc = {
 };
 
 const updated = "16 November 2026";
+const trackingUpdated = "22 November 2026";
 const contactLine = `You can contact us by email at ${site.email} or on WhatsApp at ${whatsappDisplay}.`;
+const cookieTrackingNotice =
+  [
+    ...(gaId
+      ? ["Google Analytics cookies help us understand site use, such as which pages are viewed and how many people contact us."]
+      : []),
+    ...(metaPixelId
+      ? ["Meta Pixel may use cookies or similar technologies to measure advertising and page visits. Meta may process browser, device and page-visit information under its own policies."]
+      : []),
+  ].join(" ") || "The public SmartGuru website does not set advertising or tracking cookies.";
 
 export const legalDocs: LegalDoc[] = [
   {
     slug: "privacy-policy",
     title: "Privacy Policy",
     description: "How SmartGuru collects, uses, stores and protects your personal information.",
-    updated,
+    updated: trackingUpdated,
     intro:
       "This Privacy Policy explains what personal information SmartGuru collects, why we collect it and how we handle it. By using this website or submitting a form, you agree to the practices described here.",
     sections: [
@@ -35,6 +45,9 @@ export const legalDocs: LegalDoc[] = [
           "Basic technical information needed to run the website securely, such as your IP address at the time of a form submission",
           ...(gaId
             ? ["Website usage statistics collected through Google Analytics, such as pages viewed and the device type you used"]
+            : []),
+          ...(metaPixelId
+            ? ["Page-visit and browser/device information collected through Meta Pixel to measure advertising"]
             : []),
         ],
       },
@@ -62,6 +75,9 @@ export const legalDocs: LegalDoc[] = [
         bullets: [
           "With your lender, where you have authorised us in writing to do so",
           "With service providers who help us operate, such as email and hosting providers, under appropriate confidentiality obligations",
+          ...(metaPixelId
+            ? ["With Meta through Meta Pixel for advertising measurement, subject to Meta's own privacy policies"]
+            : []),
           "Where we are required to do so by law or by a competent authority",
         ],
       },
@@ -102,7 +118,7 @@ export const legalDocs: LegalDoc[] = [
     slug: "terms-and-conditions",
     title: "Terms & Conditions",
     description: "The terms that apply to your use of the SmartGuru website.",
-    updated,
+    updated: trackingUpdated,
     intro:
       "These Terms & Conditions govern your use of the SmartGuru website. By using the website, you accept them. If you do not agree, please do not use the website.",
     sections: [
@@ -256,23 +272,24 @@ export const legalDocs: LegalDoc[] = [
     slug: "cookie-policy",
     title: "Cookie Policy",
     description: "How the SmartGuru website uses cookies.",
-    updated,
+    updated: trackingUpdated,
     intro:
       "Cookies are small text files stored on your device by a website. This page explains how SmartGuru uses them.",
     sections: [
       {
         heading: "Cookies we use",
         paragraphs: [
-          gaId
-            ? "We use Google Analytics cookies to understand how visitors use the website, for example which pages are viewed and how many people contact us, so we can improve it. These cookies do not identify you by name. You can block them in your browser settings."
-            : "The public SmartGuru website does not set advertising or tracking cookies.",
+          cookieTrackingNotice,
           "A single strictly necessary cookie is used only when a member of our staff signs in to the administration area. It keeps that session secure and is not used to track visitors.",
         ],
       },
       {
         heading: "Third-party services",
         paragraphs: [
-          "If you follow a link to a third-party service, such as WhatsApp, that service may set its own cookies under its own policies. We do not control those cookies.",
+          ...(metaPixelId
+            ? ["Meta Pixel may send page-visit and browser/device information to Meta for advertising measurement."]
+            : []),
+          "If you follow a link to another third-party service, such as WhatsApp, that service may also set its own cookies under its own policies.",
         ],
       },
       {
@@ -284,7 +301,7 @@ export const legalDocs: LegalDoc[] = [
       {
         heading: "Changes",
         paragraphs: [
-          "If we introduce analytics or other non-essential cookies in future, we will update this page and ask for your consent where required.",
+          "We will update this page if our use of analytics or other non-essential cookies changes, and seek consent where required.",
           contactLine,
         ],
       },

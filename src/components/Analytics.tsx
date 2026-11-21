@@ -1,14 +1,17 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect } from "react";
-import { gaId, trackEvent } from "@/lib/analytics";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
+import { gaId, metaPixelId, trackEvent, trackMetaPageView } from "@/lib/analytics";
 
 /**
- * Loads GA4 when NEXT_PUBLIC_GA_ID is set and records WhatsApp link clicks as a conversion event.
- * Renders nothing when analytics is not configured.
+ * Loads configured analytics and records WhatsApp link clicks as a GA4 conversion event.
  */
 export function Analytics() {
+  const pathname = usePathname();
+  const previousPathname = useRef(pathname);
+
   useEffect(() => {
     if (!gaId) return;
     const onClick = (e: MouseEvent) => {
@@ -19,13 +22,38 @@ export function Analytics() {
     return () => document.removeEventListener("click", onClick);
   }, []);
 
-  if (!gaId) return null;
+  useEffect(() => {
+    if (!metaPixelId || pathname === previousPathname.current) return;
+    previousPathname.current = pathname;
+    trackMetaPageView();
+  }, [pathname]);
+
+  if (!gaId && !metaPixelId) return null;
   return (
     <>
-      <Script src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaId)}`} strategy="afterInteractive" />
-      <Script id="ga4-init" strategy="afterInteractive">
-        {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',${JSON.stringify(gaId)});`}
-      </Script>
+      {gaId ? (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaId)}`}
+            strategy="afterInteractive"
+          />
+          <Script id="ga4-init" strategy="afterInteractive">
+            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',${JSON.stringify(gaId)});`}
+          </Script>
+        </>
+      ) : null}
+      {metaPixelId ? (
+        <>
+          <Script id="meta-pixel-init" strategy="afterInteractive">
+            {`!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',${JSON.stringify(metaPixelId)});fbq('track','PageView');`}
+          </Script>
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: `<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${encodeURIComponent(metaPixelId)}&ev=PageView&noscript=1" alt="">`,
+            }}
+          />
+        </>
+      ) : null}
     </>
   );
 }

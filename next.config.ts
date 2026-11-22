@@ -15,7 +15,8 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // Preserve the prior route after the SmartGuru rebrand.
-      { source: "/why-choose-loanclear", destination: "/why-choose-byebyeloan", permanent: true },
+      { source: "/why-choose-loanclear", destination: "/why-choose-smartguru", permanent: true },
+      { source: "/why-choose-byebyeloan", destination: "/why-choose-smartguru", permanent: true },
       // Articles moved to /blog when the site became a blog.
       { source: "/articles", destination: "/blog", permanent: true },
       { source: "/articles/:slug", destination: "/blog/:slug", permanent: true },

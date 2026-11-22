@@ -3,7 +3,7 @@ export const site = {
   tagline: "Get Clarity. Find Your Way Forward.",
   description:
     "Professional loan clearance assistance for individuals in Pakistan.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://smartguru.site",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.smartguru.site",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "923101990325",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "info@byebyeloan.online",
   /** Real office address; leave unset to hide it everywhere (never show a placeholder). */

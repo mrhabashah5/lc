@@ -20,7 +20,7 @@ const help = [
 const company = [
   { href: "/about", label: "About Us" },
   { href: "/how-it-works", label: "How It Works" },
-  { href: "/why-choose-byebyeloan", label: "Why Choose SmartGuru" },
+  { href: "/why-choose-smartguru", label: "Why Choose SmartGuru" },
   { href: "/faqs", label: "FAQs" },
   { href: "/contact", label: "Contact Us" },
 ];

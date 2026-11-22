@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Check, ChevronDown, FileCheck, FolderOpen, ShieldCheck } from "lucide-react";
+import { ArrowRight, BookOpen, Check, ChevronDown, Clock, FileCheck, FolderOpen, Layers, ShieldCheck } from "lucide-react";
 import { ArticleCard } from "@/components/ArticleCard";
+import { JsonLd } from "@/components/JsonLd";
 import { HeroIllustration } from "@/components/HeroIllustration";
 import { AppCategoryWall } from "@/components/home/AppCategoryWall";
 import { AppTicker } from "@/components/home/AppTicker";
@@ -10,11 +11,12 @@ import { WhatsAppCta } from "@/components/home/WhatsAppCta";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { articles } from "@/lib/content";
 import { loanApps } from "@/lib/loan-apps";
+import { serviceJsonLd } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
-import { whatsappDisplay, whatsappLink } from "@/lib/site";
+import { site, whatsappDisplay, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "SmartGuru | Get Your Loan Clearance Letter (NOC) in Pakistan",
+  title: "Loan Clearance Letter (NOC) Help in Pakistan | SmartGuru",
   absoluteTitle: true,
   description: `Paid off a loan? Get help with your clearance letter (NOC) and documents for loans from banks and ${loanApps.length} digital loan apps in Pakistan. Free first consultation.`,
   path: "/",
@@ -27,6 +29,7 @@ const msg = {
   steps: "Hi SmartGuru, I want to start. Here are my loan details:",
   faq: "Hi SmartGuru, I have a question about loan clearance.",
   final: "Hi SmartGuru, I would like a free chat about my loan clearance.",
+  sticky: "Hi SmartGuru, I need help with my loan clearance letter (NOC).",
 };
 
 const situations = [
@@ -58,8 +61,27 @@ const faqs = [
   { q: "Will you ask for my password or OTP?", a: "Never. We will never ask for your PIN, password, OTP or full card number." },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
+
+const homeService = serviceJsonLd({
+  name: "Loan clearance letter (NOC) assistance",
+  serviceType: "Loan clearance assistance",
+  description:
+    "Help for people in Pakistan who have paid off a bank or loan app loan to request the clearance letter (NOC) and get their documents back.",
+  path: "/",
+});
+
 export default function HomePage() {
   const guides = articles.slice(0, 3);
+  const facts = [
+    { icon: Layers, value: String(loanApps.length), label: "Loan apps covered" },
+    { icon: BookOpen, value: String(articles.length), label: "Free guides" },
+    { icon: Clock, value: "Mon–Sat", label: "10 am – 6 pm replies" },
+  ];
 
   return (
     <div
@@ -76,8 +98,8 @@ export default function HomePage() {
               Paid off your loan? <span className="text-brand">Get your clearance letter.</span>
             </h1>
             <p className="lead mt-4 max-w-xl">
-              Many people pay their loan but never get proof that it is closed. We help you get the clearance letter
-              (NOC) and your documents back from the bank or loan app.
+              Many people in Pakistan pay their loan but never get proof that it is closed. We help you get the
+              clearance letter (NOC) and your documents back from the bank or loan app.
             </p>
             <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center">
               <WhatsAppCta message={msg.hero} />
@@ -96,6 +118,19 @@ export default function HomePage() {
           </div>
           <ChatPreview />
         </div>
+      </section>
+
+      {/* Key facts */}
+      <section aria-label="SmartGuru at a glance" className="border-t border-line bg-white">
+        <ul className="container-x grid grid-cols-3 divide-x divide-line py-5 text-center">
+          {facts.map((f) => (
+            <li key={f.label} className="px-2">
+              <f.icon size={22} className="mx-auto text-brand" aria-hidden="true" />
+              <p className="mt-1.5 text-lg font-extrabold text-brand-dark sm:text-2xl">{f.value}</p>
+              <p className="text-xs text-muted sm:text-sm">{f.label}</p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <AppTicker />
@@ -224,10 +259,11 @@ export default function HomePage() {
           <h2 className="text-3xl leading-tight font-extrabold text-white sm:text-4xl">Close your loan the right way</h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-white/85">Send us a message today. Your first chat is free.</p>
           <WhatsAppCta message={msg.final} label={`WhatsApp ${whatsappDisplay}`} variant="light" className="mt-8" />
+          <p className="mt-4 text-sm text-white/80">We reply {site.hours}.</p>
         </div>
       </section>
       <a
-        href={whatsappLink("Hi ByeByeLoan, I need help with my loan clearance letter (NOC).")}
+        href={whatsappLink(msg.sticky)}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed inset-x-0 bottom-0 z-50 flex min-h-16 items-center justify-center gap-3 bg-cta px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] text-center text-sm leading-tight font-bold text-white shadow-float md:hidden"
@@ -238,6 +274,8 @@ export default function HomePage() {
         <span>Chat with us on WhatsApp — it&apos;s free</span>
         <span className="sr-only"> (opens in a new tab)</span>
       </a>
+      <JsonLd data={homeService} />
+      <JsonLd data={faqJsonLd} />
     </div>
   );
 }

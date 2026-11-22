@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMetadata({
   absoluteTitle: true,
   description:
     "Clear information, honest guidance and realistic expectations. See what SmartGuru will and will not do when helping you clear a loan in Pakistan.",
-  path: "/why-choose-byebyeloan",
+  path: "/why-choose-smartguru",
 });
 
 const will = [
@@ -33,7 +33,7 @@ export default function WhyPage() {
   return (
     <>
       <PageHero
-        path="/why-choose-byebyeloan"
+        path="/why-choose-smartguru"
         crumb="Why Choose SmartGuru"
         eyebrow="Why choose SmartGuru"
         title="Straightforward help,"

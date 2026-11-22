@@ -4,9 +4,18 @@ export const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "18412554938
 
 type Gtag = (command: "event", name: string, params?: Record<string, unknown>) => void;
 
+type Fbq = ((...args: unknown[]) => void) & {
+  callMethod?: (...args: unknown[]) => void;
+  queue?: unknown[][];
+  push?: unknown;
+  loaded?: boolean;
+  version?: string;
+};
+
 declare global {
   interface Window {
-    fbq?: (command: "track", eventName: "PageView") => void;
+    fbq?: Fbq;
+    _fbq?: Fbq;
   }
 }
 
@@ -17,7 +26,32 @@ export function trackEvent(name: string, params?: Record<string, unknown>) {
   if (gtag) gtag("event", name, params);
 }
 
-/** Sends a Meta Pixel page view when the pixel is enabled. */
-export function trackMetaPageView() {
-  if (typeof window !== "undefined") window.fbq?.("track", "PageView");
+/**
+ * Starts the Meta Pixel (once): defines the fbq queue, loads Meta's script in the background,
+ * and records the first PageView. Events sent before the script arrives are queued, not lost.
+ */
+export function loadMetaPixel() {
+  if (typeof window === "undefined" || !metaPixelId || window.fbq) return;
+  // Same behaviour as Meta's official snippet: queue calls until fbevents.js takes over.
+  const fbq: Fbq = (...args: unknown[]) => {
+    if (fbq.callMethod) fbq.callMethod(...args);
+    else fbq.queue?.push(args);
+  };
+  fbq.queue = [];
+  fbq.push = fbq;
+  fbq.loaded = true;
+  fbq.version = "2.0";
+  window.fbq = fbq;
+  window._fbq = fbq;
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = "https://connect.facebook.net/en_US/fbevents.js";
+  document.head.appendChild(script);
+  fbq("init", metaPixelId);
+  fbq("track", "PageView");
+}
+
+/** Sends a Meta Pixel event if the pixel has started. */
+export function trackMeta(event: "PageView" | "Contact" | "Lead", params?: Record<string, unknown>) {
+  if (typeof window !== "undefined") window.fbq?.("track", event, params);
 }

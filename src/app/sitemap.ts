@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/how-it-works", updated: contentUpdated, priority: 0.7 },
     { path: "/faqs", updated: contentUpdated, priority: 0.7 },
     { path: "/about", updated: contentUpdated, priority: 0.6 },
-    { path: "/why-choose-byebyeloan", updated: contentUpdated, priority: 0.6 },
+    { path: "/why-choose-smartguru", updated: contentUpdated, priority: 0.6 },
     { path: "/contact", updated: contentUpdated, priority: 0.6 },
     { path: "/blog", updated: contentUpdated, priority: 0.9 },
     ...blogCategories.map((c) => ({ path: categoryPath(c.slug), updated: contentUpdated, priority: 0.6 })),

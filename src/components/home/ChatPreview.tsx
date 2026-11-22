@@ -1,4 +1,5 @@
-import { CheckCheck, MessageCircle } from "lucide-react";
+import { CheckCheck } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { site } from "@/lib/site";
 
 const messages = [
@@ -14,8 +15,8 @@ export function ChatPreview() {
     <figure className="mx-auto w-full max-w-sm" aria-hidden="true">
       <div className="overflow-hidden rounded-3xl border border-line bg-white shadow-float">
         <div className="flex items-center gap-3 bg-brand-dark px-4 py-3 text-white">
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15">
-            <MessageCircle size={20} />
+          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-white">
+            <WhatsAppIcon size={22} />
           </span>
           <div>
             <p className="text-sm font-bold">{site.name}</p>

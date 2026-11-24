@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Noto_Nastaliq_Urdu } from "next/font/google";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Check, ChevronDown, Clock, FileCheck, FolderOpen, Layers, ShieldCheck } from "lucide-react";
 import { ArticleCard } from "@/components/ArticleCard";
@@ -7,7 +8,6 @@ import { HeroIllustration } from "@/components/HeroIllustration";
 import { AppCategoryWall } from "@/components/home/AppCategoryWall";
 import { AppTicker } from "@/components/home/AppTicker";
 import { ChatPreview } from "@/components/home/ChatPreview";
-import { UrduSection, urduFont } from "@/components/home/UrduSection";
 import { WhatsAppCta } from "@/components/home/WhatsAppCta";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { articles } from "@/lib/content";
@@ -22,6 +22,9 @@ export const metadata: Metadata = pageMetadata({
   description: `Paid off a loan? Get help with your clearance letter (NOC) and documents for loans from banks and ${loanApps.length} digital loan apps in Pakistan. Free first consultation.`,
   path: "/",
 });
+
+// Nastaliq is the Urdu script most readers in Pakistan are used to.
+const urduFont = Noto_Nastaliq_Urdu({ subsets: ["arabic"], weight: ["400", "700"], display: "swap" });
 
 // Each button sends its own WhatsApp message, so you can tell which part of the page a lead came from.
 const msg = {
@@ -94,20 +97,16 @@ export default function HomePage() {
         <div aria-hidden="true" className="absolute top-16 -right-32 h-96 w-96 rounded-full bg-brand-soft/70 blur-3xl" />
         <div className="container-x relative grid grid-cols-1 items-center gap-12 py-7 sm:py-20 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
           <div>
-            <div className="mb-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-              <p className="eyebrow">Free help on WhatsApp</p>
-              <a
-                href="#urdu"
-                lang="ur"
-                dir="rtl"
-                className={`${urduFont.className} inline-flex items-center rounded-full border border-brand/30 bg-white px-4 text-base leading-[2.2] font-bold text-brand-ink shadow-card hover:border-brand hover:text-brand-dark`}
-              >
-                اردو میں پڑھیں ↓
-              </a>
-            </div>
+            <p className="eyebrow mb-3">Free help on WhatsApp</p>
             <h1 className="text-3xl leading-[1.08] font-extrabold text-brand-dark sm:text-5xl lg:text-[3.3rem]">
               Paid off your loan? <span className="text-brand">Get your clearance letter.</span>
             </h1>
+            <div lang="ur" dir="rtl" className={`${urduFont.className} mt-5 border-r-4 border-brand pr-4`}>
+              <p className="text-[1.4rem] leading-[1.9] font-bold text-brand-dark sm:text-3xl">
+                قرض ادا کر دیا؟ لون ایپ یا بینک سے اپنا کلیئرنس لیٹر (NOC) لیں
+              </p>
+              <p className="text-lg leading-[2] text-ink">واٹس ایپ پر اردو میں مفت بات کریں۔</p>
+            </div>
             <p className="lead mt-4 max-w-xl">
               Many people in Pakistan pay their loan but never get proof that it is closed. We help you get the
               clearance letter (NOC) and your documents back from the bank or loan app.
@@ -145,8 +144,6 @@ export default function HomePage() {
       </section>
 
       <AppTicker />
-
-      <UrduSection />
 
       {/* Is this you? */}
       <section className="section bg-white">
@@ -284,12 +281,7 @@ export default function HomePage() {
         <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
           <WhatsAppIcon size={24} />
         </span>
-        <span className="flex flex-col items-center">
-          <span>Chat with us on WhatsApp — it&apos;s free</span>
-          <span lang="ur" dir="rtl" className={`${urduFont.className} text-sm leading-[1.9] font-normal`}>
-            واٹس ایپ پر مفت بات کریں
-          </span>
-        </span>
+        <span>Chat with us on WhatsApp — it&apos;s free</span>
         <span className="sr-only"> (opens in a new tab)</span>
       </a>
       <JsonLd data={homeService} />

@@ -98,12 +98,13 @@ export default function HomePage() {
         <div className="container-x relative grid grid-cols-1 items-center gap-12 py-7 sm:py-20 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
           <div>
             <p className="eyebrow mb-3">Free help on WhatsApp</p>
-            <h1 className="text-3xl leading-[1.08] font-extrabold text-brand-dark sm:text-5xl lg:text-[3.3rem]">
-              Paid off your loan? <span className="text-brand">Get your clearance letter.</span>
+            <h1 className="text-3xl leading-[1.12] font-extrabold text-brand-dark sm:text-[2.6rem] lg:text-[2.9rem]">
+              Clear your loan, escape the stress of loan app calls{" "}
+              <span className="text-brand">and get your NOC letter.</span>
             </h1>
             <div lang="ur" dir="rtl" className={`${urduFont.className} mt-5 border-r-4 border-brand pr-4`}>
               <p className="text-[1.4rem] leading-[1.9] font-bold text-brand-dark sm:text-3xl">
-                قرض ادا کر دیا؟ لون ایپ یا بینک سے اپنا کلیئرنس لیٹر (NOC) لیں
+                اپنا قرضہ ختم کروائیں، لون ایپ والوں کی کالز کی ٹینشن سے بچیں اور NOC لیٹر لیں
               </p>
               <p className="text-lg leading-[2] text-ink">واٹس ایپ پر اردو میں مفت بات کریں۔</p>
             </div>

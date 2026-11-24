@@ -8,6 +8,7 @@ export type ServiceDetailProps = {
   crumb: string;
   title: string;
   highlight: string;
+  urdu?: string;
   intro: string;
   whatTitle: string;
   what: string[];
@@ -29,7 +30,7 @@ export function ServiceDetail(p: ServiceDetailProps) {
   return (
     <>
       <JsonLd data={serviceJsonLd({ name: `${p.title} ${p.highlight}`.replace(/\.$/, ""), description: p.intro, path: p.path, serviceType: p.serviceType })} />
-      <PageHero path={p.path} crumb={p.crumb} eyebrow="Our services" title={p.title} highlight={p.highlight} intro={p.intro} />
+      <PageHero path={p.path} crumb={p.crumb} eyebrow="Our services" title={p.title} highlight={p.highlight} urdu={p.urdu} intro={p.intro} />
 
       <section className="section bg-white">
         <div className="container-x grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:gap-16">

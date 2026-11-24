@@ -52,6 +52,7 @@ export default function HowItWorksPage() {
         eyebrow="How it works"
         title="A clear process,"
         highlight="from first call to clearance."
+        urdu="تین آسان قدم: واٹس ایپ کریں، کاغذات بھیجیں اور NOC لیٹر لیں"
         intro="No jargon and no surprises. Here is exactly what happens when you contact SmartGuru."
       />
 

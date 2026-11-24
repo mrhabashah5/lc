@@ -18,6 +18,7 @@ export default function LoanClearancePage() {
       serviceType="Loan clearance assistance"
       title="Loan clearance"
       highlight="assistance."
+      urdu="اپنا قرضہ ختم کروائیں، لون ایپ والوں کی کالز کی ٹینشن سے بچیں اور NOC لیٹر لیں"
       intro="Paying the last instalment is not the final step. We help you make sure the loan is closed on paper as well."
       whatTitle="What is loan clearance?"
       what={[

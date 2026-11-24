@@ -16,6 +16,7 @@ export default function Page() {
       slug="clearance-checklist"
       title="Loan clearance"
       highlight="checklist."
+      urdu="لون کلیئرنس کی مکمل چیک لسٹ — کوئی قدم نہ چھوٹے"
       quickAnswer="Choose your type of loan and follow the steps in order: get the final figure in writing, pay through official channels, request a clearance letter (NOC) and check it, then complete any extra steps such as lien removal for car finance. Tick each step as you go and print the list to keep with your documents."
       related={[
         { href: "/blog/loan-clearance-certificate-noc-pakistan", label: "How to get a loan clearance certificate (NOC)" },

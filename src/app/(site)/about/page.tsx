@@ -39,6 +39,7 @@ export default function AboutPage() {
         eyebrow="About SmartGuru"
         title="Helping people move forward"
         highlight="with clarity."
+        urdu="ہم آپ کو لون کی ٹینشن سے نکال کر صاف کاغذات دلانے میں مدد کرتے ہیں"
         intro="SmartGuru exists for one reason: dealing with a loan problem is far harder when you do not understand where you stand."
       />
 

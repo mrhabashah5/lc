@@ -24,6 +24,7 @@ export default function ServicesPage() {
         eyebrow="Our services"
         title="Practical help with"
         highlight="loan clearance."
+        urdu="لون کلیئرنس، NOC لیٹر اور اپنے کاغذات کی واپسی — سب ایک جگہ"
         intro="From checking your final payment to receiving the clearance letter and your documents, we help you close every loan properly."
       />
 

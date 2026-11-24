@@ -50,6 +50,7 @@ export default function BlogPage() {
         eyebrow="SmartGuru Blog"
         title="Clear answers on"
         highlight="loans in Pakistan."
+        urdu="لون اور NOC لیٹر کے بارے میں آسان اور مفت معلومات"
         intro="Practical, plain-language guides on clearance letters, loan apps, credit records and your rights as a borrower."
       />
       <JsonLd data={blogLd} />

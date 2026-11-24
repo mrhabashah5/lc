@@ -38,6 +38,7 @@ export default function WhyPage() {
         eyebrow="Why choose SmartGuru"
         title="Straightforward help,"
         highlight="honestly delivered."
+        urdu="سیدھی بات، ایماندار مدد — کوئی جھوٹا وعدہ نہیں"
         intro="When you are under financial pressure, the last thing you need is another promise that does not hold. Here is how we are different."
       />
 

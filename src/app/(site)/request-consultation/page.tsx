@@ -28,6 +28,7 @@ export default async function RequestConsultationPage({ searchParams }: Props) {
         eyebrow="Free consultation"
         title="Request a"
         highlight="consultation."
+        urdu="مفت مشورہ لیں — صرف دو منٹ کا فارم بھریں"
         intro="Tell us a little about your situation. It takes about two minutes, and there is no obligation."
       />
       <section className="section bg-white">

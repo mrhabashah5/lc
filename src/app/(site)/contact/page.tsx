@@ -29,6 +29,7 @@ export default function ContactPage() {
         eyebrow="Contact us"
         title="We are here"
         highlight="to help."
+        urdu="ہم سے رابطہ کریں — واٹس ایپ پر مفت بات کریں"
         intro="Have a question about our services? Get in touch using whichever method suits you."
       />
       <section className="section bg-white">

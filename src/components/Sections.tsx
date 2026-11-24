@@ -4,6 +4,7 @@ import { breadcrumbJsonLd } from "@/lib/schema";
 import { ArrowRight, ChevronRight, MessageCircle } from "lucide-react";
 import { steps } from "@/lib/content";
 import { whatsappLink } from "@/lib/site";
+import { UrduTitle } from "./UrduTitle";
 
 /** Hero used on every inner page. */
 export function PageHero({
@@ -11,6 +12,7 @@ export function PageHero({
   title,
   highlight,
   intro,
+  urdu,
   crumb,
   path,
   breadcrumbs,
@@ -20,6 +22,8 @@ export function PageHero({
   /** Optional trailing words of the title shown in the brand colour. */
   highlight?: string;
   intro?: string;
+  /** Short Urdu title shown under the English heading. */
+  urdu?: string;
   crumb: string;
   /** Page path; adds breadcrumb structured data (Home > crumb). */
   path?: string;
@@ -50,6 +54,7 @@ export function PageHero({
         <h1 className="h-display max-w-3xl">
           {title} {highlight && <span className="text-brand">{highlight}</span>}
         </h1>
+        {urdu && <UrduTitle title={urdu} className="mt-5" />}
         {intro && <p className="lead mt-5 max-w-2xl">{intro}</p>}
       </div>
     </section>

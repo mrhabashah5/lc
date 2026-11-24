@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Noto_Nastaliq_Urdu } from "next/font/google";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Check, ChevronDown, Clock, FileCheck, FolderOpen, Layers, ShieldCheck } from "lucide-react";
 import { ArticleCard } from "@/components/ArticleCard";
@@ -10,6 +9,7 @@ import { AppTicker } from "@/components/home/AppTicker";
 import { ChatPreview } from "@/components/home/ChatPreview";
 import { WhatsAppCta } from "@/components/home/WhatsAppCta";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
+import { UrduTitle } from "@/components/UrduTitle";
 import { articles } from "@/lib/content";
 import { loanApps } from "@/lib/loan-apps";
 import { serviceJsonLd } from "@/lib/schema";
@@ -22,9 +22,6 @@ export const metadata: Metadata = pageMetadata({
   description: `Paid off a loan? Get help with your clearance letter (NOC) and documents for loans from banks and ${loanApps.length} digital loan apps in Pakistan. Free first consultation.`,
   path: "/",
 });
-
-// Nastaliq is the Urdu script most readers in Pakistan are used to.
-const urduFont = Noto_Nastaliq_Urdu({ subsets: ["arabic"], weight: ["400", "700"], display: "swap" });
 
 // Each button sends its own WhatsApp message, so you can tell which part of the page a lead came from.
 const msg = {
@@ -102,12 +99,11 @@ export default function HomePage() {
               Clear your loan, escape the stress of loan app calls{" "}
               <span className="text-brand">and get your NOC letter.</span>
             </h1>
-            <div lang="ur" dir="rtl" className={`${urduFont.className} mt-5 border-r-4 border-brand pr-4`}>
-              <p className="text-[1.4rem] leading-[1.9] font-bold text-brand-dark sm:text-3xl">
-                اپنا قرضہ ختم کروائیں، لون ایپ والوں کی کالز کی ٹینشن سے بچیں اور NOC لیٹر لیں
-              </p>
-              <p className="text-lg leading-[2] text-ink">واٹس ایپ پر اردو میں مفت بات کریں۔</p>
-            </div>
+            <UrduTitle
+              title="اپنا قرضہ ختم کروائیں، لون ایپ والوں کی کالز کی ٹینشن سے بچیں اور NOC لیٹر لیں"
+              sub="واٹس ایپ پر اردو میں مفت بات کریں۔"
+              className="mt-5"
+            />
             <p className="lead mt-4 max-w-xl">
               Many people in Pakistan pay their loan but never get proof that it is closed. We help you get the
               clearance letter (NOC) and your documents back from the bank or loan app.
@@ -174,6 +170,7 @@ export default function HomePage() {
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <h2 className="h-section">How it works</h2>
             <p className="lead mt-3">Three easy steps. You can start right now on WhatsApp.</p>
+            <UrduTitle title="تین آسان قدم — آج ہی واٹس ایپ پر شروع کریں" centered className="mt-4" />
           </div>
           <ol className="grid grid-cols-1 gap-5 md:grid-cols-3">
             {steps.map((s, i) => (
@@ -269,6 +266,7 @@ export default function HomePage() {
         <div className="container-x text-center">
           <h2 className="text-3xl leading-tight font-extrabold text-white sm:text-4xl">Close your loan the right way</h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-white/85">Send us a message today. Your first chat is free.</p>
+          <UrduTitle title="آج ہی واٹس ایپ کریں — پہلی بات چیت بالکل مفت" centered onDark className="mt-4" />
           <WhatsAppCta message={msg.final} label={`WhatsApp ${whatsappDisplay}`} variant="light" className="mt-8" />
           <p className="mt-4 text-sm text-white/80">We reply {site.hours}.</p>
         </div>

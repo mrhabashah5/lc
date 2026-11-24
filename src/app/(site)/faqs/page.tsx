@@ -31,6 +31,7 @@ export default function FaqsPage() {
         eyebrow="FAQs"
         title="Questions,"
         highlight="answered clearly."
+        urdu="آپ کے سوال، ہمارے آسان جواب"
         intro="If you cannot find what you are looking for, contact us and we will be glad to help."
       />
 

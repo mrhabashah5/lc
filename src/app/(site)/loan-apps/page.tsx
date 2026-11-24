@@ -55,6 +55,7 @@ export default function LoanAppsPage() {
         eyebrow="Loan app clearance"
         title="Clearance help for"
         highlight="digital loan apps."
+        urdu="ان تمام لون ایپس سے NOC لیٹر لینے میں ہم آپ کی مدد کرتے ہیں"
         intro={`We provide loan clearance assistance for ${loanApps.length} digital lending apps in Pakistan across ${appCategories.length} types of financing. Find yours below.`}
       />
 

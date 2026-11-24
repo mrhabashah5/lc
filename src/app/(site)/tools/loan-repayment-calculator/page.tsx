@@ -16,6 +16,7 @@ export default function Page() {
       slug="loan-repayment-calculator"
       title="Loan repayment"
       highlight="calculator."
+      urdu="اپنی قسط اور کل رقم کا حساب خود لگائیں"
       quickAnswer="Enter your loan amount in rupees, the annual mark-up rate and the term in months. The calculator shows your monthly instalment, the total mark-up you will pay and a month-by-month schedule, using either the reducing-balance method most lenders use or a flat rate."
       related={[
         { href: "/blog/loan-clearance-certificate-noc-pakistan", label: "How to get a loan clearance certificate (NOC)" },

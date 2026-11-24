@@ -8,6 +8,7 @@ type Props = {
   slug: string;
   title: string;
   highlight?: string;
+  urdu?: string;
   /** Direct answer to what the tool does and how to use it (shown first). */
   quickAnswer: string;
   children: React.ReactNode;
@@ -16,7 +17,7 @@ type Props = {
   related: { href: string; label: string }[];
 };
 
-export function ToolPage({ slug, title, highlight, quickAnswer, children, howItWorks, faqs, related }: Props) {
+export function ToolPage({ slug, title, highlight, urdu, quickAnswer, children, howItWorks, faqs, related }: Props) {
   const url = `${site.url}/tools/${slug}`;
   const ld = {
     "@context": "https://schema.org",
@@ -39,7 +40,7 @@ export function ToolPage({ slug, title, highlight, quickAnswer, children, howItW
 
   return (
     <>
-      <PageHero breadcrumbs={[{ name: "Free Loan Tools", path: "/tools" }, { name: `${title}${highlight ? ` ${highlight}` : ""}`.replace(/\.$/, ""), path: `/tools/${slug}` }]} crumb="Free Loan Tools" eyebrow="Free tool" title={title} highlight={highlight} />
+      <PageHero breadcrumbs={[{ name: "Free Loan Tools", path: "/tools" }, { name: `${title}${highlight ? ` ${highlight}` : ""}`.replace(/\.$/, ""), path: `/tools/${slug}` }]} crumb="Free Loan Tools" eyebrow="Free tool" title={title} highlight={highlight} urdu={urdu} />
 
       <section className="bg-white pt-10">
         <div className="container-x">

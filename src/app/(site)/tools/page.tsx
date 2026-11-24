@@ -23,6 +23,7 @@ export default function ToolsPage() {
         eyebrow="Free tools"
         title="Free loan tools,"
         highlight="no sign-up needed."
+        urdu="مفت لون ٹولز — کوئی سائن اپ نہیں"
         intro="Work out your instalments and follow a step-by-step clearance checklist. Everything runs in your browser and nothing you enter is sent to us."
       />
       <section className="section bg-white">

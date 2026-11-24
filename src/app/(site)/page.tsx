@@ -7,6 +7,7 @@ import { HeroIllustration } from "@/components/HeroIllustration";
 import { AppCategoryWall } from "@/components/home/AppCategoryWall";
 import { AppTicker } from "@/components/home/AppTicker";
 import { ChatPreview } from "@/components/home/ChatPreview";
+import { UrduSection, urduFont } from "@/components/home/UrduSection";
 import { WhatsAppCta } from "@/components/home/WhatsAppCta";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { articles } from "@/lib/content";
@@ -93,7 +94,17 @@ export default function HomePage() {
         <div aria-hidden="true" className="absolute top-16 -right-32 h-96 w-96 rounded-full bg-brand-soft/70 blur-3xl" />
         <div className="container-x relative grid grid-cols-1 items-center gap-12 py-7 sm:py-20 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
           <div>
-            <p className="eyebrow mb-3">Free help on WhatsApp</p>
+            <div className="mb-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+              <p className="eyebrow">Free help on WhatsApp</p>
+              <a
+                href="#urdu"
+                lang="ur"
+                dir="rtl"
+                className={`${urduFont.className} inline-flex items-center rounded-full border border-brand/30 bg-white px-4 text-base leading-[2.2] font-bold text-brand-ink shadow-card hover:border-brand hover:text-brand-dark`}
+              >
+                اردو میں پڑھیں ↓
+              </a>
+            </div>
             <h1 className="text-3xl leading-[1.08] font-extrabold text-brand-dark sm:text-5xl lg:text-[3.3rem]">
               Paid off your loan? <span className="text-brand">Get your clearance letter.</span>
             </h1>
@@ -134,6 +145,8 @@ export default function HomePage() {
       </section>
 
       <AppTicker />
+
+      <UrduSection />
 
       {/* Is this you? */}
       <section className="section bg-white">
@@ -271,7 +284,12 @@ export default function HomePage() {
         <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#25D366] text-white">
           <WhatsAppIcon size={24} />
         </span>
-        <span>Chat with us on WhatsApp — it&apos;s free</span>
+        <span className="flex flex-col items-center">
+          <span>Chat with us on WhatsApp — it&apos;s free</span>
+          <span lang="ur" dir="rtl" className={`${urduFont.className} text-sm leading-[1.9] font-normal`}>
+            واٹس ایپ پر مفت بات کریں
+          </span>
+        </span>
         <span className="sr-only"> (opens in a new tab)</span>
       </a>
       <JsonLd data={homeService} />

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { whatsappLink } from "@/lib/site";
 
@@ -10,9 +11,11 @@ export function WhatsAppCta({
   label = "Chat with us on WhatsApp",
   variant = "primary",
   className = "",
+  newTabNote = "(opens in a new tab)",
 }: {
   message: string;
-  label?: string;
+  label?: ReactNode;
+  newTabNote?: string;
   variant?: "primary" | "light";
   className?: string;
 }) {
@@ -31,7 +34,7 @@ export function WhatsAppCta({
         <WhatsAppIcon size={20} />
       </span>
       {label}
-      <span className="sr-only"> (opens in a new tab)</span>
+      <span className="sr-only"> {newTabNote}</span>
     </a>
   );
 }

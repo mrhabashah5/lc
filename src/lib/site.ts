@@ -19,7 +19,7 @@ export const whatsappDisplay = site.whatsapp.replace(/^(92)(\d{3})(\d+)$/, "+$1 
  * A short Urdu form, so the first message already says which apps and how much.
  */
 export const whatsappMessage = [
-  "السلام علیکم! مجھے اپنے لون کا NOC لیٹر چاہیے۔",
+  "السلام علیکم! لون سے جان چھڑوانا چاہتے ہیں یا NOC لینا چاہتے ہیں؟",
   "لون ایپس کی تعداد: ",
   "ایپ کا نام اور رقم:",
   "1) ",

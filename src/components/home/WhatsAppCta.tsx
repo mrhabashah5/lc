@@ -1,17 +1,14 @@
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
-import { whatsappLink } from "@/lib/site";
+import { whatsappLink, whatsappMessage } from "@/lib/site";
 
-/**
- * Large WhatsApp button. Each placement sends its own pre-filled message,
- * so you can see in WhatsApp which part of the page a lead came from.
- */
+/** Large WhatsApp button that opens a chat with the standard pre-typed message. */
 export function WhatsAppCta({
-  message,
+  message = whatsappMessage,
   label = "Chat with us on WhatsApp",
   variant = "primary",
   className = "",
 }: {
-  message: string;
+  message?: string;
   label?: string;
   variant?: "primary" | "light";
   className?: string;

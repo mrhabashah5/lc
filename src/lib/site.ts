@@ -14,7 +14,20 @@ export const site = {
 /** WhatsApp number formatted for display, e.g. +92 310 1990325. */
 export const whatsappDisplay = site.whatsapp.replace(/^(92)(\d{3})(\d+)$/, "+$1 $2 $3");
 
-export function whatsappLink(message = "Hello SmartGuru, I would like to request a consultation.") {
+/**
+ * Message already typed in the visitor's WhatsApp box when they tap a WhatsApp button.
+ * A short Urdu form, so the first message already says which apps and how much.
+ */
+export const whatsappMessage = [
+  "السلام علیکم! مجھے اپنے لون کا NOC لیٹر چاہیے۔",
+  "لون ایپس کی تعداد: ",
+  "ایپ کا نام اور رقم:",
+  "1) ",
+  "2) ",
+  "قرض پورا ادا ہو چکا ہے: ہاں / نہیں",
+].join(String.fromCharCode(10));
+
+export function whatsappLink(message = whatsappMessage) {
   return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
 }
 

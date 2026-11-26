@@ -23,16 +23,6 @@ export const metadata: Metadata = pageMetadata({
   path: "/",
 });
 
-// Each button sends its own WhatsApp message, so you can tell which part of the page a lead came from.
-const msg = {
-  hero: "Hi SmartGuru, I paid off my loan and I need help getting my clearance letter (NOC).",
-  situations: "Hi SmartGuru, I think I need a clearance letter for my loan. Can you help?",
-  steps: "Hi SmartGuru, I want to start. Here are my loan details:",
-  faq: "Hi SmartGuru, I have a question about loan clearance.",
-  final: "Hi SmartGuru, I would like a free chat about my loan clearance.",
-  sticky: "Hi SmartGuru, I need help with my loan clearance letter (NOC).",
-};
-
 const situations = [
   "You paid your loan, but you never got a clearance letter",
   "Your loan app still shows money due after you paid",
@@ -109,7 +99,7 @@ export default function HomePage() {
               clearance letter (NOC) and your documents back from the bank or loan app.
             </p>
             <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <WhatsAppCta message={msg.hero} />
+              <WhatsAppCta />
               <Link href="/request-consultation" className="link-arrow">
                 Or fill a short form <ArrowRight size={17} aria-hidden="true" />
               </Link>
@@ -158,7 +148,7 @@ export default function HomePage() {
                 </li>
               ))}
             </ul>
-            <WhatsAppCta message={msg.situations} label="Yes, this is me. Chat now" className="mt-8" />
+            <WhatsAppCta label="Yes, this is me. Chat now" className="mt-8" />
           </div>
           <HeroIllustration className="mx-auto h-auto w-full max-w-lg" />
         </div>
@@ -184,7 +174,7 @@ export default function HomePage() {
             ))}
           </ol>
           <div className="mt-10 text-center">
-            <WhatsAppCta message={msg.steps} label="Start step 1 on WhatsApp" />
+            <WhatsAppCta label="Start step 1 on WhatsApp" />
           </div>
         </div>
       </section>
@@ -229,7 +219,7 @@ export default function HomePage() {
           <p className="mt-8 text-center text-lg text-ink">
             Still have a question?{" "}
             <a
-              href={whatsappLink(msg.faq)}
+              href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
               className="font-bold text-brand-ink underline underline-offset-4"
@@ -267,12 +257,12 @@ export default function HomePage() {
           <h2 className="text-3xl leading-tight font-extrabold text-white sm:text-4xl">Close your loan the right way</h2>
           <p className="mx-auto mt-4 max-w-xl text-lg text-white/85">Send us a message today. Your first chat is free.</p>
           <UrduTitle title="آج ہی واٹس ایپ کریں — پہلی بات چیت بالکل مفت" centered onDark className="mt-4" />
-          <WhatsAppCta message={msg.final} label={`WhatsApp ${whatsappDisplay}`} variant="light" className="mt-8" />
+          <WhatsAppCta label={`WhatsApp ${whatsappDisplay}`} variant="light" className="mt-8" />
           <p className="mt-4 text-sm text-white/80">We reply {site.hours}.</p>
         </div>
       </section>
       <a
-        href={whatsappLink(msg.sticky)}
+        href={whatsappLink()}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed inset-x-0 bottom-0 z-50 flex min-h-16 items-center justify-center gap-3 bg-cta px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] text-center text-sm leading-tight font-bold text-white shadow-float md:hidden"

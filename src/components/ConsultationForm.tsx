@@ -124,7 +124,7 @@ export function ConsultationForm({ initialApp }: { initialApp?: string }) {
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <a
-            href={whatsappLink(`Hello SmartGuru, I have submitted a consultation request. My reference is ${reference}.`)}
+            href={whatsappLink(`السلام علیکم! میں نے ویب سائٹ پر فارم بھیج دیا ہے۔ میرا ریفرنس نمبر: ${reference}`)}
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary"
